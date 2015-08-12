@@ -1,0 +1,12 @@
+# Site settings
+title: Machine Learning by Doing!
+email: sballas8@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Sam Ballas' Blog. 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+github_username:  sballas8
+
+# Build settings
+markdown: kramdown

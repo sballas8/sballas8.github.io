@@ -1,0 +1,181 @@
+---
+layout: post
+title:  "Generating Poetry with PoetRNN"
+date:   2015-08-11 
+excerpt: "We describe PoetRNN which can learn and produce short verse poetry. We also test it out using a sample of haikus and limericks." 
+comments: true
+mathjax: true
+---
+
+A few months ago I read Andrej Karpathy's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) about using RNNs to generate text. I was amazed by the quality of the results (it basically wrote compilable LaTeX code, which as a mathematician blew my mind). I saw that a lot of people had been doing some really cool stuff with these networks, and so I decided I wanted to try it out myself. Being a machine learning/python novice I decided I would learn way more if I basically started from scratch. Thus [PoetRNN](https://github.com/sballas8/PoetRNN) was born. 
+
+##PoetRNN
+
+Basically, PoetRNN is designed to learn and produce short verse poetry. It is heavily inspired by Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn) and thus its architecture is similar. One key difference between char-rnn and PoetRNN is the format of the training data and of the sampled output. Unlike char-rnn which learns by using sequences of characters of fixed length, PoetRNN learns using sequences of varying length (the sequence length is the length of one of the poems in the `csv` data file). This more flexible API allows us to respect the natural structure of the data (i.e. we don't split a poem in the middle). 
+
+This flexibility also manifests itself when you try to sample a model you have trained. Instead of having to decide in advance how many characters you would like to sample you can select how many poems you want to sample instead. Your model will learn what the end of a poem looks like! At the end of the post I will describe how this works in practice for those of you who are into those sorts of things. 
+
+##The Results
+
+I collected the poetry data from various websites, a list of which can be found [here](https://github.com/sballas8/PoetRNN). More specifically,  I used scrapy to scrape various poetry websites, but that is a story for another day (or possibly another blog post if I feel ambitious). Also, I am not currently blessed with a GPU and so I was not really able train a bunch of different models and tune the hyperparameters to optimize the model as well as I would like. As a result I trained relatively few models with somewhat arbitrarily chosen parameters. Also, to keep the vocabulary size manageable, I made all the characters lowercase.  Without further adieu. 
+
+### Haikus
+
+Here are some of my favorite haikus that the model generated at various temperatures. 
+
+>sunset home
+<br>
+>the bird of windows 
+<br>
+>white the hand
+
+>at the turn??
+<br>
+>the shadow of summer
+<br>
+marks and path
+
+>rain pond
+<br>
+>the light of shadow
+<br>
+>of the song
+
+>not the star
+<br>
+>the scare of the crocks
+<br>
+>of the frost
+
+Some of these are pretty decent. They don't totally make sense and often don't follow a consistent theme, but hey, many of the human produced haikus I read were sort of confusing and disjointed as well. Here are some examples of haikus the model was trained on.
+
+>absently choking
+<br>
+>on a sliver of lemon
+<br>
+near-total eclipse
+<br>
+>	-Helen Buckingham
+
+>stocking
+<br>
+>empty to the toe
+<br>
+the spray of citrus
+<br>
+>	-kjmunro
+
+
+
+Don't let these examples mislead you. It's not all puppies and rainbows. Just when you think your model is about to ace the haiku Turing test you get brought back down to earth when the model samples somthing like this.
+
+>rever
+<br>
+>my cat??
+<br>
+>the star blosers the wind
+ 
+>a bout the stone
+<br>
+>the slow room
+<br>
+>a cag from the boar's song
+
+>dog
+<br>
+>fog a a eputhed pitnes
+<br>
+>on the swe lut bemore
+
+###Limericks
+Here are a few limericks sampled at various temperatures
+
+>now i don't see the heart that is bone.
+<br>
+>it's an air of my fun in the spare.
+<br>
+>you must work in the fear
+<br>
+>when i need to be falling,
+<br>
+>and despair that i hope that it's shown.
+
+>i was spreading a card of dark grape
+<br>
+that would see them to broke on his track:
+<br>
+we are basically saved
+<br>
+when the leaves of the bottom?
+<br>
+the complete consistent are wrong.
+
+This one is probably my favorite.
+
+>the chinicological means,
+<br>
+and she started to consume the cat,
+<br>
+and we won't think they banding
+<br>
+all prover of friends
+<br>
+and i make me a sentence a pee.
+
+Chinicological is an amazing word. It's totally fake (I looked it up), but it sounds almost plausable. Perhaps it is the study of Chinese ecology, but feel free to come up with your own fake meanings and post them in the comments section.  
+
+The purists out there probably object to calling these poems limericks since they don't have the characteristic AABBA rhyming pattern. I'll talk a bit in the conclusions section about why I think this may have happened. However, I will say that I am pleased at how much better the model has learned English. It is clear that this model has reaped the benefits of a much larger training set (~14M of limericks versus only .5M for the haikus). 
+
+##Under the Hood
+
+
+For those of you interested in the nitty gritty details, this section is for you. 
+
+###Training
+
+
+First we look at all the poems and assign each distinct character a number. The number of distinct characters is called the vocab size and we denote it by V. Given a poem of length N we can encode the poem as a NxV dimensional matrix. We encode the labels as a N dimensional vector where the $$k$$th component is the label of the $$(k+1)$$st character. The astute reader has probably noticed that this scheme doesn't work for the last character and so we just encode the Nth component with a "special" label that doesn't correspond to any character. This will help our model learn where poems end.
+
+To efficiently train our models we want to use "mini-batch" RMSProp updates, however this is a bit of problem since our poems don't all have the same length. To simplify things, let's pretend that we have a batch of B poems that all have length N. In this case we could encode our batch as a BxNxV dimensional 3-tensor, or more practically a numpy array of shape (B,N,V). Clearly, this doesn't work for poems of different length.
+
+Fortunately, there is an easy way to fix this. Given our batch of poems we find the longest poem (say of length M) and then we pad the matrices of the other poems in the batch with rows of zeros until they are all NxV. Intuitively, you should think of this as adding "phantom characters" to the end of each poem so that they all have the same length. Now we can code our batch as a BxNxV dimensional 3-tensor. We also need to remember where these rows of zeros are located. We do this with a BxN dimensional mask matrix of ones and zeros representing real and phantom characters, respectively. 
+
+When we perform our forward pass using this batch the model will compute what it thinks the most likely next character is and uses this prediction to compute the loss. However, the model doesn't know the difference between the real characters and the phantom characters and just merrily computes loss for all characters. That is where the mask matrix comes in; the phantom losses get multiplied by the zeros in the matrix and so they don't get counted. 
+
+This flexibility can also have its drawbacks, as it diminishes the returns for increasing the size of the training batches. This is because the size of the batch is controlled by the size of largest poem in the batch. So if you unluckily pick a batch that contains an outlier that is really long, than your batch will be artificially long since the other poems will have to be padded with lots of phantom characters. 
+
+
+###Sampling
+  
+Once you have trained a model you can sample it and bear the fruits of your labor. Basically, the model will make predictions one character at a time. Given a character, the model computes a score for each possible character. We are using a softmax loss function and so these scores can be roughly thought of as giving a probability distribution. The next character is then selected by sampling this distribution. Sampling continues until your model decides the poem has ended and spits out a that "special character" I mentioned earlier. 
+
+There is an important parameter to play around with when sampling; temperature. This is a positive number $$\tau$$ that can be thought of as controlling how adventurously the model is sampled by modifying the distribution. When $$\tau$$ is near 0 the smaller probabilities get sucked towards 0 and the largest probability gets sucked towards 1. So when we sample the most likely character is selected nearly 100% of the time. When $$\tau$$ is large the probabilities tend to cluster together, and so when we sample all characters are nearly equally likely. Mathematically, the limit as $$\tau\to0^{+}$$ is a dirac distribution centered at the most likely value and the limit as $$\tau\to\infty$$ is a uniform distribution.   
+
+##Conclusions
+
+The algorithm seems to be good at learning the basic structure of the poems. It tends to produce poems with the correct number of lines (3 for haikus and 5 for limericks). It also tends to learn to respect the relative lengths of lines. For example, the second line of the haikus tends to be longer than the first or third and the third and fourth lines of the limericks tend to be shorter than the other lines. 
+
+However, more subtle aspects of poetry seem to elude the models. In the haiku case the model often produces haikus with the correct number of syllables, but it messes up often enough to make me think that it hasn't really grasped the concept. I can think of a couple of possible explanations for this. First, syllables are based on the sound of the word and not the actual characters. This can make things difficult, particularly in English, where there are lots of silent letters. Another possible reason is that the data is not the best. There isn't that much of it (only about .5 megabytes) and the number of syllables in the haikus are not well standardized throughout the data. Some of the haikus follow a 3-5-3 syllable structure, some a 5-7-5 structure, and there are other syllable structures too. This makes the data noisy and I suspect more difficult for the model to learn from.  
+
+I'm not going to sugar coat things, the model completely failed to learn about rhyming. This was a bit of a surprise to me since it seemed like something the model would be able to learn. In many cases words that rhyme have the same letters at the end. Words that are supposed to rhyme also come at the end of lines, and are thus followed by `\n` characters, which would seem to give the model a useful cue. Then it dawned on me that maybe the model had learned about the rhyming structure, but that the sampling was not allowing it to take advantage of the `\n` cue. If you think about it the `\n` cue is a bit of a catch 22. On the one hand it picks out words that should be rhymed, but on the other hand it occurs *after* the word, so by the time the model samples the `\n` character it has already sampled the word that was supposed to rhyme and by then it is too late.
+
+In order to test this theory I decided to train the model so that it went through each limerick backwards (i.e. reading from bottom-to-top and right-to-left). This way the `\n` cue would occur before the words that were supposed to rhyme. Unfortunately, this made the results even worse. The number of lines in the sampled poems became less consistent. One explanation for the added variability in the line lengths is that many of the lines in the limericks used to train the model have puctuation at the end of the lines that serve as an indicator to the model that it is time to start a new line. When read backwards, this punctuation is at the beginning of the line and so the model can't use it as a newline cue. At any rate, this backwards training didn't result in any rhyming behavior, so perhaps this theory that the sampling is to blame doesn't hold water. 
+
+
+Another theory is that there are subtleties that arise from rhyming being about sound and not just about the letters in the words. For example the words brew and through rhyme, but have few of the same letters, and so it would likely be difficult for our model to learn that these words rhyme. However, I would have guessed that the model would start to output words at the end of lines that have the same letters in them, at least some of the time, but again this wasn't the case.  
+
+
+Even though the results weren't as spectacular as I was hoping for I still had a good time working on the project and learned a ton about recurrent neural networks, implementing machine learning algorithms, and even a bit about poetry. So all and all I would say the project was pretty successful. 
+
+If anyone has any bright ideas about how to teach a model like this about rhyming or syllable formation I would love to hear about it. Also, if you think of any other cool applications for PoetRNN that would be most welcome too. 
+
+
+
+
+
+
+
+
+
+
+

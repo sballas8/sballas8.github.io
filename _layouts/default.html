@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <style>
+	  .comments {
+	  		width: 70%;
+	  		margin-right: auto;
+	  	}
+      </style>
+      </head>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+	
+	
+	{% include comments.html %}
+	
+    {% include footer.html %}
+	
+  </body>
+
+</html>
