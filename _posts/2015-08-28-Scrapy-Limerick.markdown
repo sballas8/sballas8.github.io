@@ -2,7 +2,7 @@
 layout: post
 title:  "Wrangling Limericks using Scrapy"
 date:   2015-08-28 
-excerpt: "We describe how to use decipher a website's HTLM code and write a spider to scrape its data. As a working example we show how these scrape a bunch of limericks." 
+excerpt: "We describe how to use decipher a website's HTLM code and write a spider to scrape its data. As a working example we show how to use these tools to scrape a bunch of limericks." 
 comments: true
 mathjax: true
 ---
