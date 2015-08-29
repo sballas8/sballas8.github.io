@@ -9,4 +9,4 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 github_username:  sballas8
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
