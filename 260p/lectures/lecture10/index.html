@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 10: Properly Convex Automorphisms Part II</title>
+  <meta name="description" content="We continue our work classifying the transformations of a properly convex domain. Let  be open and properly convex in , and suppose  is not elliptic.  Then a...">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture10/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 10: Properly Convex Automorphisms Part II</h1>
+    <p class="post-meta">May 2, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>We continue our work classifying the transformations of a properly convex 
+domain. Let <script type="math/tex">\Omega</script> be open and properly convex in <script type="math/tex">\mathbb{R} P^n</script>, 
+and suppose <script type="math/tex">A \in \text{SL}(\Omega)</script> is not elliptic.  Then as we saw 
+last time, <script type="math/tex">A</script> has an attracting fixed point 
+<script type="math/tex">x_+ \in \mathbb{P}(E(A)) \cap \overline{\Omega} \subseteq \partial \Omega</script>.
+We also saw that <script type="math/tex">x_+ = [v_+]</script> where <script type="math/tex">v_+</script> is a <script type="math/tex">r(A)</script>-eigenvector 
+of <script type="math/tex">A</script> (where <script type="math/tex">r(A)</script> is the spectral radius, i.e. the absolute value of the 
+largest eigenvalue of <script type="math/tex">A</script>.)</p>
+
+<p>We break our analysis into two cases:</p>
+<ul>
+  <li><script type="math/tex">r(A) > 1</script> (hence <script type="math/tex">A</script> is hyperbolic)</li>
+  <li><script type="math/tex">r(A) = 1</script> (hence <script type="math/tex">A</script> is parabolic)</li>
+</ul>
+
+<p>Let’s consider the first case.  Let <script type="math/tex">\lambda_+ = r(A)</script>.  We note that 
+<script type="math/tex">r(A^{-1}) > 1</script> also, and we can find an attracting fixed point 
+<script type="math/tex">x_- = [v_-]</script> of <script type="math/tex">A^{-1}</script>, where <script type="math/tex">v_-</script> is an <script type="math/tex">r(A^{-1})</script> eigenvector 
+of <script type="math/tex">A^{-1}</script>.  Then it is clear that <script type="math/tex">x_-</script> is a fixed point of <script type="math/tex">A</script>, 
+and that <script type="math/tex">v_-</script> is a <script type="math/tex">1/r(A^{-1}) = \lambda_-</script> eigenvector of <script type="math/tex">A</script>.</p>
+
+<p>Now let <script type="math/tex">\ell_{x_+ x_-} = [x_+, x_-] \cap \overline{\Omega}</script> be the projective 
+line in <script type="math/tex">\overline{\Omega}</script> through <script type="math/tex">x_+</script> and <script type="math/tex">x_-</script>.  Any point <script type="math/tex">p</script> on 
+this line is moved to another point on the line, but how far does it move? 
+To answer this, we view the line as a copy of <script type="math/tex">\mathbb{R}P^1</script> and apply 
+a Mobius transformation to set <script type="math/tex">x_- = 0</script>, <script type="math/tex">p = 1</script>, and <script type="math/tex">x_+ = \infty</script>. 
+Then a simple calculation shows that <script type="math/tex">Ap = \lambda_+ / \lambda_-</script>.</p>
+
+<p>We have just seen that for any <script type="math/tex">p\in \ell_{x_+ x_-}</script>,</p>
+
+<script type="math/tex; mode=display">d_{\Omega}(p,Ap) = \log [x_-:p:Ap:x_+] = \log(\lambda_+/\lambda_-).</script>
+
+<p>So we set <script type="math/tex">\tau(A) = \log(\lambda_+/\lambda_-)</script> and call this the 
+<em>translation length</em> of <script type="math/tex">A</script>.</p>
+
+<p>As we saw in a previous lecture, <script type="math/tex">A</script> also acts on the dual <script type="math/tex">\Omega^*</script>, and 
+we can find attracting and repelling fixed points; call them <script type="math/tex">\varphi_+</script> and 
+<script type="math/tex">\varphi_-</script> respectively.  In fact, these fixed points correspond to 
+supporting hyperplanes of <script type="math/tex">\Omega</script>, written <script type="math/tex">H_{\varphi_+}</script> and 
+<script type="math/tex">H_{\varphi_-}</script>.  We foliate <script type="math/tex">\Omega</script> by a pencil of hyperplanes with 
+core <script type="math/tex">H_{\varphi_+} \cap H_{\varphi_-}</script>.  Next we note that any four points 
+from the same four hyperplanes in the foliation have the same cross ratio.<br />
+Thus, projecting along these hyperplanes onto the line <script type="math/tex">\ell_{x_+ x_-}</script> is a 
+distance decreasing function, as points on the boundary of <script type="math/tex">\Omega</script> must 
+be closer together than projections of <script type="math/tex">x_+</script> and <script type="math/tex">x_-</script>.</p>
+
+<p><strong>Theorem:</strong> Supposes that <script type="math/tex">\Omega</script> is strictly convex.</p>
+
+<p>1 If <script type="math/tex">A\in \text{SL}(\Omega)</script> a hyperbolic 
+trasformation, then there exist a <em>unique</em> attractor <script type="math/tex">x_+</script> and repeller 
+<script type="math/tex">x_-</script>.</p>
+
+<p>2 The line connecting <script type="math/tex">x_+</script> and <script type="math/tex">x_-</script>, called the <em>axis</em> of <script type="math/tex">A</script>, 
+consists of all points realizing the translation length, that is, all points 
+<script type="math/tex">p</script> such that <script type="math/tex">d_{\Omega}(p,Ap) = \tau(A)</script>.</p>
+
+<p>3 The Jordan blocks of <script type="math/tex">x_+</script> and <script type="math/tex">x_-</script> have size 1.</p>
+
+<p><em>Proof.</em></p>
+
+<p>1 As noted above, we know that 
+	<script type="math/tex">x_+ \in \mathbb{P}(E(A)) \cap \overline{\Omega}</script> and that 
+	<script type="math/tex">x_+ \in \partial \Omega</script>, but since <script type="math/tex">\Omega</script> is strictly convex 
+	the hyperplane <script type="math/tex">\mathbb{P}(E(A))</script> meets its boundary at just one point.
+	A similar argument applies to <script type="math/tex">x_-</script>.</p>
+
+<p>2 It was already shown above that all the points on this line realize the translation 
+length.  Additionally, projecting along the pencil of hyperplanes as described just 
+before this theorem is a strictly distance decreasing transformation in the strictly 
+convex case.</p>
+
+<p>3 To show this, we must find an <script type="math/tex">A</script>-invariant complement to the space 
+generated by <script type="math/tex">x_+</script> and <script type="math/tex">x_-</script>, but the core of our pencil of hyperplanes 
+is just such a complement.  QED.</p>
+
+<p>We now consider the case where <script type="math/tex">r(A) = 1</script>, when we have a parabolic 
+transformation.  Then there is an attracting fixed point 
+<script type="math/tex">x \in \partial \overline{\Omega}</script>.</p>
+
+<p>We define the <em>index</em> of <script type="math/tex">A</script>, <script type="math/tex">i(A)</script> to be the size of its most powerful 
+Jordan block.  If <script type="math/tex">A \in \text{SL}(\Omega)</script> is parabolic, then <script type="math/tex">i(A)</script> 
+is odd.</p>
+
+<p>To prove this, first suppose <script type="math/tex">A</script> has a single Jordan block, so <script type="math/tex">i(A) = n+1</script>. 
+Then we can choose coordinates such that <script type="math/tex">[e_{n+1}] \in \Omega</script> and 
+<script type="math/tex">A = I + N</script> where <script type="math/tex">N</script> is a matrix with 1’s above the diagonal and 0 
+elsewhere.  Note that <script type="math/tex">N^n \neq 0</script> and <script type="math/tex">N^{n+1} = 0</script>.  So,</p>
+
+<script type="math/tex; mode=display">(I+N)^p[e_{n+1}] = [e_{n+1}] + {p \choose 1} [e_n] + \cdots + {p \choose n} [e_1]</script>
+
+<p>and for large <script type="math/tex">p</script>, the <script type="math/tex">e_1</script> term dominates.  So as we repeatedly apply 
+<script type="math/tex">A</script> (or <script type="math/tex">A^{-1}</script>) our point approaches <script type="math/tex">e_1</script>.  Now if <script type="math/tex">n</script> is odd, the 
+sign of the <script type="math/tex">e_1</script> term is the sign of <script type="math/tex">p</script>.  This implies that 
+<script type="math/tex">\pm e_1 \in \partial \Omega</script>, contradicting the fact that <script type="math/tex">\Omega</script> is 
+properly convex.  Thus <script type="math/tex">n</script> is even and <script type="math/tex">i(A)</script> is odd.</p>
+
+<p>Now we consider the general case. Suppose <script type="math/tex">[v] \in \Omega</script> and let <script type="math/tex">W</script> be 
+the cyclic <script type="math/tex">\mathbb{R}[A]</script>-module generated by <script type="math/tex">v</script>.  <script type="math/tex">A|_W</script> has a 
+single Jordan block.  If we assume <script type="math/tex">v</script> generates the largest Jordan block, 
+then we consider <script type="math/tex">\Omega' = \mathbb{P}_+(W) \cap \Omega</script> and reduce to the 
+previous case.</p>
+
+<p><strong>Theorem:</strong>
+Let <script type="math/tex">A \in \text{SL}(\Omega)</script> be parabolic and suppose <script type="math/tex">\Omega</script> is strictly 
+convex. Then <script type="math/tex">A</script> has a <em>unique</em> attracting fixed point in <script type="math/tex">\partial \Omega</script>.</p>
+
+<p>Finally, here’s an interesting unsolved question.  Fix <script type="math/tex">r\in \mathbb{R}</script>, 
+and consider the set of points moved distance less than <script type="math/tex">r</script> by an isometry 
+of a properly convex set.  Is this set connected?</p>
+
+	<p><a href="/~ballas/260p/lectures/lecture9/"><b>Previous Post:</b> Lecture 9: Properly Convex Automorphisms</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture11/"><b>Next Post:</b> Lecture 11: Projective Structures on Surfaces</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 4: Projective Structures and Maps</title>
+  <meta name="description" content="A properly convex projective manifold is a quotient  where  is an open properly convex set and  is discrete and torsion-free.">
+
+  <link rel="stylesheet" href="/~sballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.ucsb.edu/~sballas/260p/lectures/lecture4">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.ucsb.edu/~sballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~sballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~sballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~sballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 4: Projective Structures and Maps</h1>
+    <p class="post-meta">Apr 7, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>A properly convex projective manifold is a quotient <script type="math/tex">\Omega/\Gamma</script> where <script type="math/tex">\Omega\subseteq \mathbb R P^n</script> is an open properly convex set and <script type="math/tex">\Gamma\subseteq PGL(\Omega)</script> is discrete and torsion-free.</p>
+
+<p><strong>Definition:</strong>  Let <script type="math/tex">M^n</script> be a manifold.  A <em>projective atlas</em> is a collection <script type="math/tex">\mathcal A=\{\varphi:U_\alpha\to \mathbb R P^n\}</script> such that</p>
+
+<p><script type="math/tex">\;\;\;\;(i)</script> The sets <script type="math/tex">U_\alpha\subseteq M</script> are open, connected, and cover <script type="math/tex">M</script>.</p>
+
+<p><script type="math/tex">\;\;\;\;(ii)</script>  On each component of <script type="math/tex">U_\alpha \cap U_\beta</script> there is a map <script type="math/tex">g_{\alpha\beta}\in PGL(n+1,\mathbb R)</script> with <script type="math/tex">g_{\alpha\beta}\circ\varphi_\beta=\varphi_\alpha.</script></p>
+
+<p>A <em>projective structure</em> is a maximal projective atlas.</p>
+
+<p>Note that a projective structure also defines a smooth structure.</p>
+
+<p>———————————————</p>
+
+<p><strong><em>Local to Global Property</em></strong></p>
+
+<p>If <script type="math/tex">g,h\in PGL(n+1,\mathbb R)</script> and there exists <script type="math/tex">U\subseteq \mathbb RP^n</script> open such that <script type="math/tex">g\big\vert_U=h\big\vert_U</script> then <script type="math/tex">g\equiv h</script>.  This rigidity leads us to a notion of <em>developing/analytic continuation</em> as follows.</p>
+
+<p>Let <script type="math/tex">\varphi_1:U_1\to \mathbb R P^n</script> be a chart and fix <script type="math/tex">p\in U_1.</script>  Let <script type="math/tex">\gamma:[a,b]\to M</script> such that <script type="math/tex">\gamma(a)=p</script>.  Cover <script type="math/tex">\gamma([a,b])</script> with charts <script type="math/tex">U_1,…,U_n.</script>  We obtain a path <script type="math/tex">\hat\gamma:[a,b]\to \mathbb R P^n</script> given by
+\begin{equation}
+\hat\gamma=(\varphi_1\circ\gamma)(g_{12}\circ\varphi_2\circ\gamma)…(g_{12}\circ g_{23}\circ…\circ g_{(n-1)n}\circ\varphi_n\circ\gamma)
+\end{equation}
+where juxtaposition denotes a concatenation of restrictions of paths.</p>
+
+<p><strong>Exercise:</strong> The curve <script type="math/tex">\hat\gamma</script> does not depend on the charts (after the first chart <script type="math/tex">U_1</script> is fixed).</p>
+
+<p><strong>Lemma:</strong>  Let <script type="math/tex">\alpha,\beta:[a,b]\to M</script> with the same endpoints <script type="math/tex">\alpha(a)=\beta(a),\alpha(b)=\beta(b)</script>.  Let <script type="math/tex">\varphi:U\to\mathbb RP^n</script> be a chart containing <script type="math/tex">\alpha(a)=\beta(a).</script>  Suppose that <script type="math/tex">\alpha</script> and <script type="math/tex">\beta</script> are homotopic rel endpoints.  Then <script type="math/tex">\hat \alpha,\hat\beta</script> are homotopic rel endpoints.</p>
+
+<p><em>Proof:</em>  If <script type="math/tex">\alpha([a,b])</script> and <script type="math/tex">\beta([a,b])</script> are contained in a simply connected chart then we are done.  Let <script type="math/tex">H:[a,b]^2\to M</script> be a homotopy, and pick <script type="math/tex">% <![CDATA[
+a=t_0<t_1<…<t_n=b %]]></script> such that <script type="math/tex">H([t_{i-1},t_i]\times[t_{j-1},t_j])</script> is contained in a simply connected chart.  Using a typical argument, we construct our homotopy from <script type="math/tex">\hat\alpha</script> to <script type="math/tex">\hat\beta</script> piece by piece on all of <script type="math/tex">[a,b]^2</script> using the fact that on each subrectangle, <script type="math/tex">H([t_{i-1},t_i]\times [t_{j-1},t_j])</script> is contained in a simply connected chart.  <script type="math/tex">\blacksquare</script></p>
+
+<p>We may now define a “developing map”</p>
+
+<p>\begin{equation}
+D:\widetilde M=\{\text{homotopy classes of paths}\}\to \mathbb R P^n
+\end{equation}</p>
+
+<p>by <script type="math/tex">[\alpha]\mapsto \hat\alpha(b).</script>  We also obtain a corresponding representation <script type="math/tex">\rho:\pi_1(M,p)\to PGL(n+1,\mathbb R)</script> given by <script type="math/tex">[\gamma]\mapsto g_{12}g_{23}…g_{(n-1)n}.</script>  Observe that the developing map is <script type="math/tex">\rho</script>-equivariant, i.e. if <script type="math/tex">\gamma\in \pi_1(M,p)</script> and <script type="math/tex">x\in \widetilde M</script> then</p>
+
+<p>\begin{equation}
+D(\gamma\cdot x) = \rho(\gamma)D(x)
+\end{equation}</p>
+
+<p>where <script type="math/tex">\gamma\cdot x</script> denotes the action of <script type="math/tex">\pi_1(M,p)</script> on <script type="math/tex">\widetilde M</script> by deck transformations.</p>
+
+<p>———————————————</p>
+
+<p><strong><em>Projective Maps</em></strong></p>
+
+<p>Now that we have a notion of a projective structure on a manifold, we must determine what constitutes a structure-preserving map between projective manifolds.</p>
+
+<p><strong>Definition:</strong>  Let <script type="math/tex">M</script> and <script type="math/tex">N</script> be projective manifolds of the same dimension.  Let <script type="math/tex">F:M\to N</script> be a continuous map.  Then <script type="math/tex">F</script> is a <em>projective map</em> if for all charts <script type="math/tex">\varphi:U\subset M\to\mathbb RP^n,\psi:V\subset N\to\mathbb RP^n</script>, given a component of <script type="math/tex">U\cap F^{-1}(V)</script> there exists <script type="math/tex">g\in PGL(n+1,\mathbb R)</script> so that</p>
+
+<p>\begin{equation}
+g\circ \varphi = \psi\circ F
+\end{equation}</p>
+
+<p>where both maps above are restricted to the given component of <script type="math/tex">U\cap F^{-1}(V).</script></p>
+
+<p><strong>Exercise:</strong>  Let <script type="math/tex">N</script> be a projective manifold, let <script type="math/tex">M</script> be a smooth manifold of the same dimension, and let <script type="math/tex">F:M\to N</script> be a local diffeomorphism.  Show that there exists a unique projective structure on <script type="math/tex">M</script> for which <script type="math/tex">F</script> is a projective map.</p>
+
+<p><strong>Exercise:</strong>  Show that <script type="math/tex">D:\widetilde M \to\mathbb R P^n</script> is a projective map.</p>
+
+<p><strong>Exercise:</strong>  Let <script type="math/tex">M</script> be a simply connected projective manifold.  Let <script type="math/tex">\varphi:U\to \mathbb RP^n</script> be a chart.  (a)  Show that there exists a projective map <script type="math/tex">F:M\to \mathbb RP^n</script> such that <script type="math/tex">F\big\vert_U=\varphi</script>.  (b)  Show that if <script type="math/tex">F,G:M\to \mathbb RP^n</script> are projective maps then there exists a unique <script type="math/tex">h\in PGL(n+1,\mathbb R)</script> such that <script type="math/tex">F=h\circ G.</script></p>
+
+<p>Different choices of charts give different developing maps, but they are related in the following way.   Let <script type="math/tex">D,D’:\widetilde M\to \mathbb RP^n</script> be developing maps with holonomies <script type="math/tex">\rho,\rho’:\pi_1(M)\to PGL(n+1,\mathbb R).</script>  There exists a unique <script type="math/tex">g\in PGL(n+1,\mathbb R)</script> such that <script type="math/tex">D’=g\circ D</script> and <script type="math/tex">\rho’=Ad(g)\circ\rho.</script> That is, for <script type="math/tex">\gamma\in \pi_1(M)</script></p>
+
+<p>\begin{equation}
+\rho’(\gamma)=g\rho(\gamma)g^{-1}.
+\end{equation}</p>
+
+
+	<p><a href="/~sballas/260p/lectures/lecture3/"><b>Previous Post:</b> Lecture 3: Properly Convex Domains</a></p>
+	<br>
+	<p> <a href="/~sballas/260p/lectures/lecture5/"><b>Next Post:</b> Lecture 5: Properly Convex Geometry</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://math.ucsb.edu/~sballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

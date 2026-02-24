@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 8: Projective Isometries</title>
+  <meta name="description" content="We have a properly convex domain with a Hilbert metric. We define the distance between two points  by . If we have a projective transformation that preseves ...">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture8/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 8: Projective Isometries</h1>
+    <p class="post-meta">Apr 21, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>We have a properly convex domain with a Hilbert metric. We define the distance between two points <script type="math/tex">x,y</script> by <script type="math/tex">d_{\Omega}(x,y) = log([a:x:y:b])</script>. If we have a projective transformation that preseves cross ratios we call it an isometry of <script type="math/tex">d_{\Omega}</script>.</p>
+
+<p>If we restrict ourselves to matrices with determinant plus or minus one <script type="math/tex">SL^{\pm} (\Omega)</script> and then lift to the sphere (since the double cover of a projective space <script type="math/tex">RP^{n}</script> is a sphere <script type="math/tex">S^n</script>) and choose one of the preimages <script type="math/tex">\tilde{\Omega}</script> with the property that <script type="math/tex">\tilde{\Omega}</script> maps to itself it becomes much simpler to talk about eigen values and classify isometries.</p>
+
+<p><script type="math/tex">A</script> is called elliptic if there exists <script type="math/tex">p \in \Omega</script> such that <script type="math/tex">Ap=p</script>. Here <script type="math/tex">p=[v]</script> the equivalence class of some vector i.e. <script type="math/tex">[Av]=[v]</script>. This implies that <script type="math/tex">Av = \lambda v</script> for some <script type="math/tex">\lambda > 0</script>. Hence fixed points coresspond to eigenvectors of the matrix with positve eigenvalues. <script type="math/tex">A</script> is parabolic if every eigenvalue of <script type="math/tex">A</script> has modulus <script type="math/tex">1</script>, but <script type="math/tex">A</script> is not elliptic. Finally we say that <script type="math/tex">A</script> is parabolic otherwise.</p>
+
+<p>We define the translation length <script type="math/tex">t(A)=\inf_{x \in \Omega}  d_{\Omega}(x,Ax) \geq 0</script> and also define the <script type="math/tex">minset(A)=\{x \in \Omega \mid d_{\Omega}(x,Ax) = t(A)\}</script> of an isometry. In Hyperbolic geometery <script type="math/tex">H^{n}</script> <script type="math/tex">t(A) > 0</script> if and only if <script type="math/tex">A</script> is hyperbolic. In this case points along the geodesic are moved the minimum amount i.e. the minset lies in some geodesic, called the axis. If <script type="math/tex">t(A)=0</script> then <script type="math/tex">A</script> is elliptic if and only if the minset is nonempty and parabolic (along with a unique point <script type="math/tex">p \in \partial \tilde{\Omega}</script> called the parabolic fixed point) if and only if the minset is empty.</p>
+
+<p>Proposition: Let <script type="math/tex">A \in SL(\Omega)</script>, then <script type="math/tex">t(A)=log\vert\lambda / \mu\vert</script> where <script type="math/tex">\lambda</script> is an eigenvalue of largest modulus and <script type="math/tex">\mu</script> is an eigenvalue of smallest modulus.</p>
+
+<p>Proposition: <script type="math/tex">A \in SL(\Omega) \subset SL^{\pm}(n+1,R)</script> is elliptic if and only if <script type="math/tex">A</script> is conjugate onto <script type="math/tex">O(n+1)</script></p>
+
+<p>Proof: By the definition of elliptic there is some point in the domain <script type="math/tex">p \in A</script> that is fixed by the elliptic. Here we have a diffeomorphism so <script type="math/tex">dA</script> acts on <script type="math/tex">T_p \simeq R^{n}</script>. <script type="math/tex">d_{\Omega}</script> is a norm on <script type="math/tex">T_p(\Omega)</script> specifically a Finsler metric. <script type="math/tex">dA</script> is an isometry of <script type="math/tex">T_p(\Omega)</script>, which implies there exists an inner product <script type="math/tex">\beta</script> on <script type="math/tex">T_p(\Omega)</script> such that <script type="math/tex">dA</script> is an isometry of <script type="math/tex">\beta</script>. Implies <script type="math/tex">dA \in Isom(\beta)=O(n)</script>. (We did not finish proof in lecture, but this implies the conclusion apparently.)</p>
+
+<p><script type="math/tex">\bar{\Omega}</script> is homeomorphic to some <script type="math/tex">[0,1]^n</script> so any isometry of <script type="math/tex">\Omega</script>, <script type="math/tex">A \in SL(\Omega)</script> it preserves the closure <script type="math/tex">A(\bar{\Omega})=\bar{\Omega}</script>. The Brower fixed point theorem implies that there exists <script type="math/tex">p \in \bar{\Omega}</script> such that <script type="math/tex">Ap=p</script>.</p>
+
+<p>Case1: The fixed point is in the interior <script type="math/tex">p \in \Omega</script> then <script type="math/tex">A</script> is an elliptic.</p>
+
+<p>Case2: The fixed point is on the boundary <script type="math/tex">p \in \partial  \bar{\Omega}</script>. (In addition it fixes a hyperplane containing that point on the boundary.)</p>
+
+<p>Define a supporting hyper plane <script type="math/tex">H</script> to <script type="math/tex">\Omega</script> at <script type="math/tex">p \in \partial \bar{\Omega}</script> is a projective hyperplane <script type="math/tex">H=P(V)</script> with <script type="math/tex">dim(V)=n</script>, such that <script type="math/tex">p \in H</script> and <script type="math/tex">H \cap \Omega = \emptyset</script>.</p>
+
+<p>Exercise: Supporting hyperplanes exist.</p>
+
+<p>Proposition: The set of supporting hyperplanes <script type="math/tex">\{P(ker \phi) : [\phi] \in CC(RP^n)^*\}</script> is dual to a nonempty compact convex set in <script type="math/tex">(RP^n)^*</script>.</p>
+
+<p>Proof: <script type="math/tex">\Omega \subset RP^n</script> and <script type="math/tex">\Omega^* \subset RP^n</script> a linear map is in the dual domain if and only if <script type="math/tex">P(ker \phi)</script> misses the interior of the domain, <script type="math/tex">\Omega^* = P(\{\phi \in V^* \mid \phi(\Omega) >0\})</script>. <script type="math/tex">\Omega</script> must be in <script type="math/tex">S^n \subset R^{n+1} = V</script> for this to make sense, so we have to lift to the double cover (<script type="math/tex">V</script> a vector space).</p>
+
+<p>Corollary: If <script type="math/tex">A \in SL(\Omega)</script> fixes a point in the boundary of the ball <script type="math/tex">p \in \partial \Omega</script> then there exists a supporting hyperplane <script type="math/tex">H</script> to <script type="math/tex">\Omega</script> at <script type="math/tex">p</script> such that <script type="math/tex">A(H)=H</script></p>
+
+<p>Proof: <script type="math/tex">H</script> corresponds to a point in a dual compact convex set <script type="math/tex">C</script>. <script type="math/tex">A</script> sends supporting hyperplanes to supporting hyperplanes, so <script type="math/tex">A: C \rightarrow C</script>. Then by the Brower Fixed Point Theorem there exists <script type="math/tex">[\phi] \in C</script> such that <script type="math/tex">A[\phi]=[\phi]</script>. Therefore <script type="math/tex">H=ker \phi</script> is a supporting hyperplanefixed by <script type="math/tex">A</script>.</p>
+
+<p>Structure of fixed set of <script type="math/tex">A \in SL(\Omega)</script>: Let <script type="math/tex">p=[x]</script> for <script type="math/tex">x \in R^{n+1}</script>, <script type="math/tex">A</script> fixes <script type="math/tex">p</script> if and only if there is a positive number <script type="math/tex">\lambda</script> such that <script type="math/tex">Ax=\lambda x</script>. In other word equivalent to <script type="math/tex">x</script> being and eigenvector with a positive eigenvalue. Given an eigenvalue <script type="math/tex">\lambda>0</script> for <script type="math/tex">A</script> we have the eigenspace <script type="math/tex">E_\lambda</script>. Define the Fixset  <script type="math/tex">Fix(\lambda, A, \bar{\Omega})= \bar{\Omega} \cap P(E_{\lambda})</script> this will be compact and convex as both <script type="math/tex">\bar{\Omega}</script> and <script type="math/tex">P(E_{\lambda})</script> are. The set of all fixed points will be <script type="math/tex">Fix(A,\Omega) = \bigcup_{\lambda > 0} Fix(\lambda, A, \Omega)</script>.</p>
+
+<p>Example: Suppose <script type="math/tex">\Omega = \Delta</script> then</p>
+
+<script type="math/tex; mode=display">SL(\Omega) = \{  ()~a,b > 0 \} \rtimes \{permutation~matrices\}</script>
+
+<p>Consider <script type="math/tex">% <![CDATA[
+A=\{ \begin{pmatrix} 2&0&0 \\ 0 & 2 & 0 \\ 0&0&1/4 \end{pmatrix} %]]></script> then the fixed points we have are <script type="math/tex">Fix(\lambda =2,A,\Delta)</script> and <script type="math/tex">Fix(\lambda = 1/4,A, \Delta)</script>.</p>
+
+<p>Dynamics of <script type="math/tex">[A] \in P_{+}GL(n+1,R)</script>:</p>
+
+<p>First of all the largest eigenvalues will ‘win’ (i.e. they will blow up the fastest as a  matrix is multiplied by itself repeatedly) hence we need only consider the largest eigenvalues. Consider <script type="math/tex">% <![CDATA[
+A=\{ \begin{pmatrix} 2&0&0 \\ 0 & 2 & 2 \\ 0&0&2 \end{pmatrix} %]]></script> then  <script type="math/tex">% <![CDATA[
+A^n=2^n \{ \begin{pmatrix} 1&0&0 \\ 0 & 1 & n \\ 0&0&1 \end{pmatrix} %]]></script>. From this we can see that the largest Jordan block will blow up fastest therefore we will just talk about the dynamics of a single <script type="math/tex">k+1 \times k+1</script> Jordan block. The growth of some block is <script type="math/tex">A^{n}=\lambda^n (I + nN + \frac{n(n-1)}{2}N^2+ ...  + (\frac{n}{k}N^k))</script> the last term wins as <script type="math/tex">N \rightarrow \infty</script>. We define the power of a Jordan blonck with eigenvalue <script type="math/tex">\lambda \in C</script> is <script type="math/tex">(\vert\lambda\vert,k+1)</script> and we use the lexicographical order. We get a partial ordering on Jordan blocks from this.</p>
+
+
+	<p><a href="/~ballas/260p/lectures/lecture7/"><b>Previous Post:</b> Lecture 7: The Margulis Lemma</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture9/"><b>Next Post:</b> Lecture 9: Properly Convex Automorphisms</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

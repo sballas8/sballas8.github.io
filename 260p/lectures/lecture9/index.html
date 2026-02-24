@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 9: Properly Convex Automorphisms</title>
+  <meta name="description" content="To recall notation from last time, given a matrix  we let  denote the spectral radius, the modulus of the largest eigenvalue.  We will let  denote a Jordan b...">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture9/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 9: Properly Convex Automorphisms</h1>
+    <p class="post-meta">Apr 26, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>To recall notation from last time, given a matrix <script type="math/tex">A\in \textrm{PSL}(n,\mathbb{R})</script> we let <script type="math/tex">r(A)</script> denote the spectral radius, the modulus of the largest eigenvalue.  We will let <script type="math/tex">J</script> denote a Jordan block of a matrix, and will work with the convention that both the diagonal and super-diagonal have the eigenvalue (as opposed to the above-diagonal 1’s, as is standard).  For example:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+J=\lambda(I+N)=\left (\begin{array}{ccc}\lambda &\lambda &0\\0&\lambda &1\\0&0&\lambda\end{array}\right) %]]></script>
+
+<p>We define an ordering on the Jordan blocks of a matrix by considering the associated ordered pair (under the lexiographic order) <script type="math/tex">\textrm{power}(J)=(\vert\lambda\vert,n)</script> where <script type="math/tex">\lambda</script> is the associated eigenvalue and <script type="math/tex">n</script> is the size of the block.</p>
+
+<p>Our goal here is to describe the behavior of projective transformations, by looking at iterations of them and qualitatively describing the dynamics.  However first a few definitions are in order. Given a topological space <script type="math/tex">X</script> and a continuous map <script type="math/tex">f:X\to X</script> we define the forward orbit of <script type="math/tex">x\in X</script> to be the set <script type="math/tex">\{f^n(x)\}_{n\in \mathbb{N}}</script>.  The <script type="math/tex">\omega</script>-limit set, denoted <script type="math/tex">\omega(f,x)</script> is the set of accumulation points of the forward orbit, where for a subset <script type="math/tex">U\subset X</script> we define <script type="math/tex">\omega(f,U)=\bigcup_{x\in U}\omega(f,x)</script>.</p>
+
+<p>For the following defintions we will be considering positive projective space <script type="math/tex">\mathbb{S}^n=\mathbb{P}_+(\mathbb{R}^{n+1})</script> together with its projective transformations <script type="math/tex">\textrm{SL}^\pm(n+1,\mathbb{R})</script>.  Given a such projective transformation <script type="math/tex">A</script> we may define <script type="math/tex">E_\mathbb{C}(A)</script> to be the vector space spanned by the eigenvectors with largest modulus eigenvalue, more precisely <script type="math/tex">E_\mathbb{C}(A)=\textrm{Span}_\mathbb{C}\{v\in\mathbb{C}^n\;\mid\; Av=\lambda v,\;\; \vert\lambda\vert=r(A)\}</script>.  Using this we then define <script type="math/tex">E(A)=\mathbb{R}^{n+1}\cap E_\mathbb{C}(A)</script> and <script type="math/tex">\mathbb{P}(E(A))</script> as its projectivization.</p>
+
+<p>As a quick example, consider the map <script type="math/tex">A=\textrm{diag}(2,2,\frac{1}{4})\in\textrm{SL}^\pm(3,\mathbb{R})</script> and let <script type="math/tex">\Delta\subset \mathbb{S}^2</script> be the triangle with vertices <script type="math/tex">[e_1],[e_2]</script> and <script type="math/tex">[e_3]</script>.  Here <script type="math/tex">\mathbb{P}(E(A))</script> is the projective line <script type="math/tex">\ell</script> containing <script type="math/tex">[e_1]</script> and <script type="math/tex">[e_2]</script>, and the forward orbit of any point in <script type="math/tex">\Delta</script> accumulates along this line; that is, <script type="math/tex">\omega(A,\mathring{\Delta})=\ell</script>.</p>
+
+<p>There’s a very useful proposition from linear algebra which will help us understand the dynamics of projective transformations such as the example above which we will state here quickly.  Given any <script type="math/tex">A\in\mathrm{SL}^\pm(n+1,\mathbb{R})</script> there is a finite collection of (positive) projective subspaces <script type="math/tex">H_1,\ldots H_m\subset \mathbb{S}^n</script> such that if <script type="math/tex">W</script> is a subset of their complement with nonempty interior, <script type="math/tex">\omega(A,W)\subset \mathbb{P}_+(E(A))</script> has nonempty interior, and the action of <script type="math/tex">A</script> not only preserves <script type="math/tex">\mathbb{P}_+(E(A))</script> but restricts to an orthogonal action on it.</p>
+
+<p>The utility of this is best illustrated by considering another example: let <script type="math/tex">A\in \textrm{SL}^\pm(4,\mathbb{R})</script> be the following matrix</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+A=\left(\begin{array}{cccc}2\cos\theta & -2\sin\theta &0&0\\2\sin\theta &2\cos\theta &0&0\\0&0&2&0\\0&0&0&\frac{1}{8}\end{array}\right) %]]></script>
+
+<p>The eigenvalues of <script type="math/tex">A</script> over the complex numbers are <script type="math/tex">\{2,2e^{\pm i\theta},\frac{1}{8}\}</script>, and so <script type="math/tex">r(A)=2</script>.  Also, <script type="math/tex">E_\mathbb{C}(A)</script> is the (complex) span of the first three basis vectors, and so <script type="math/tex">E(A)=\textrm{Span}_\mathbb{R}\{e_1,e_2,e_3\}</script>.  The positive projectivization of <script type="math/tex">E(A)</script> is then a 2-sphere inside of the 3-sphere, the relevant subspaces are <script type="math/tex">H_1=[e_4]</script>, <script type="math/tex">H_2=[-e_4]</script>, and the restriction of the action of <script type="math/tex">A</script> to <script type="math/tex">\mathbb{S}^2</script> is simply</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+2\left (\begin{array}{ccc}\cos\theta &-\sin\theta &0\\\sin\theta & \cos\theta &0\\0&0&1\end{array}\right ) %]]></script>
+
+<p>which is a rotation about the “<script type="math/tex">z</script>”-axis (the overall constant factor of <script type="math/tex">r(A)</script> doesn’t matter under projectivization).  Thus we may describe the dynamics of <script type="math/tex">A</script> acting on <script type="math/tex">\mathbb{S}^3</script> as follows:  there is a pair of two antipodal “repelling” fixed points <script type="math/tex">H_1,H_2</script> and relative to them an equitorial 2-sphere <script type="math/tex">S^2</script>.  This sphere rotates under iterations of <script type="math/tex">A</script>, and any other point of <script type="math/tex">\mathbb{S}^3</script> is attracted towards it.</p>
+
+<p>This linear-algebra-inspired description of the dynamics on <script type="math/tex">\mathbb{S}^n</script> can be used to help us understand projective transformations preserving a more general properly convex subset <script type="math/tex">\Omega</script>. In fact; given a projective transformation <script type="math/tex">A\in \mathrm{SL}^\pm(\Omega)</script> we can say that the largest modulus of eigenvalue for <script type="math/tex">A</script> actually occurs as a real eigenvalue, and out of all Jordan blocks for eigenvalues of that modulus, the largest occurs for the real one (In terms of the notation we have been developing, this says that there exists a most powerful Jordan block for <script type="math/tex">A</script> with <script type="math/tex">\lambda=r(A)</script>).  Furthermore, the fixed set for this must lie on the boundary.</p>
+
+<p>To see this, let <script type="math/tex">H</script> be the union of the projective subspaces furnished for us by the linear algebra proposition above, and consider the <script type="math/tex">\omega(A,\Omega\setminus H)</script>, which is then a subset of <script type="math/tex">\mathbb{P}_+(E(A))</script> by the proposition.  Intersecting this with <script type="math/tex">\bar{\Omega}</script> gives a compact, convex set preserved by <script type="math/tex">A</script>, and so by the Brower fixed point theorem, there is a fixed point <script type="math/tex">x\in \mathbb{P}_+(E(A))\cap \bar{\Omega}</script>.  Interpreting this, we have <script type="math/tex">[Ax]=[x]</script>, and so <script type="math/tex">Ax=\lambda x</script> for some <script type="math/tex">\lambda>0</script>.    But we already know that <script type="math/tex">x\in E(A)</script> which means that <script type="math/tex">\vert\lambda\vert=r(A)</script>, and so the radius is in fact achieved by a real eigenvalue.  Also, because we began with a non-elliptic transformation, <script type="math/tex">A</script> fixes no points in the interior of <script type="math/tex">\Omega</script> and so our fixed point <script type="math/tex">x</script> must lie on the boundary.</p>
+
+	<p><a href="/~ballas/260p/lectures/lecture8/"><b>Previous Post:</b> Lecture 8: Projective Isometries</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture10/"><b>Next Post:</b> Lecture 10: Properly Convex Automorphisms Part II</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

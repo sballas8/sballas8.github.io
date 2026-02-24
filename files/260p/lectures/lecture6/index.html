@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 6: Benzécri's compactness theorem</title>
+  <meta name="description" content="LAST TIME:  Let  be the standard quadratic form on  of signature , let  be the upper half of the cone , and let  be the upper sheet of the hyperboloid .  We ...">
+
+  <link rel="stylesheet" href="/~sballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.ucsb.edu/~sballas/260p/lectures/lecture6/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.ucsb.edu/~sballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~sballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~sballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~sballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 6: Benzécri's compactness theorem</h1>
+    <p class="post-meta">Apr 14, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>LAST TIME:  Let <script type="math/tex">Q</script> be the standard quadratic form on <script type="math/tex">\mathbb R^{n + 1}</script> of signature <script type="math/tex">(n, 1)</script>, let <script type="math/tex">\mathscr C</script> be the upper half of the cone <script type="math/tex">Q^{-1}((-\infty, 0))</script>, and let <script type="math/tex">\mathcal H</script> be the upper sheet of the hyperboloid <script type="math/tex">Q^{-1}(-1)</script>.  We have a map</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\Phi : \mathbb H^n &\longrightarrow{} (\mathbb H^n)^*, \\
+x &\longmapsto{} [H_x],
+\end{align*} %]]></script>
+
+<p>where <script type="math/tex">\mathbb H^n</script> is the projective model of hyperbolic space and</p>
+
+<script type="math/tex; mode=display">H_x = x^{\perp_Q} = \{v \in \mathbb R^{n + 1} \mid \langle x, v \rangle_Q = 0\}.</script>
+
+<p>Recall that <script type="math/tex">x</script> is the center of mass of <script type="math/tex">\mathbb H^n</script> in the affine patch <script type="math/tex">\mathbb R\mathrm P^n \setminus [H_x]</script>.</p>
+
+<p>TODAY, we’ll do a more general construction, starting with an arbirtrary fixed properly convex domain in projective space.  The machinery we get out of it, along with John’s ellipsoid theorem (see below), will enable us to prove Benzecri’s compactness theorem.</p>
+
+<p>Let <script type="math/tex">V = \mathbb R^{n + 1}</script>, fix a properly convex domain <script type="math/tex">\Omega \subset \mathbb R\mathrm P^n</script>, let <script type="math/tex">\mathscr C</script> be the cone of <script type="math/tex">\Omega</script>, and let <script type="math/tex">\mathscr C^*</script> be the dual cone.  Define <script type="math/tex">f : \mathscr C \to \mathbb R</script> by</p>
+
+<script type="math/tex; mode=display">f(x) = \int_{\mathscr C^*} e^{-\varphi(x)} \, d\varphi,</script>
+
+<p>where <script type="math/tex">d\varphi</script> is Lebesgue measure on <script type="math/tex">V^*</script>.</p>
+
+<p>To compute <script type="math/tex">f</script> explicity, we decompose <script type="math/tex">\mathscr C^*</script> into slices as follows.  For each <script type="math/tex">x \in V</script> and each <script type="math/tex">t > 0</script>, let</p>
+
+<script type="math/tex; mode=display">\mathscr C^*_x(t) = \{\varphi \in \mathscr C^* \mid \varphi(x) = t\}.</script>
+
+<p>Note that <script type="math/tex">\mathscr C^*_x(t)</script> is the intersection of <script type="math/tex">\mathscr C^*</script> with a hyperplane in <script type="math/tex">V^*</script>.  We have</p>
+
+<script type="math/tex; mode=display">\mathscr C^* = \bigcup_{t > 0} \mathscr C^*_x(t).</script>
+
+<p>Multiplication by <script type="math/tex">t</script> gives a map <script type="math/tex">\mathscr C^*_x(1) \to \mathscr C^*_x(t)</script>.  We have <script type="math/tex">d\varphi = d\varphi_t \wedge dt</script> for some differential <script type="math/tex">n</script>-form <script type="math/tex">d\varphi_t</script> on <script type="math/tex">\mathscr C^*_x(t)</script>.  Then</p>
+
+<script type="math/tex; mode=display">f(x) = \int^\infty_0 e^{-t} \int_{\mathscr C^*_x(t)} \, d\varphi_t \, dt = \int^\infty_0 e^{-t} t^n \int_{\mathscr C^*_x(1)} \, d\varphi_t \, dt = n! \, \mathrm{Vol}(\mathscr C^*_x(1)).</script>
+
+<p>It follows that</p>
+
+<script type="math/tex; mode=display">f(\gamma x) = (\det \gamma)^{-1} f(x)</script>
+
+<p>for all <script type="math/tex">\gamma \in \mathrm{GL}(\mathscr C)</script>.  The level sets of <script type="math/tex">f</script> behave like <script type="math/tex">\mathcal H</script> from last time.</p>
+
+<p>The <script type="math/tex">1</script>-form <script type="math/tex">\alpha = -d \log f = -df / f</script> maps <script type="math/tex">\mathscr C</script> into <script type="math/tex">\mathscr C^*</script>.  If <script type="math/tex">v \in T_x\mathscr C \cong \mathbb R^{n + 1}</script>, then</p>
+
+<script type="math/tex; mode=display">df(x)(v) = -\int_{\mathscr C^*} \varphi(v) e^{-\varphi(x)} \, d\varphi,</script>
+
+<p>so that</p>
+
+<script type="math/tex; mode=display">\alpha(x)(v) = \displaystyle\frac{\int_{\mathscr C^*} \varphi(v) e^{-\varphi(x)} \, d\varphi}{\int_{\mathscr C^*} e^{-\varphi(x)} \, d\varphi} > 0.</script>
+
+<p>The action of <script type="math/tex">\mathrm{GL}(\mathscr C)</script> on <script type="math/tex">\mathscr C</script> induces an action of  <script type="math/tex">\mathrm{GL}(\mathscr C)</script> on <script type="math/tex">\mathscr C^*</script> given by <script type="math/tex">\alpha(\gamma x) = \gamma \cdot \alpha(x)</script>, where <script type="math/tex">\gamma \cdot \alpha(x) \in V^*</script> is given by <script type="math/tex">\gamma \cdot \alpha(x)(v) = \alpha(x)(\gamma^{-1}v)</script>.  It follows that <script type="math/tex">\alpha</script> is <script type="math/tex">\mathrm{GL}(\mathscr C)</script>-equivariant.  We calculate</p>
+
+<script type="math/tex; mode=display">\alpha(x) = \displaystyle\frac{\int^\infty_0 e^{-t} t^{n + 1} \int_{\mathscr C^*_x(1)} \, d\varphi_t \, dt}{\int^\infty_0 e^{-t} t^n \int_{\mathscr C^*_x(1)} \, d\varphi_t \, dt} = (n + 1)\, \mathrm{Com}(\mathscr C^*_x(1)).</script>
+
+<p>There is a natural map <script type="math/tex">\Omega \to \Omega^*</script> making the diagram</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{matrix} \mathscr C & \smash{\stackrel{\alpha}{\longrightarrow}} & \mathscr C^* \\ \downarrow & & \downarrow \\ \Omega & \longrightarrow & \Omega^* \\ \end{matrix} %]]></script>
+
+<p>commute.  (Here the vertical maps are the quotient maps).</p>
+
+<p><em>Remark.</em>  In Goldman’s notes, it is shown that <script type="math/tex">f</script> has positive Hessian and <script type="math/tex">\alpha</script> is a diffeomorphism.</p>
+
+<p>Now we’ll define the duals of the maps <script type="math/tex">f</script> and <script type="math/tex">\alpha</script>.  As you’ll see, the definitions of these functions look similar to those of <script type="math/tex">f</script> and <script type="math/tex">\alpha</script>.</p>
+
+<p>Define <script type="math/tex">f^* : \mathscr C^* \to \mathbb R</script> by</p>
+
+<script type="math/tex; mode=display">f^*(\varphi) = \int_{\mathscr C} e^{\varphi(x)} \, dx = n! \, \mathrm{Vol}(\mathscr C_\varphi(1)),</script>
+
+<p>and define <script type="math/tex">\alpha^* : \mathscr C^* \to \mathscr C</script> by</p>
+
+<script type="math/tex; mode=display">\alpha^*(\varphi) = (n + 1) \, \mathrm{Com}(\mathscr C_\varphi(1)),</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">\mathscr C_\varphi(t) = \{x \in \mathscr C \mid \varphi(x) = t\}</script>
+
+<p>is the intersection of <script type="math/tex">\mathscr C</script> with a hyperplane in <script type="math/tex">V</script> for each <script type="math/tex">\varphi \in V^*</script> and each <script type="math/tex">t > 0</script>.  Now let</p>
+
+<script type="math/tex; mode=display">\Phi = (\alpha^*)^{-1}.</script>
+
+<p>The map <script type="math/tex">\Phi</script> sends each <script type="math/tex">x \in \mathscr C</script> to the intersection <script type="math/tex">H_x \cap \mathscr C^*</script>, where <script type="math/tex">H_x</script> is the unique hyperplane in <script type="math/tex">V^*</script> such that <script type="math/tex">H_x \cap \mathscr C^*</script> has center of mass at <script type="math/tex">x</script>.</p>
+
+<p><em>Remark.</em>  In general, <script type="math/tex">\alpha^* \circ \alpha</script> is not equal to the identity map, but it is if <script type="math/tex">\Omega</script> is <script type="math/tex">\mathbb H^n</script>.  Thus the preceeding construction is a generalization of the construction from last time.</p>
+
+<p>Now we just need some more notation to state Benzécri’s compactness theorem.</p>
+
+<p>Let <script type="math/tex">\mathfrak C(\mathbb R\mathrm P^n)</script> denote the set of all properly convex domains in <script type="math/tex">\mathbb R\mathrm P^n</script>.  Topologize <script type="math/tex">\mathfrak C(\mathbb R\mathrm P^n)</script> by giving it the Hausdorff topology on closures.  Let <script type="math/tex">G = \mathrm{PGL}(n + 1)</script>.  The action of <script type="math/tex">G</script> on <script type="math/tex">\mathbb R\mathrm P^n</script> induces an action of <script type="math/tex">G</script> on <script type="math/tex">\mathfrak C(\mathbb R\mathrm P^n)</script>.  This action is not very nice in that the orbit space <script type="math/tex">\mathfrak C(\mathbb R\mathrm P^n) / G</script> is not Hausdorff (remember the “tear drop in a triangle” example from class), but we can get a nicer action by considering pointed domains instead.</p>
+
+<p>Let <script type="math/tex">\mathfrak C_*(\mathbb R\mathrm P^n)</script> be the set of all ordered pairs <script type="math/tex">(\Omega, p)</script>, where <script type="math/tex">\Omega \in \mathfrak C(\mathbb R\mathrm P^n)</script> and <script type="math/tex">p \in \Omega</script>.  The topology on <script type="math/tex">\mathfrak C(\mathbb R\mathrm P^n)</script> gives a topology on <script type="math/tex">\mathfrak C_*(\mathbb R\mathrm P^n)</script>, and the action of <script type="math/tex">G</script> on <script type="math/tex">\mathfrak C(\mathbb R\mathrm P^n)</script> gives an action of <script type="math/tex">G</script> on <script type="math/tex">\mathfrak C_*(\mathbb R\mathrm P^n)</script>.</p>
+
+<p><strong>Theorem</strong> (Benzécri compactness).  <em>The action of <script type="math/tex">G</script> on <script type="math/tex">\mathfrak C_*(\mathbb R\mathrm P^n)</script> is proper and cocompact.</em></p>
+
+<p>We’ll use the following two results to prove this theorem:</p>
+
+<p><strong>Fact.</strong>  <em>If <script type="math/tex">G</script> acts properly on <script type="math/tex">X</script> and <script type="math/tex">K</script> is a compact subset of <script type="math/tex">X</script>, then</em></p>
+
+<script type="math/tex; mode=display">G_K = \{g \in G \mid g(K) \cap K \neq \emptyset\}</script>
+
+<p><em>is a compact subset of <script type="math/tex">G</script>.</em></p>
+
+<p><strong>Theorem</strong> (John ellipsoid).  <em>Let <script type="math/tex">C \subset \mathbb R^n</script> be a compact convex set with nonempty interior and center of mass at the origin.  There exists a unique ellipsoid <script type="math/tex">E</script> of maximal volume contained in <script type="math/tex">C</script> and centered at the origin.  Furthermore, <script type="math/tex">E \subseteq C \subseteq n E</script>.</em></p>
+
+<p>By applying an affine map if necessary, we may assume that the John ellipsoid of <script type="math/tex">C</script> is the unit ball <script type="math/tex">B \subset \mathbb R^n</script> centered at the origin.</p>
+
+<p>Let <script type="math/tex">\mathfrak E_*(\mathbb R\mathrm P^n)</script> be the set of all ordered pairs <script type="math/tex">(E, p)</script>, where <script type="math/tex">E \subset \mathbb R\mathrm P^n</script> is an ellipsoid and <script type="math/tex">p \in E</script>.  Then <script type="math/tex">G</script> acts transitively on pointed ellipsoids with point stabilizers isomorphic to <script type="math/tex">\mathrm{PO}(n)</script>, so <script type="math/tex">G</script> acts properly and cocompactly on <script type="math/tex">\mathfrak E_*(\mathbb R\mathrm P^n)</script>.</p>
+
+<p><em>Proof of Benzécri compactness.</em>  We define a map <script type="math/tex">\varphi : \mathfrak C_*(\mathbb R\mathrm P^n) \to \mathfrak E_*(\mathbb R\mathrm P^n)</script> as follows.  Given <script type="math/tex">(\Omega, p)</script>, let <script type="math/tex">p^* = \Phi(p)</script>.  Then <script type="math/tex">p</script> is the center of mass of <script type="math/tex">\Omega</script>, regarded as a subset of the affine patch <script type="math/tex">\mathbb R\mathrm P^n \setminus [\ker p^*]</script>.  Now let <script type="math/tex">E</script> be the John ellipsoid for <script type="math/tex">\Omega</script> in these coordinates, and set <script type="math/tex">\varphi(\Omega, \rho) = (E, \rho)</script>.</p>
+
+<p>The map <script type="math/tex">\varphi</script> is continuous, well-defined, and <script type="math/tex">G</script>-invariant from what we proved earlier.  The fibers of <script type="math/tex">\varphi</script> are cocompact, since there are only compactly many domains <script type="math/tex">\Omega</script> between a ball <script type="math/tex">B</script> and <script type="math/tex">nB</script>.  Therefore, the action of <script type="math/tex">G</script> is proper and cocompact.  <script type="math/tex">\square</script></p>
+
+<p><strong>Corollary.</strong>  If <script type="math/tex">\Omega \subset \mathbb R\mathrm P^n</script> is a properly convex domain and <script type="math/tex">\Gamma</script> is a discrete subgroup of <script type="math/tex">\mathrm{PGL}(\Omega)</script>, then the action of <script type="math/tex">\Gamma</script> on <script type="math/tex">\Omega</script> is properly discontinuous.</p>
+
+<p><strong>Corollary.</strong>  If <script type="math/tex">\Omega \subset \mathbb R\mathrm P^n</script> is a properly convex domain, <script type="math/tex">G</script> is a subgroup of <script type="math/tex">\mathrm{PGL}(\Omega)</script>, and the action of <script type="math/tex">G</script> on <script type="math/tex">\Omega</script> has a fixed point, then <script type="math/tex">G</script> is conjugate into <script type="math/tex">\mathrm{PO}(n)</script>.</p>
+
+	<p><a href="/~sballas/260p/lectures/lecture5/"><b>Previous Post:</b> Lecture 5: Properly Convex Geometry</a></p>
+	<br>
+	<p> <a href="/~sballas/260p/lectures/lecture7/"><b>Next Post:</b> Lecture 7: The Margulis Lemma</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://math.ucsb.edu/~sballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

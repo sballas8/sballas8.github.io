@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 5: Properly Convex Geometry</title>
+  <meta name="description" content="In this lecture, we will discuss the geometry of properly convex subsets of . We begin by discussing an important invariant from 1-dimensional projective geo...">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture5/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 5: Properly Convex Geometry</h1>
+    <p class="post-meta">Apr 12, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>In this lecture, we will discuss the geometry of properly convex subsets of <script type="math/tex">\mathbb{R} P^n</script>. We begin by discussing an important invariant from 1-dimensional projective geoemtry that will be the basis for a metric on properly convex domains.</p>
+
+<p>###The Cross Ratio</p>
+
+<p>Recall that we can identify <script type="math/tex">\mathbb R P^1</script> with <script type="math/tex">\mathbb R \cup \{\infty\}</script>. Suppose that <script type="math/tex">a,x,y,b\in \mathbb R P^1</script> are a 4 distinct points, then we can define the <em>cross ratio</em> as</p>
+
+<script type="math/tex; mode=display">[a:x:y:b]:=\frac{(b-x)(y-a)}{(b-y)(x-a)},</script>
+
+<p>where a limit is taken if one of the points is <script type="math/tex">\infty</script>. The cross ratio has many useful properties which we now outline.</p>
+
+<ol>
+  <li>If the points occur in order (with respect to the orientation on <script type="math/tex">\mathbb R P^1</script>) then <script type="math/tex">[a:x:y:b]>1</script>.</li>
+  <li>If <script type="math/tex">A\in PGL_2(\mathbb R)</script> then <script type="math/tex">[Aa:Ax:Ay:Ab]=[a:x:y:b]</script></li>
+  <li>If <script type="math/tex">[a:x:y:b]=[a':x':y':b']</script> then there is a unique <script type="math/tex">A\in PGL_2(\mathbb R)</script> such that <script type="math/tex">A\cdot(a,x,y,b)=(a',x',y',b')</script></li>
+  <li>If <script type="math/tex">(a,x,z,y,b)</script> is an ordered quintuple of points in <script type="math/tex">\mathbb R P^1</script> then <script type="math/tex">[a:x:y:b]=[a:x:z:b][a:z:y:b]</script></li>
+</ol>
+
+<p>All of the above properties can be verified by elementary computations. Property 2 shows that the cross ratio is a projective invariant of quadruples of points and property 3 can be thought of as saying that this invariant uniquely determines quadruples of points in <script type="math/tex">\mathbb R P^1</script>.</p>
+
+<p>Property 4 can be viewed as a metric property. Specifically, the cross ratio allows us to put a metric on the interval <script type="math/tex">(a,b)</script> using the formula <script type="math/tex">d_{ab}(x,y)=\log([a:x:y:b])</script> for <script type="math/tex">x,y\in (a,b)</script>. Property 4 ensures that this metric satisfies the triangle inequality. We now discuss some comparison properties of this metric</p>
+
+<p>Let <script type="math/tex">a,x,y,b\in \mathbb{R}P^1</script> be ordered, then we can think of <script type="math/tex">[a:x:x+t:b]</script> and <script type="math/tex">[a:x:y:a+t]</script> as functions of <script type="math/tex">t</script>. I simple computation involving derivatives shows that</p>
+
+<ol>
+  <li><script type="math/tex">[a:x:x+t:b]</script> is increasing for <script type="math/tex">t\in (0,b-x)</script></li>
+  <li><script type="math/tex">[a:x:y:a+t]</script> is decreasing for <script type="math/tex">t\in (y-1,\infty)</script></li>
+</ol>
+
+<p>The first property shows that as points move away from each other on <script type="math/tex">(a,b)</script> that the their distance increases, and the second property shows that the metric gets smaller as the interval gets larger.</p>
+
+<p>The following cross ratio identity in <script type="math/tex">\mathbb{R}P^2</script> will also be of much use to us. For <script type="math/tex">1\leq i\leq 4</script>, let <script type="math/tex">\ell_i</script> be four lines passing through a common point, <script type="math/tex">p\in \mathbb{R}P^2</script> and  <script type="math/tex">a_i</script> and <script type="math/tex">b_i</script> be quadruples of concurrent points, as in the image below.</p>
+
+<p><img src="/~ballas/260p/assets/crossratio.png" alt="alt txt" class="center-image" /></p>
+
+<p>Then <script type="math/tex">[a_1:a_2:a_3:a_4]=[b_1:b_2:b_3:b_4]</script>. This can be seen as follows: there is a projective transformation fixing <script type="math/tex">p</script> and mapping <script type="math/tex">a_i</script> to <script type="math/tex">b_i</script> for <script type="math/tex">1\leq i\leq 3</script>. Such a transformation leaves the lines <script type="math/tex">\ell_1,\ell_2</script>, and <script type="math/tex">\ell_3</script> invariant. However, it is easy to see that such a projective transformation must leave <script type="math/tex">\ell_4</script> invariant as well (the <script type="math/tex">\ell_i</script> correspond to 4 concurrent points in <script type="math/tex">\mathbb{R}P^{1\ast}</script>), and as such it must map <script type="math/tex">a_4</script> to <script type="math/tex">b_4</script>. It should be remarked that the quantity we are calculating is really just the cross ratio of the concurrent lines <script type="math/tex">l_1,l_2,l_3,l_4</script> when regarded as element of <script type="math/tex">\mathbb{R}P^{2\ast}</script>.</p>
+
+<p>###The Hilbert Metric</p>
+
+<p><img src="/~ballas/260p/assets/domain.png" alt="alt text" class="center-image" /></p>
+
+<p>Let <script type="math/tex">\Omega\subset \mathbb{R}P^n</script> be an open properly convex domain and let <script type="math/tex">x,y\in \Omega</script>. Since <script type="math/tex">\Omega</script> is properly convex the projective line connecting <script type="math/tex">x</script> and <script type="math/tex">y</script> intersects <script type="math/tex">\partial \Omega</script> in two points <script type="math/tex">a</script> and <script type="math/tex">b</script> and we define the <em>Hilbert distance</em> betwee these points as</p>
+
+<script type="math/tex; mode=display">d_\Omega(x,y)=\log([a:x:y:b])</script>
+
+<p>It is easy to see that <script type="math/tex">d_\Omega(x,y)=0</script> if and only if <script type="math/tex">x=y</script> and that <script type="math/tex">d_\Omega(x,y)=d_\Omega(y,x)</script>. Furthermore, since projective maps preserve the cross ratio, we see that elements of <script type="math/tex">PGL(\Omega)</script> are isometries. We now discuss why <script type="math/tex">d_\Omega</script> satisfies the triangle inequality. The triangle inequality follows from a comparison argument with a triangle <script type="math/tex">\Delta\subset \mathbb{R}P^2</script>, and so for the time being we assume that <script type="math/tex">d_\Delta</script> satisfies the triangle inequality.</p>
+
+<p>Let <script type="math/tex">x,y,z\in \Omega</script>. Any three such points are contained in a projective 2-plane that intersects <script type="math/tex">\Omega</script>, thus the proof can be reduced to the two dimensional case. The key point is that we can always find a triangle <script type="math/tex">\Delta</script> such that <script type="math/tex">d_\Omega(x,z)=d_\Delta(x,z)</script>, <script type="math/tex">d_\Omega(z,y)=d_\Delta(z,y)</script>, and <script type="math/tex">d_\Omega(x,y)\leq d_\Delta(x,y)</script>. This is illustrated in the following picture.</p>
+
+<p><img src="/~ballas/260p/assets/triang-ineq.png" alt="alt text" class="center-image" /></p>
+
+<p>As a result we see that</p>
+
+<script type="math/tex; mode=display">d_\Omega(x,z)+d_\Omega(z,y)=d_\Delta(x,z)+d_\Delta(z,y)\geq d_\Delta(x,y)\geq d_\Omega(x,y)</script>
+
+<p>We now verify that the triangle inequality is satisfied for triangular domains in <script type="math/tex">\mathbb{R}P^2</script>. This will be done by showing that for a triangle <script type="math/tex">\Delta</script>,  <script type="math/tex">(\Delta,d_\Delta)</script> is isometric to <script type="math/tex">(\mathbb{R}^2,d_{Hex})</script>, where <script type="math/tex">d_{Hex}</script> is the metric on <script type="math/tex">\mathbb{R}^2</script> coming from the norm whose unit ball is a regular hexagon.</p>
+
+<p>We can realize a projective triangle as</p>
+
+<script type="math/tex; mode=display">\Delta=\{[e^{c_1},e^{c_2},e^{c_3}]\mid c_1+c_2+c_3=0\}</script>
+
+<p>If we realize <script type="math/tex">\mathbb{R}^2</script> as the plane in <script type="math/tex">\mathbb{R}^3</script> where the coordinates sum to zero, then there is a map <script type="math/tex">L:\Delta\to \mathbb{R}^2</script> given by <script type="math/tex">[e^{c_1},e^{c_2},e^{c_3}]\mapsto (c_1,c_2,c_3)</script>. The group of diagonal matrices in <script type="math/tex">SL_3(\mathbb{R})</script> with positive entries acts as a transitive group of isometries on <script type="math/tex">\Delta</script> with respect to the Hilbert metric. For any such diagonal matrix <script type="math/tex">A</script>, a simple computation shows that <script type="math/tex">L\circ A</script> is a translation of <script type="math/tex">\mathbb{R}^3</script> that preserves <script type="math/tex">\mathbb{R}^2</script>, and is thus a <script type="math/tex">d_{Hex}</script> isometry. It thus suffices to show that metric balls in <script type="math/tex">\Delta</script> centered at <script type="math/tex">p_0=[1,1,1]</script> are mapped by <script type="math/tex">L</script> to metric balls in <script type="math/tex">\mathbb{R}^2</script> centered at <script type="math/tex">(0,0,0)</script> of the same radius.</p>
+
+<p><img src="/~ballas/260p/assets/triangle.png" alt="alt text" class="center-image" /></p>
+
+<p>Let <script type="math/tex">d>0</script>, for <script type="math/tex">1\leq i\leq 3</script> let <script type="math/tex">\ell_i</script> be the line connecting <script type="math/tex">[e_i]</script> to the midpoint of the opposite side of <script type="math/tex">\Delta</script>, and let <script type="math/tex">p_i^{\pm}</script> be the points on <script type="math/tex">\ell_i</script> distance <script type="math/tex">d</script> from <script type="math/tex">p_0</script> (where <script type="math/tex">p_i^+</script> is the point closer to <script type="math/tex">[e_i]</script>). Let <script type="math/tex">\ell_i^\pm</script> be the line starting at <script type="math/tex">[e_i]</script> and passing through <script type="math/tex">p_{i\pm 1}^+</script>, where the indices are taken mod 3.</p>
+
+<p>The line <script type="math/tex">\ell_1</script> can be parameterized as <script type="math/tex">[e^{2t/3},e^{-t/3},e^{-t/3}]</script>, and a simple computation shows that this is an isometric embedding of <script type="math/tex">\mathbb{R}</script> to <script type="math/tex">\ell_1</script>. Consequently, the points <script type="math/tex">p_{1}^\pm=[e^{\pm 2d/3},e^{\mp d/3},e^{\mp d/3}]</script></p>
+
+<p>By construction, the points <script type="math/tex">p_i^\pm</script> are on the boundary of the unit ball centered at <script type="math/tex">p_0</script>. These points span a hexagon <script type="math/tex">H</script> (shown in blue above) in <script type="math/tex">\Delta</script> and using the above identity for cross ratios we see that the points on the boudnary of <script type="math/tex">H</script> are distance d from <script type="math/tex">p_0</script> and thus <script type="math/tex">H</script> is the unit ball centered at <script type="math/tex">p_0</script>. Furthermore, the six sides of this <script type="math/tex">H</script> are contained in the lines <script type="math/tex">\ell_i^\pm</script>.</p>
+
+<p>Consider the line</p>
+
+<script type="math/tex; mode=display">\ell=\{[e^{c_1},e^{c_2},e^{c_3}]\mid c_1+c_2+c_3=0 \textrm{ and } c_{3}-c_{1}=d \}.</script>
+
+<p>This line has <script type="math/tex">[e_2]</script> as one of its endpoints and its a simple computation shows that its intersection with <script type="math/tex">\ell_1</script> is <script type="math/tex">p_1^-</script>, and so we see that <script type="math/tex">\ell=\ell_2^+</script>. A similar argument shows that</p>
+
+<script type="math/tex; mode=display">\ell_i^\pm=\{[e^{c_1},e^{c_2},e^{c_3}]\mid c_1+c_2+c_3=0 \textrm{ and } c_{i\pm 1}-c_{i \mp 1}=d \}.</script>
+
+<p>As a result, we see that The images of <script type="math/tex">\ell_i^{\pm}</script> under <script type="math/tex">L</script> are lines in <script type="math/tex">\mathbb{R}^2</script> that span a hexagon in <script type="math/tex">\mathbb{R}^2</script>. Furthermore, the <script type="math/tex">L</script>-image of the <script type="math/tex">d</script>-ball centered at <script type="math/tex">p_0</script> is obtained by scaling the <script type="math/tex">L</script>-image of the 1-ball centered at <script type="math/tex">p_0</script> by a factor of <script type="math/tex">d</script>. As a result we see that <script type="math/tex">L</script> is an isometry. Consequently, <script type="math/tex">d_\Delta</script> satisfies the triangle inequality, and thus <script type="math/tex">(\Delta, d_\Delta)</script> is a metric space.</p>
+
+<p>An interesting and fun fact that can be easily verified from the above picture is that for this metric <script type="math/tex">\pi</script> (i.e. the ratio of the circumfrence and the diameter of a circle) is 3.</p>
+
+
+	<p><a href="/~ballas/260p/lectures/lecture4"><b>Previous Post:</b> Lecture 4: Projective Structures and Maps</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture6/"><b>Next Post:</b> Lecture 6: Benzécri's compactness theorem</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

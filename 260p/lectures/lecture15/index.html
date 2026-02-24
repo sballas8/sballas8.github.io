@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 15: Tautological Line Bundle</title>
+  <meta name="description" content="Lemma: Suppose  is connected and open with the property that if  then , that is if two sides of a triangle are in  then so is the third side, then  is convex.">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture15/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 15: Tautological Line Bundle</h1>
+    <p class="post-meta">May 17, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Lemma: Suppose <script type="math/tex">U \subset R^n</script> is connected and open with the property that if <script type="math/tex">[a,b],[b,c] \subset U</script> then <script type="math/tex">[a,c] \subset U</script>, that is if two sides of a triangle are in <script type="math/tex">U</script> then so is the third side, then <script type="math/tex">U</script> is convex.</p>
+
+<p>Proof: The set of points that can be reached with a straight line from the point <script type="math/tex">p</script> is both an open set and a closed set. Because <script type="math/tex">U</script> is connected the set of points we can reach from some point <script type="math/tex">p</script> must be the whole space. Therefore taking any two point other than <script type="math/tex">p</script> and making two sides of a triangle by connecting them to <script type="math/tex">p</script> we conclude there must be a straight path between those points by hypothesis. Therefore <script type="math/tex">U</script> is convex.</p>
+
+<p>Last time: Again take U to be an open connected subset of <script type="math/tex">R^n</script> and let <script type="math/tex">c:U \rightarrow R</script> be hessian convex (<script type="math/tex">d^2c>0</script>) and <script type="math/tex">d^2c</script> is a complete Riemannian metric then <script type="math/tex">U</script> is convex.</p>
+
+<p>A projective manifold determines and affine manifold of one dimension higher, called the tautological line bundle. Whether or not that projective manifold is convex is equivelent to whether or not there is a certian kind of metric on the affine manifold.</p>
+
+<p>Tautological Line Bundle: Let <script type="math/tex">M^n</script> be a real projective manifold. There is a developing map <script type="math/tex">dev: \tilde{M} \rightarrow S^n</script>. The sphere of course is a subset of <script type="math/tex">R^{n+1}-\{0\}</script> and there is a radial projection <script type="math/tex">\Pi_{\xi} R^{n+1}-\{0\} \rightarrow S^{n}</script>, then the preimage of a point in the sphere will be a ray coming out of the origin. This is a line bundle <script type="math/tex">R^{+}  \equiv (0,\infty) \rightarrow R^{n+1}-\{0\}</script> which we can line of as an affine manifold. This gives us a natural line bundle over the sphere.</p>
+
+<p>Pull Back Construction: The pull back of this line bundle to <script type="math/tex">\tilde{M}</script>. The fiber product: <script type="math/tex">\xi \tilde{M} \{(\tilde{m},x) \in \tilde{M} \times (R^{n+1}-\{0\}) : \Pi_{\xi}(x)=dev(\tilde{m})\}</script>. 
+The obvious map <script type="math/tex">(\tilde{m},x) \rightarrow \tilde{m}</script> which is the <script type="math/tex">R^{+}</script> bundle. We can quotient out by the fundamental group <script type="math/tex">\Pi_{M}: \tilde{M} \rightarrow M</script> and define an action of <script type="math/tex">\Pi</script>, <script type="math/tex">M</script> on <script type="math/tex">\xi \tilde{M}</script> by <script type="math/tex">\tau \circ (\tilde{m},x):=(\tau \tilde{m},p(\tau)(x))</script> where <script type="math/tex">\rho</script> is the holonomy <script type="math/tex">\Pi,M \rightarrow SL^{\pm}(n+1,R)</script>. This action is bundle preserving which means a map <script type="math/tex">\xi M = \xi \tilde{M}/(\Pi,M) \rightarrow M</script> that is line preserving.</p>
+
+<p>Example: If <script type="math/tex">dev:\tilde{M} \hookrightarrow S^{n}</script> is injective then the line bundle is all the rays comming through the image of this map. So the line bundle is embedded in euclidean space <script type="math/tex">R^{n+1} - \{0\}</script>.</p>
+
+<p>Example: <script type="math/tex">dim=1</script> with <script type="math/tex">M=S^1</script> we can think of that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+P= \begin{pmatrix} 2&0 \\ 0&1/2 \end{pmatrix} %]]></script>
+
+<p>The universal cover we can think of as the real line. This doubles the <script type="math/tex">x</script> coordinate andf halves the <script type="math/tex">y</script> coordinate. So <script type="math/tex">% <![CDATA[
+\xi \tilde{M} / (\rho(\Pi,M) = <p(\alpha)>) %]]></script> we get an open annulus/cylinder. Affine manifold, <script type="math/tex">\xi S^{1} = S^{1} \times (0,\infty)</script> the projection of <script type="math/tex">\Pi({(x,y) : xy=c})</script>. These can be thought of as Vinberg hypersurfaces.</p>
+
+<p>Tautological <script type="math/tex">S^1</script>-bundle: <script type="math/tex">\xi , M = \xi M/ Z</script> with <script type="math/tex">k \in Z</script> and <script type="math/tex">[\tilde{m},x] \in \xi M</script> then <script type="math/tex">k \cdot [\tilde{m},x] = [\tilde{m},2^k \cdot x]</script> since we apply the action of doubling <script type="math/tex">k</script> times of course. We get <script type="math/tex">S^1 \rightarrow \xi, M \rightarrow M</script>.</p>
+
+<p>Given compact projective <script type="math/tex">n</script>-manifold <script type="math/tex">M</script> to get compact <script type="math/tex">S^{1}</script>-bundle <script type="math/tex">S^1 \rightarrow \xi,M</script> is compact and affine. We can show it is convex using a complete Hiessan metric. We are going to show <script type="math/tex">M^n</script> is properly convex.</p>
+
+<p>Definition: Radial flow (<script type="math/tex">\Phi_t \circ \Phi_s = \Phi_{t+s}</script>) or <script type="math/tex">\Phi: R^{n+1}-\{0\} \rightarrow R^{n+1}-\{0\}</script>, <script type="math/tex">\Phi_{t}(x)=e^{-t}x</script>. Which pulls back to a flow <script type="math/tex">\Phi_t: \xi \tilde{M} \rightarrow \xi \tilde{M}</script> <script type="math/tex">\Phi_{t}(\tilde{m},x) = (\tilde{m},\Phi_t(x)=e^{-t} \cdot x)</script>. Note: The word radial refers the fact that in euclidean space points are just moving radially away towards the origin.</p>
+
+<p>Flow function: Smooth <script type="math/tex">c:\xi M \rightarrow R^{+}</script> which is flow equivariant. Which means that the image of a point <script type="math/tex">c(\Phi_t(\tilde{m},x)) = \Phi_{t}(c(\tilde{m},x))</script>. Note: <script type="math/tex">c</script> is uniquely determined by <script type="math/tex">c^{-1}(1)</script> (multiplicative identity “zero” is <script type="math/tex">1</script>).</p>
+
+<p>Theorem: Suppose <script type="math/tex">M^{k}</script> is a closed projective manifold and <script type="math/tex">c:\xi M \rightarrow R^{+}</script> is a complete convexity function. Which means that <script type="math/tex">c</script> is Hiessian convex, (<script type="math/tex">d^2c>0</script>) and <script type="math/tex">d^2c</script> is a complete Riemannian metric and <script type="math/tex">c</script> is a flow function. Then <script type="math/tex">M</script> is properly convex.</p>
+
+<p>Proof: We have <script type="math/tex">dev: \xi \tilde{M} \rightarrow R^{n+1}-\{0\}</script> let <script type="math/tex">\Omega = dev(\xi \tilde{M}) \subset R^{n+1}</script>. Since <script type="math/tex">c</script> is a complete Hiessian metric this implies that <script type="math/tex">\Omega</script> is convex and the developing map is injective. 
+It remains to show that <script type="math/tex">P(\Omega) \subset RP^n</script> is properly convex. This can be shown with and elementary geometric argument, the proof of which starts at the end of page 8 of the Deforming Convex Projective Manifold paper (Thm 3.4).</p>
+
+	<p><a href="/~ballas/260p/lectures/lecture14/"><b>Previous Post:</b> Lecture 14: Deforming Strictly Convex Projective Manifolds</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture16/"><b>Next Post:</b> Lecture 16: Openness of Deformation Space</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

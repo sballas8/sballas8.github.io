@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 19: Closedness Part I</title>
+  <meta name="description" content="Let  be a closed -manifold, and let , , , and ">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture19/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 19: Closedness Part I</h1>
+    <p class="post-meta">May 31, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Let <script type="math/tex">M</script> be a closed <script type="math/tex">m_0</script>-manifold, and let <script type="math/tex">Rep(M)=Hom(\pi_1(M),SL^{\pm}(m_0+1,R))</script>, <script type="math/tex">\chi(M)=\{tr\circ\rho\colon \pi_1(M)\to R \mid \rho\in Rep(M)\}</script>, <script type="math/tex">Rep_c(M)=\{\rho\in Rep(M)\mid \rho\text{ is holonomy of properly convex projective structure on }M\}</script>, and <script type="math/tex">\chi_c(M)=\{tr\circ \rho\mid \rho\in Rep_c(M)\}</script></p>
+
+<p><strong>Theorem 1:</strong> <script type="math/tex">\chi_c(M)</script> is closed in <script type="math/tex">\chi(M)</script>.</p>
+
+<p><strong>Chuckrow’s theorem:</strong> <script type="math/tex">G</script> a finitely generated group that does not contain an infinite nilpotent normal subgroup (eg <script type="math/tex">G=\pi_1(M)</script>, <script type="math/tex">M</script> a closed hyperbolic manifold of dimension at least 2). Then the subset of <script type="math/tex">Hom(G,GL(k,R))</script> consisting of discrete, faithful homomorphisms is closed.</p>
+
+<p>Idea: if <script type="math/tex">A,B\in GL(n,R)</script> are <script type="math/tex">\epsilon</script>-close to the identity, their commutator is <script type="math/tex">\epsilon^2</script>-close.</p>
+
+<p>Overview of theorem 1: Sequence of projective structures by taking <script type="math/tex">\Gamma_n=\rho_n(\pi_1(M))</script>, and consider <script type="math/tex">\Omega_n/\Gamma_n</script>.</p>
+
+<p>Open bounded convex set <script type="math/tex">K\subseteq R^n</script>. Define <script type="math/tex">\widetilde{q}_K\colon R^n\to R</script> with <script type="math/tex">\widetilde{q}_K=\int_K\|x-y\|^2dV</script>. This attains the minimum at a unique point <script type="math/tex">\mu(K)</script>, called the center of mass. Define the moment of inertia (tensor) to be <script type="math/tex">q_K(y)=\widetilde{q}_K(y)-\widetilde{q}_K(\mu(K))</script>, which is a positive-definite quadratic form (when considering <script type="math/tex">\mu(K)</script> as the origin). There is a unique ellipsoid <script type="math/tex">\Omega</script> with <script type="math/tex">q_\Omega=q_K</script>, called the ellipsoid of inertia.</p>
+
+<p>Let <script type="math/tex">\Omega\subseteq S^n</script> is open and properly convex so that <script type="math/tex">\overline{\Omega}</script> is disjoint from some great sphere. A point <script type="math/tex">p\in\Omega</script> is called a center of <script type="math/tex">\Omega</script> if, letting <script type="math/tex">\overline{\Omega}\subseteq U_p=\{x\in S^n\mid \langle x,p\rangle >0\}</script>, and <script type="math/tex">\pi_p\colon U_p\to R^n</script> by <script type="math/tex">\pi_p(x)=\frac{x}{\langle x,p\rangle}</script>, we have <script type="math/tex">\pi_p(p)=\mu(\pi_p\Omega)</script>.</p>
+
+<p><strong>Prop:</strong> If <script type="math/tex">\Omega\subseteq S^n</script> is properly convex and open, then <script type="math/tex">\Omega</script> has a unique center, which is in <script type="math/tex">\Omega</script>.</p>
+
+<p><em>Proof:</em> Prove when <script type="math/tex">\Omega</script> is round, meaning strictly convex and <script type="math/tex">\partial\Omega</script> is <script type="math/tex">C^1</script>. Then approximate arbitrary <script type="math/tex">\Omega</script> by round ones and use continuity.</p>
+
+<p>Let <script type="math/tex">\Omega^*</script> be the dual in <script type="math/tex">S^n</script>, using the inner product to identify <script type="math/tex">R^n</script> with its dual. Namely, <script type="math/tex">% <![CDATA[
+\Omega^*=\{y\in S^n\mid d_{S^n}(x,y)<\pi/2\forall x\in\Omega\} %]]></script>.</p>
+
+<p>Define <script type="math/tex">m\colon \Omega^*\to \Omega</script> by <script type="math/tex">m(p)=\pi_p^{-1}(\mu(\pi_p(\Omega)))</script>. Then <script type="math/tex">p</script> is the center if and only if <script type="math/tex">m(p)=p</script>.</p>
+
+<p>Define <script type="math/tex">\psi\colon \partial \overline{\Omega}^*\to\partial \overline{\Omega}</script> by <script type="math/tex">\psi(x)=x^\perp\cap\overline{\Omega}</script>. Strict convexity implies $\psi$ is one-to-one, and roundness implies <script type="math/tex">\psi</script> is continuous, and <script type="math/tex">\psi</script> is a continuous extension of <script type="math/tex">m</script>. Extend <script type="math/tex">m</script> by <script type="math/tex">m\vert_{\partial\Omega}=\psi</script>. If <script type="math/tex">m</script> has no fixed point, let <script type="math/tex">\ell</script> be the line through <script type="math/tex">p</script> and <script type="math/tex">m(p)</script> and <script type="math/tex">r(p)</script> the point on <script type="math/tex">\ell\cap\partial\overline{\Omega}^*</script> closer to <script type="math/tex">p</script>. This gives <script type="math/tex">r\colon \overline{\Omega}^*\to \partial \overline{\Omega}^*</script> and <script type="math/tex">r\vert_{\partial \overline{\Omega}^*}</script> the identity, a contradiction.</p>
+
+<p>A box is a product of intervals in <script type="math/tex">R^n</script>; given a box <script type="math/tex">B</script> and <script type="math/tex">k>0</script>, <script type="math/tex">kB=\{kx\mid x\in B\}</script>, which is another box. The unit box is <script type="math/tex">B_1=\prod_{i=1}^n[-1,1]</script>.</p>
+
+<p>Fact 1: For any dimension <script type="math/tex">n</script>, there is a <script type="math/tex">k</script> so that for any <script type="math/tex">\Omega\subseteq R^n</script> which is open, bounded, and convex with inertia tensor <script type="math/tex">x_1^+\dots +x_n^2</script> and the origin the center of mass, we have <script type="math/tex">k^{-1}B_1\subseteq \Omega\subseteq kB_1</script>.</p>
+
+<p><strong>Corollary</strong>: If <script type="math/tex">\Omega\subseteq S^n</script> is open and properly convex, there is an <script type="math/tex">A\in SO(n+1)</script> and a box <script type="math/tex">B\subseteq R^n</script> with <script type="math/tex">B\subseteq \pi_{e_1}(A\Omega)\subseteq k^2B</script>.</p>
+
+
+	<p><a href="/~ballas/260p/lectures/lecture18/"><b>Previous Post:</b> Lecture 18: Geometric Transitions Part II</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture20/"><b>Next Post:</b> Lecture 20: Closedness Part II</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

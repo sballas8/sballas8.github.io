@@ -1,0 +1,5 @@
+#Protect Directory
+AuthName "Dialog prompt"
+AuthType Basic
+AuthUserFile /Users/ballas/Dropbox/fsu website/tenure/.htpasswd
+Require valid-user

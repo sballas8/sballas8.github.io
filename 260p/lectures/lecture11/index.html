@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 11: Projective Structures on Surfaces</title>
+  <meta name="description" content="Let  be a closed surface of genus at least 2, and  a surface of genus .">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture11/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 11: Projective Structures on Surfaces</h1>
+    <p class="post-meta">May 3, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Let <script type="math/tex">\Sigma</script> be a closed surface of genus at least 2, and <script type="math/tex">\Sigma_2</script> a surface of genus <script type="math/tex">2</script>.</p>
+
+<p>Let <script type="math/tex">\Gamma=\langle a,b,c,d\rangle</script> be a discrete subgroup of <script type="math/tex">PSO(2,1)</script>. Then <script type="math/tex">\mathbb{H}^2/\Gamma\cong \Sigma_2</script>. The surface <script type="math/tex">\Sigma</script> covers <script type="math/tex">\Sigma_2</script> and if we let <script type="math/tex">\Gamma'\subset \Gamma</script> be the subgroup corresponding to this cover then <script type="math/tex">\mathbb{H}^2/\Gamma'</script> gives a convex projective structure on <script type="math/tex">\Sigma</script></p>
+
+<p>Let <script type="math/tex">\Omega\subseteq RP^2</script> be an open properly convex set, let <script type="math/tex">\Gamma</script> be a discrete subgroup of <script type="math/tex">PGL(\Omega)</script>, and <script type="math/tex">f\colon\Sigma\to \Omega/\Gamma</script>. Then the pair <script type="math/tex">(\Omega/\Gamma,f)</script> is a marked convex projective structure on <script type="math/tex">\Sigma</script>. There is an equivalence relation on the collection of marked convex projective structures on <script type="math/tex">\Sigma</script> by saying <script type="math/tex">(\Omega/\Gamma,f)\sim(\Omega'/\Gamma',f')</script> if there is an element <script type="math/tex">g\in PGL_3(R)</script> so that <script type="math/tex">gf</script> is isotopic to <script type="math/tex">f'</script></p>
+
+<p>Teichmuller space <script type="math/tex">T(\Sigma)</script> is contained in <script type="math/tex">\mathfrak{B}(\Sigma)</script>, the collection of equivalence classes of marked convex projective structures.</p>
+
+<p>The character variety is <script type="math/tex">\chi(\Sigma)=Hom(\pi_1\Sigma,SL_3(R))/SL_3(R)</script>. There is a map <script type="math/tex">Hol\colon B(\Sigma)\to \chi(\Sigma)</script>, with <script type="math/tex">Hol(\Omega/\Gamma,f)=\left[f_*\colon \pi_1\Sigma\to\Gamma\subseteq SL_3(R)\right]</script></p>
+
+<p><strong>Theorem:(Koszul, Goldman-Choi)</strong> Hol is a homeomorphism onto a connected component of <script type="math/tex">\chi(\Sigma)</script>.</p>
+
+<p><strong>Theorem:(Goldman)</strong> If <script type="math/tex">\Sigma</script> has genus <script type="math/tex">g\geq 2</script>, then <script type="math/tex">\mathfrak{B}(\Sigma)</script> is a cell of dimension <script type="math/tex">16g-16=-8\chi(\Sigma)</script>.</p>
+
+<p><em>Outline:</em></p>
+
+<p>1 Understand “<script type="math/tex">\mathfrak{B}(Pants)</script>”. It is an 8-dimensional cell.</p>
+
+<p>2 If <script type="math/tex">\Sigma_1</script> and <script type="math/tex">\Sigma_2</script> are convex projective manifolds with “nice” boundary and their boundary geometry agrees, then they can be “convexly glued” in 2-dimensional ways.</p>
+
+<p>###Principal annuli</p>
+
+<p>Let <script type="math/tex">% <![CDATA[
+D^+=\{\begin{pmatrix} e^{t_1} & & \\ & e^{t_2} & \\ & & e^{t_3}\end{pmatrix}\in SL_3(R)\mid t_3<t_2<t_1\text{ and } t_1+t_2+t_3=0\} %]]></script>.</p>
+
+<p>Let <script type="math/tex">\Delta=\{[e^{x_1},e^{x_2},e^{x_3}\mid x_1+x_2+x_3=0\}</script>. Let <script type="math/tex">% <![CDATA[
+1\not=\gamma=\begin{pmatrix} e^{t_1} & & \\ & e^{t_2} & \\ & & e^{t_3}\end{pmatrix}\in D^+ %]]></script>. Then choose <script type="math/tex">(a_1,a_2,a_3)</script> such that <script type="math/tex">a_1t_1+a_2t_2+a_3t_3=0</script>. Then let <script type="math/tex">f_\gamma\colon\Delta\to R^+</script> with <script type="math/tex">f_\gamma([e^{x_1},e^{x_2},e^{x_3}])=e^{a_1x_1+a_2x_2+a_3x_3}</script>. Then we have <script type="math/tex">f_\gamma(\gamma[e^{x_1},e^{x_2},e^{x_3})=f_\gamma([e^{x_1+t_1},e^{x_2+t_2},e^{x_3+t_3}])=f_\gamma([e^{x_1},e^{x_2},e^{x_3}])</script>.</p>
+
+<p><script type="math/tex">\Delta/\langle\gamma\rangle</script> is foliated by the level sets of <script type="math/tex">f_\gamma</script>.</p>
+
+<p>Let <script type="math/tex">A_d^\gamma=f^{-1}((d,\infty))/\langle\gamma\rangle</script>, which we call a <em>principal annulus</em>. Let <script type="math/tex">\Sigma=\Omega/\Gamma</script> be properly convex with boundary. Let <script type="math/tex">\partial\subseteq \partial\Sigma</script>. We say that <script type="math/tex">\Omega/\Gamma</script> has <em>principal totally geodesic boundary</em> if for each lift <script type="math/tex">\widetilde{\partial}</script> of <script type="math/tex">\partial</script> in <script type="math/tex">\widetilde{\Sigma}</script>, <script type="math/tex">D(\widetilde{\partial})</script> is an embedding into an open segment in <script type="math/tex">RP^1\subseteq RP^2</script> and <script type="math/tex">\rho(\pi_1\partial)</script> conjugate into <script type="math/tex">D^+</script>.</p>
+
+<p>The following picture illustrates the geometry of <script type="math/tex">\Omega</script> when <script type="math/tex">\Omega/\Gamma</script> has a principal boundary component and is useful to refer to when thinking about the following two lemmas.</p>
+
+<p><img src="/~ballas/260p/assets/principal-domain.png" alt="alt text" class="center-image" /></p>
+
+<p><strong>Lemma:</strong> If <script type="math/tex">\Sigma\cong \Omega/\Gamma</script> has principal totally geodesic boundary, then (after applying a projective transformation) <script type="math/tex">\Omega\subseteq\overline{\Delta}</script> and <script type="math/tex">\Sigma</script> contains an embedded principal annulus neighborhood of each principal boundary component.</p>
+
+<p>Proof: We can always assume <script type="math/tex">\Omega\cap\overline{\Delta}\not=\varnothing</script>. By construction we know that <script type="math/tex">[e_1,e_3]\cap\overline{\Delta}\subseteq\partial\Omega</script>.</p>
+
+<p>Let <script type="math/tex">\langle \gamma\rangle=\pi_1\partial</script>. For a generic <script type="math/tex">p\in \Omega^*</script>, we have <script type="math/tex">\gamma^np\to[e_3^*]\in\partial\Omega^*</script> as <script type="math/tex">n\to\infty</script> and <script type="math/tex">\gamma^{n}p\to[e_1^*]\in\partial\Omega^*</script> as <script type="math/tex">n\to -\infty</script>. As a result we see that <script type="math/tex">[\ker e_1^\ast]</script> and <script type="math/tex">[\ker e_3^\ast]</script> are supporting hyperplanes.  As a result we see that <script type="math/tex">\Omega</script> is disjoint from these hyperplanes and thus <script type="math/tex">\Omega\subseteq \overline{\Delta}</script>.</p>
+
+<p>In order to show that <script type="math/tex">\Sigma</script> contains an embedded principal annulus we start by taking a regular neighborhood <script type="math/tex">N</script> of <script type="math/tex">\partial</script> in <script type="math/tex">\Sigma</script> and lifting it to <script type="math/tex">\tilde N\subset \Omega</script>. Since <script type="math/tex">\partial</script> is compact we can find a <script type="math/tex">\hat N\subset \tilde N</script> which covers a principal annulus in <script type="math/tex">\Sigma</script>. Since <script type="math/tex">\hat N</script> is contained in <script type="math/tex">\tilde N</script> and <script type="math/tex">N</script> is embedded we see that this principal annulus must be embedded.</p>
+
+<p>Let <script type="math/tex">R</script> be the reflection given in coordinates by <script type="math/tex">% <![CDATA[
+\begin{pmatrix}1 & & \\ & -1 & \\ & & 1\end{pmatrix} %]]></script></p>
+
+<p><strong>Lemma:</strong> If <script type="math/tex">g\in \Gamma\setminus\langle\gamma\rangle</script>, then <script type="math/tex">g R\Delta\subseteq \Delta\setminus \Omega</script>.</p>
+
+<p>Proof: <script type="math/tex">\Omega\cap R\Delta=\varnothing</script> so <script type="math/tex">\varnothing=g(\Omega\cap R\Delta)=\Omega\cap gR\Delta</script>. Given <script type="math/tex">g\in \Gamma\setminus\langle\gamma\rangle</script> The set <script type="math/tex">gR\Delta</script> is bounded by the three lines <script type="math/tex">g\tilde \partial</script>, <script type="math/tex">p_1:=g[\ker e_1^\ast]</script> and <script type="math/tex">p_3=g[\ker e_3^\ast]</script>. The planes <script type="math/tex">p_1</script> and <script type="math/tex">p_3</script> are disjoint from <script type="math/tex">R\Delta</script> and are thus correspond to points  <script type="math/tex">p_1^\ast,p_3^\ast\in \partial \Omega^\ast\cap (R\Delta)^\ast</script>. The projective line <script type="math/tex">[p_1^\ast,p_3^\ast]</script> is disjoint from <script type="math/tex">\Delta^\ast</script>. As a results we see that the pencil of hyperplanes containing <script type="math/tex">p_1</script> and <script type="math/tex">p_3</script> has its center in <script type="math/tex">\Delta</script>. Thus <script type="math/tex">gR\Delta\subset \Delta\setminus \Omega</script>.</p>
+
+<p>Next time we will use this setup to show that properly convex surfaces with principal totally geodesic boundary components can be convexly glued together whenever their boundary geometry agrees.</p>
+
+
+	<p><a href="/~ballas/260p/lectures/lecture10/"><b>Previous Post:</b> Lecture 10: Properly Convex Automorphisms Part II</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture12/"><b>Next Post:</b> Lecture 12: Projective Structures on Surfaces Part II</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

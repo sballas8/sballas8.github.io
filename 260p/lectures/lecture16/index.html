@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 16: Openness of Deformation Space</title>
+  <meta name="description" content="Geometric topology: a space of  structure on a manifold .">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture16/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 16: Openness of Deformation Space</h1>
+    <p class="post-meta">May 19, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Geometric topology: a space of <script type="math/tex">(G,X)</script> structure on a manifold <script type="math/tex">M</script>.</p>
+
+<p><em>What does it mean for two structures to be nearby?</em></p>
+
+<p>Consider the space <script type="math/tex">C_w^\infty(M^m,N^n) = \{f: M \xrightarrow{\text{smooth}} N \}</script> with the smooth weak topology, where <script type="math/tex">M^m</script> and <script type="math/tex">N^n</script> are smooth manifolds with dimension <script type="math/tex">m,n</script> respectively.</p>
+
+<p><strong>Definition.</strong> for smooth weak topology.  Choose <script type="math/tex">k >0</script>, <script type="math/tex">\varepsilon >0, K \subset M</script> where <script type="math/tex">K</script> is compact, finitely many charts covering <script type="math/tex">K</script> <script type="math/tex">\{\phi_n\}</script>.
+Then,
+<script type="math/tex">U(k, \varepsilon, K, \{\phi_n\})\subset C_w^\infty(M,N)</script>
+is the set of all <script type="math/tex">g: M \rightarrow N</script> such that on each of the charts, <script type="math/tex">f,g</script> are close in <script type="math/tex">C^k</script>, i.e. <script type="math/tex">% <![CDATA[
+|D^\ell f - D^\ell g | < \varepsilon %]]></script> for all <script type="math/tex">\ell \le k</script>.  That is, the partial derivatives of order less than or equal to <script type="math/tex">k</script> differ by less than <script type="math/tex">\varepsilon</script>.</p>
+
+<p>Now, let <script type="math/tex">M</script> be a closed <script type="math/tex">n</script>-manifold.  A <script type="math/tex">(G,X)</script> structure is <script type="math/tex">\text{dev} : \tilde M \rightarrow X</script>, <script type="math/tex">\rho: \pi_1 M \rightarrow G</script> such that <script type="math/tex">\forall \alpha \in \pi_1 M</script>, <script type="math/tex">\forall x \in \tilde M</script>, <script type="math/tex">\text{dev}(\tau_\alpha \cdot x) = \rho(\alpha) \cdot \text{dev} x</script>.</p>
+
+<p>So, dev determines <script type="math/tex">\rho.</script></p>
+
+<p><strong>Definition.</strong></p>
+
+<script type="math/tex; mode=display">\text{Dev}(M, (G,X))= \{\text{dev}: \tilde M \xrightarrow{\text{smooth}} X : \text{dev is developing map of }(G,X) \text{ structure on M}\}</script>
+
+<p>Then, notice <script type="math/tex">\text{Dev}(M,(G,X))  \subset C_w^\infty (\tilde M, X)</script>, so we can give it the subspace topology.</p>
+
+<p><strong>Special case.</strong> Suppose <script type="math/tex">\text{dev} \in \text{Dev}(M, (G,X))</script> is injective.  Let <script type="math/tex">U = \text{dev} (\tilde M)</script>.  Identify <script type="math/tex">\tilde M</script> with <script type="math/tex">U \subset X</script>.  Then, dev becomes the inclusion <script type="math/tex">i : U \hookrightarrow X</script>.  Then, <script type="math/tex">\text{dev}': U \rightarrow X</script> is nearby in the weak topology if on a compact set <script type="math/tex">K \subset U</script>, <script type="math/tex">\text{dev}'</script> is close the the identity in the <script type="math/tex">C^k</script> topology.</p>
+
+<p>We have a smalll neighborhood in the weak topology if we have a big <script type="math/tex">K</script> and a small <script type="math/tex">\varepsilon</script>.</p>
+
+<p>This is a stronger version of the Holonomy Theorem: If <script type="math/tex">M</script> is a closed manifold, <script type="math/tex">\text{Hol} :\text{Dev}(M, (G,X)) \rightarrow \text{Hom}(\pi_1(M), G)</script> is open.</p>
+
+<p><strong>Lemma 3.3</strong>
+Let <script type="math/tex">M</script> be a properly convex manifold.  Let <script type="math/tex">N = \xi M</script>, the tautological line bundle.  Let <script type="math/tex">C: N \rightarrow \mathbb R</script> be a flow function, i.e. there is a flow <script type="math/tex">\Phi_t</script> such that <script type="math/tex">C(\Phi_t(x)) = C(x) +t</script>.  Then <script type="math/tex">C</script> is Hessian convex (<script type="math/tex">d^2C >0</script> (positive definite matrix)) if and only if <script type="math/tex">S = C^{-1}(0)</script> is a Hessian convex surface.</p>
+
+<p><strong>Example</strong> Consider <script type="math/tex">f =x^4</script>.  This is convex in the old sense, because every secant lies on one side.  But, it’s not Hessian convex because <script type="math/tex">f''(0) = 0</script>.</p>
+
+<p><strong>Definition</strong> A smooth hypersurface <script type="math/tex">F^{n-1} \subset \mathbb R^n</script> is Hessian convex if <script type="math/tex">\forall x \in F</script>, <script type="math/tex">P</script> the tangent plane to <script type="math/tex">F</script> at <script type="math/tex">x</script>, there exists a neighborhood <script type="math/tex">U \subset P</script> of <script type="math/tex">x</script>, <script type="math/tex">g: U \xrightarrow{\text{smooth}} \mathbb R</script> above <script type="math/tex">U</script>, where <script type="math/tex">F</script> is the graph of <script type="math/tex">g</script> and <script type="math/tex">D^2g >0</script> (positive definite).</p>
+
+<p>Now, we give our main result of today:</p>
+
+<p><strong>Openness for Properly Convex Structures</strong> (Koszul ~ 1962)
+Let <script type="math/tex">m</script> be a closed <script type="math/tex">n</script>-manifold.<br />
+<script type="math/tex">\text{Dev}_C(M, \mathbb P) = \{ \text{dev} \in \text{Dev}(M, (\mathsf{PGL}(n+1), \mathbb R), \mathbb R P^n): \text{dev}(\tilde M) \text{ is properly convex and dev is injective}\}</script>
+Then <script type="math/tex">\text{Dev}_C(M, \mathbb P) \rightarrow \text{Hom}(\pi_1M, \mathsf{PGL}(n+1, \mathbb R))</script> is open.</p>
+
+<p>Sketch proof: Suppose <script type="math/tex">\text{dev}_\rho \in \text{Dev}_c(M)</script>, so <script type="math/tex">\text{dev}_\rho: \tilde M \xrightarrow{\text{injective}} \mathbb R P^n</script>, holonomy <script type="math/tex">\rho : \pi_1 M \rightarrow \mathsf{PGL}(n+1, \mathbb R)</script>.  Suppose <script type="math/tex">\sigma \in \text{Hom}(\pi_1 M, \mathsf{PGL}(n+1), \mathbb R))</script> close to <script type="math/tex">\rho</script>.  Let <script type="math/tex">\Omega_\rho = \text{dev}_\rho (\tilde M)</script>, <script type="math/tex">\sigma</script> close to <script type="math/tex">\rho</script>.  This implies that nearby <script type="math/tex">\text{dev}_\sigma : \tilde M _\sigma \equiv \Omega_\rho \rightarrow \mathbb R P^n</script>.</p>
+
+<p>We can to the same thing for <script type="math/tex">\xi_1 M_\rho</script> and <script type="math/tex">\xi_1 M_\sigma</script>.</p>
+
+<p>Similarly, there exist nearby dev maps,  <script type="math/tex">\widetilde{\xi_1 M_\rho}, \widetilde{\xi_1 M_\sigma} \xrightarrow{\text{smooth}} \mathbb R^{n+1}</script>.  Then, notice <script type="math/tex">\widetilde{\xi_1 M_\rho} \equiv \mathcal C \Omega_\rho = \xi \Omega_\rho</script>, where <script type="math/tex">\mathcal C \Omega_\rho</script> denote the cone over <script type="math/tex">\Omega_\rho</script>.</p>
+
+<p>So, there exists <script type="math/tex">h: \xi_1 \tilde M_\rho \xrightarrow{\text{diffeo}} \xi \tilde M_\sigma</script> with lift <script type="math/tex">\tilde h : \mathcal C \Omega_\rho \rightarrow \mathbb R^{n+1} - \{0\}</script> where <script type="math/tex">\tilde h</script> is close the the identity on a large compact set in <script type="math/tex">C^k</script>.  Thus <script type="math/tex">d^2 \tilde h</script> is close to 0, and <script type="math/tex">d \tilde h</script> is close the the identity.</p>
+
+<p>Define <script type="math/tex">S \subset \xi_2 \tilde M \rho</script>, a level set of the convexity function <script type="math/tex">c: \xi_1 M_\rho \rightarrow S^1</script>.  Then, <script type="math/tex">S</script> is a hypersurface, and <script type="math/tex">S</script> is Hessian convex by the lemma.</p>
+
+<p>So, <script type="math/tex">h(S) \subset \xi_1 \tilde M_\sigma</script>.  Since <script type="math/tex">d^2 h \approx 0</script> and <script type="math/tex">dh \approx</script> identity, we use the chain rule to see that <script type="math/tex">h(S)</script> is Hessian convex in <script type="math/tex">\xi_1 \tilde M _\sigma</script>, since <script type="math/tex">M</script> is compact.  Then, by the lemma, we know that <script type="math/tex">h(S)</script> is the zero set of a convexity flow function on <script type="math/tex">\xi_1 M _\sigma</script>, and from the theorem from last time, we know that <script type="math/tex">M_\sigma</script> is properly convex.</p>
+
+
+	<p><a href="/~ballas/260p/lectures/lecture15/"><b>Previous Post:</b> Lecture 15: Tautological Line Bundle</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture17/"><b>Next Post:</b> Lecture 17: Geometric Transitions</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

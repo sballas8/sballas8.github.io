@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 14: Deforming Strictly Convex Projective Manifolds</title>
+  <meta name="description" content="Let  be a closed, connected, smooth -manifold.">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture14/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 14: Deforming Strictly Convex Projective Manifolds</h1>
+    <p class="post-meta">May 12, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Let <script type="math/tex">M</script> be a closed, connected, smooth <script type="math/tex">n</script>-manifold.</p>
+
+<p>Our goal is to describe all strictly convex projective structures on <script type="math/tex">M</script>.  To this end, we seek a strictly convex domain <script type="math/tex">\Omega \subseteq \mathbb R \mathrm P^n</script> such that <script type="math/tex">M</script> is homeomorphic to the orbit space <script type="math/tex">\Omega / \Gamma</script> for some subgroup <script type="math/tex">\Gamma</script> of <script type="math/tex">\mathrm{PGL}(\Omega)</script>.  Recall that <script type="math/tex">\Omega</script> is <em>properly convex</em> if its closure lies in an affine patch, and that <script type="math/tex">\Omega</script> is <em>strictly convex</em> if it is properly convex and if <script type="math/tex">\partial \overline \Omega</script> contains no line segment of positive length.</p>
+
+<p>A marking <script type="math/tex">h : M \to \Omega / \Gamma</script> gives a <em>holonomy representation</em></p>
+
+<script type="math/tex; mode=display">\rho = h_* : \pi_1 M \stackrel{\cong}{\longrightarrow} \Gamma.</script>
+
+<p><strong>Proposition.</strong>  <em><script type="math/tex">\Gamma</script> determines <script type="math/tex">\Omega</script>; hence, <script type="math/tex">\rho</script> determines <script type="math/tex">\Omega</script>.</em></p>
+
+<p><em>Proof.</em>  This follows from the fact that <script type="math/tex">\partial \overline \Omega</script> is the limit set of <script type="math/tex">\Gamma</script>.  <script type="math/tex">\square</script></p>
+
+<p>Thus describing strictly convex projective structures on <script type="math/tex">M</script> amounts to describing holonomy representations  <script type="math/tex">\pi_1 M \to \Gamma \leq \mathrm{PGL}(n + 1)</script>.</p>
+
+<p>Let <script type="math/tex">SC(M)</script> denote the set of all holonomy representations <script type="math/tex">\pi_1 M \to \mathrm{PGL}(n + 1)</script> of strictly convex projective structures on <script type="math/tex">M</script>.  We have</p>
+
+<script type="math/tex; mode=display">SC(M) \leq \mathrm{Hom}(\pi_1 M, \mathrm{PGL}(n + 1)) \cong \mathrm{Hom}(\pi_1 M, \mathrm{SL}_\pm (n + 1)).</script>
+
+<p><strong>Theorem</strong> (Benoist 2000)<strong>.</strong>  <em><script type="math/tex">SC(M)</script> is both open and closed in <script type="math/tex">\mathrm{Hom}(\pi_1 M, \mathrm{PGL}(n + 1))</script>.</em></p>
+
+<p>We will prove the “open” part of this theorem using a general result of Thurston and Ehresmann.</p>
+
+<p><strong><em><script type="math/tex">(G, X)</script>-MANIFOLDS, THE HOLONOMY THEOREM</em></strong></p>
+
+<p>Let <script type="math/tex">X</script> be a manifold, and let <script type="math/tex">G</script> be a Lie group that acts continuously (and hence analytically) and transitively on <script type="math/tex">X</script> by diffeomorphisms.</p>
+
+<p>Recall that a manifold <script type="math/tex">M</script> is a <em><script type="math/tex">(G, X)</script>-manifold</em> if there exists an atlas <script type="math/tex">\{\varphi_i : U_i \subseteq M \to \varphi_i(U_i) \subseteq X\}</script> of <script type="math/tex">M</script> such that the transition map</p>
+
+<script type="math/tex; mode=display">g_{ij} = \varphi_j \circ \varphi_i^{-1} : \varphi_i^{-1}(U_i \cap U_j) \longrightarrow \varphi_j^{-1}(U_i \cap U_j)</script>
+
+<p>is the restriction of an element of <script type="math/tex">G</script> whenever <script type="math/tex">U_i \cap U_j</script> is nonempty, and such that the following <em>cocycle condition</em> is satisfied:</p>
+
+<script type="math/tex; mode=display">g_{ik} = g_{jk} \circ g_{ij} \quad\text{whenever}\quad U_i \cap U_j \cap U_k \neq \emptyset.</script>
+
+<p>Alternatively, <script type="math/tex">M</script> is a <script type="math/tex">(G, X)</script>-manifold if and only if it is homeomorphic to a quotient <script type="math/tex">X / \Gamma</script> for some discrete torsion-free subgroup of <script type="math/tex">G</script>.  Then the action of <script type="math/tex">\Gamma</script> on <script type="math/tex">X</script> is properly discontinuous and free, and the diagram</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{matrix} \pi_1 M & \smash{\stackrel{\mathrm{hol}}{\longrightarrow}} & \Gamma \\ \curvearrowright & & \curvearrowright \\ \widetilde M & \smash{\stackrel{\mathrm{dev}}{\longrightarrow}} & X \\ \end{matrix} %]]></script>
+
+<p>commutes.  Here <script type="math/tex">\pi_1 M</script> acts on the universal cover <script type="math/tex">\widetilde M</script> of <script type="math/tex">M</script> by deck transformations, <script type="math/tex">\mathrm{dev}</script> is the developing map, and <script type="math/tex">\mathrm{hol}</script> is the holonomy of <script type="math/tex">M</script>.</p>
+
+<p><strong>Theorem</strong> (Thurston–Ehresmann)<strong>.</strong>  <em>Let <script type="math/tex">M</script> be a closed, connected, smooth <script type="math/tex">(G, X)</script>-manifold.  Then the set of all holonomies <script type="math/tex">\pi_1 M \to G</script> of <script type="math/tex">(G, X)</script>-structures on <script type="math/tex">M</script> is open in <script type="math/tex">\mathrm{Hom}(\pi_1 M, G)</script>.</em></p>
+
+<p><em>Sketch of proof</em> (Thurston 1978)<em>.</em>  Let <script type="math/tex">\pi : \widetilde M \to M</script> be the universal cover, and let <script type="math/tex">D \subseteq \widetilde M</script> be a fundamental domain.  There exist finitely many charts fo <script type="math/tex">\varphi_: U_i \to X</script> covering <script type="math/tex">D</script>.  For each index <script type="math/tex">i</script>, we choose <script type="math/tex">U_i</script> small enough that <script type="math/tex">\pi</script> is one-to-one on <script type="math/tex">U_i</script>, and we use <script type="math/tex">\pi</script> to identify <script type="math/tex">U_i</script> with a subset of <script type="math/tex">M</script>.  We have</p>
+
+<script type="math/tex; mode=display">M = \bigsqcup U_i \Big / \sim,</script>
+
+<p>where the equivalence relation <script type="math/tex">\sim</script> is given by</p>
+
+<script type="math/tex; mode=display">x_i \sim x_j \Longleftrightarrow g_{ij} \circ \varphi_i(x_i) = \varphi_j(x_j).</script>
+
+<p><em>Here is the idea of the proof:</em>  If <script type="math/tex">\rho'</script> is close to a holonomy representation <script type="math/tex">\rho : \pi_1 M \to G</script>, then there are maps <script type="math/tex">g'_{ij}</script> close to the maps <script type="math/tex">g_{ij}</script> satisfying the cocycle condition.  Then define</p>
+
+<script type="math/tex; mode=display">M' = \bigsqcup U_i \Big / \sim',</script>
+
+<p>where the relation <script type="math/tex">\sim'</script> is defined by replacing <script type="math/tex">g_{ij}</script> with <script type="math/tex">g'_{ij}</script> above.</p>
+
+<p><em>Why can we do this?</em>  Take the <em>nerve</em> of the cover, i.e., a graph <script type="math/tex">H</script> with one vertex for each set <script type="math/tex">U_i</script> and one edge between corresponding vertices whenever <script type="math/tex">U_i \cap U_j</script> is nonempty.  We may assume without loss of generality that the sets <script type="math/tex">U_i</script> are round balls, so that <script type="math/tex">H</script> is connected.  Now let <script type="math/tex">T</script> be a maximal tree with a chosen basepoint.  Define <script type="math/tex">g'_{ij}</script> to be <script type="math/tex">g_{ij}</script> if the edge for <script type="math/tex">g_{ij}</script> is in <script type="math/tex">T</script>; otherwise, choose <script type="math/tex">g'_{ij}</script> so that the based loop <script type="math/tex">\alpha_{ij}</script> in <script type="math/tex">H</script> containing the edge for <script type="math/tex">g_{ij}</script> is <script type="math/tex">\rho(\alpha_{ij})</script>, a product of maps <script type="math/tex">g_{kl}</script> around the loop.  <script type="math/tex">\square</script></p>
+
+<p><strong>Theorem</strong> (Kozul 1962).  <em><script type="math/tex">SC(M)</script> is open in <script type="math/tex">\mathrm{Hom}(\pi_1 M, \mathrm{PGL}(n + 1))</script>.</em></p>
+
+<p><em>Proof.</em>  Suppose we are given a strictly convex projective structure, and hence a holonomy representation <script type="math/tex">\rho : \pi_1 M \to \mathrm{PGL}(n + 1)</script> by the Proposition, and a nearby representation <script type="math/tex">\rho'</script>.  By the holonomy theorem, there exists a nearby projective structure, and this structure is a strictly convex structure (why?).  <script type="math/tex">\square</script></p>
+
+<p><strong><em>HESSIAN METRICS</em></strong></p>
+
+<p>Let <script type="math/tex">U \subseteq \mathbb R^n</script> be open, and let <script type="math/tex">c : U \to \mathbb R^n</script> be a smooth function that is strictly convex (i.e., whose Hessian matrix is positive definite).  The map <script type="math/tex">c</script> induces a Riemannian metric on <script type="math/tex">U</script> given by</p>
+
+<script type="math/tex; mode=display">\langle u, v \rangle_c = u^\top A v \quad\text{for all }v, w \in T_x U \text{ and all } x \in U,</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">A = D^2 c = {\left(\displaystyle{\frac{\partial^2 c}{\partial x_i \partial x_j}}\right)}</script>
+
+<p>is the Hessian matrix of <script type="math/tex">c</script>.</p>
+
+<p>For example, the map <script type="math/tex">c : \mathbb R^2 \to \mathbb R</script> given by <script type="math/tex">c(x_1, x_2) = x_1^2 + x_2^2</script> induces the Euclidean metric on <script type="math/tex">\mathbb R^2</script>.</p>
+
+<p>Recall that a nonzero tangent vector <script type="math/tex">v \in T_x U</script> is specified by a smooth curve <script type="math/tex">\gamma : (-\epsilon, \epsilon) \to U</script> with <script type="math/tex">\gamma(0) = x</script> and <script type="math/tex">\gamma'(0) = v</script>, where <script type="math/tex">x \in U</script> and <script type="math/tex">\epsilon > 0</script>.  Then  <script type="math/tex">\|v\|_c^2 = F''(0) > 0</script> by strict convexity, where <script type="math/tex">F = c \circ \gamma</script>.</p>
+
+<p>Let <script type="math/tex">M</script> be an affine <script type="math/tex">n</script>-manifold.  Then we have charts <script type="math/tex">\varphi_i : U_i \subseteq M \to \mathbb R^n</script> and transition maps in the affine group <script type="math/tex">\mathrm{Aff}(n)</script>.</p>
+
+<p>Let <script type="math/tex">c : M \to \mathbb R</script> be smooth.  Then</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+c \text{ is strictly convex} &\Longleftrightarrow {} \text{all maps } c \circ \varphi_i^{-1} \text{ are strictly convex} \\
+&\Longleftrightarrow {} (c \circ \gamma)''(t) > 0 \text{ for all } t \in (-\epsilon, \epsilon) \text{ for all curves } \gamma \text{ defined as above.}
+\end{align*} %]]></script>
+
+<p>Thus <script type="math/tex">c</script> determines a Hessian metric on <script type="math/tex">M</script>.</p>
+
+<p><em>Remark.</em>  The Vinberg character functions on cones (April 14) are examples of this phenomenon.</p>
+
+<p><strong>Theorem.</strong>  <em>Suppose <script type="math/tex">M</script> is a simply connected boundaryless affine <script type="math/tex">n</script>-manifold with a complete Hessian metric  <script type="math/tex">d</script>.  Then the developing map <script type="math/tex">M \to \mathbb R^n</script> is injective and has image a convex set.</em></p>
+
+<p><em>Proof.</em>  Since <script type="math/tex">M</script> is simply connected, the developing map is a diffeomorphism, so we identify <script type="math/tex">M</script> with its image in <script type="math/tex">\mathbb R^n</script>.</p>
+
+<p>Let <script type="math/tex">a, b \in M</script> be distinct; we must show that the line segment joining them is contained in <script type="math/tex">M</script>.  Consider the triangle formed by <script type="math/tex">a</script>, <script type="math/tex">b</script>, and an arbitrary point <script type="math/tex">p \in M</script>.  Let <script type="math/tex">\alpha, \beta : [0, 1] \to M</script> be the straight-line paths paths from <script type="math/tex">p</script> to <script type="math/tex">a</script> and from <script type="math/tex">p</script> to <script type="math/tex">b</script>, respectively.  For each <script type="math/tex">t \in [0, 1]</script>, let <script type="math/tex">\gamma_t : [0, 1] \to M</script> be the straight-line path from <script type="math/tex">\alpha(t)</script> to <script type="math/tex">\beta(t)</script>.  We claim that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\mathrm{length}(\gamma_t) \leq K < \infty\quad \text{for some } K > 0 \text{ for all } t. %]]></script>
+
+<p>Then <script type="math/tex">% <![CDATA[
+d(x, p) < L %]]></script> for some <script type="math/tex">L > 0</script> for all <script type="math/tex">x \in M</script>, and we are done by completeness.</p>
+
+<p>Let <script type="math/tex">F_t = c \circ \gamma_t</script> for each <script type="math/tex">t</script>.  We have</p>
+
+<script type="math/tex; mode=display">\mathrm{length}(\gamma_t)
+= \int^1_0 \sqrt{F''_t(s)}\,ds
+\leq {\left(\int^1_0 F''_t(s)\,ds\right)}^{1/2} {\left(\int^1_0 ds\right)}^{1/2}
+\leq (F'_t(1) + F'_t(0))^{1/2}
+\leq K.</script>
+
+<p>The first inequality follows from the Cauchy–Schwarz ineqality, and the last inequality (for some <script type="math/tex">K > 0</script>) follows from compactness.  This proves the claim.  <script type="math/tex">\square</script></p>
+
+	<p><a href="/~ballas/260p/lectures/lecture13/"><b>Previous Post:</b> Lecture 13: Projective Structures on Surfaces Part III</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture15/"><b>Next Post:</b> Lecture 15: Tautological Line Bundle</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

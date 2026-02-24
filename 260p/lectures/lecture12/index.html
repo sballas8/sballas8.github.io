@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 12: Projective Structures on Surfaces Part II</title>
+  <meta name="description" content="Last time we introduced properly convex projective structures on surfaces with principal totally geodesic boundary. We proved a few basic lemmas about how  w...">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture12/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 12: Projective Structures on Surfaces Part II</h1>
+    <p class="post-meta">May 5, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Last time we introduced properly convex projective structures on surfaces with principal totally geodesic boundary. We proved a few basic lemmas about how <script type="math/tex">\Omega</script> was situated in <script type="math/tex">\mathbb{R}P^2</script>, when <script type="math/tex">\Omega/\Gamma</script> is a projective manifold with principal totally geodesic boundary. The figure below illustrates the generic configuration.</p>
+
+<p><img src="/~ballas/260p/assets/principal-domain.png" alt="alt text" class="center-image" /></p>
+
+<p>We now discuss how we can glue properly convex surfaces with principal boundary to get new properly convex surfaces. Here is the setup: Let <script type="math/tex">\Sigma_1=\Omega_1/\Gamma_1</script> and <script type="math/tex">\Sigma_2=\Omega_2/\Gamma_2</script> be properly convex surfaces (here it is possible that <script type="math/tex">\Sigma_1=\Sigma_2</script>) with principal boundary components <script type="math/tex">\partial_1</script> and <script type="math/tex">\partial_2</script>. Let <script type="math/tex">f:N(\partial_2)\to N(\partial_2)</script> be a projective equivalence between principal annular neighborhoods of <script type="math/tex">\partial_1</script> and <script type="math/tex">\partial_2</script>. Using this projective equivalence we can produce a (non-unique) projective structure on the manifold <script type="math/tex">\Sigma:=\Sigma_1\sqcup_f \Sigma_2</script>, such that the obvious inclusion maps <script type="math/tex">\iota_i:\Sigma_i\to \Sigma</script> for <script type="math/tex">i=1,2</script> are projective embeddings. Two possibilities can arise depending on whether or not <script type="math/tex">\Sigma_1=\Sigma_2</script> (see figure below).</p>
+
+<p><img src="/~ballas/260p/assets/gluing.png" alt="alt" class="center-image" /></p>
+
+<p><strong>Theorem</strong>: Let <script type="math/tex">\Sigma_1</script> and <script type="math/tex">\Sigma_2</script> be as above then the projective structure on <script type="math/tex">\Sigma</script> is properly convex. In other words <script type="math/tex">\Sigma\cong \Omega/\Gamma</script>, for some properly convex <script type="math/tex">\Omega</script> and some discrete group <script type="math/tex">\Gamma\subset PGL(\Omega)</script>.</p>
+
+<p>We will focus on the case where <script type="math/tex">\Sigma_1\neq \Sigma_2</script>, as the proof in the other case requires only small modifications.</p>
+
+<p>We begin by describing both the holonomy and developing map of this structure. Let <script type="math/tex">\Gamma=\pi_1\Sigma</script>, let <script type="math/tex">\partial</script> be the image of <script type="math/tex">\partial_1</script> in <script type="math/tex">\Sigma</script> and let <script type="math/tex">\gamma</script> be such that <script type="math/tex">\langle\gamma\rangle=\pi_1\partial</script>. By Van Kampen we see that <script type="math/tex">\Gamma\cong \Gamma_1\ast_{\pi_1\partial} \Gamma_2</script>. For <script type="math/tex">i=1,2</script> let <script type="math/tex">\rho_i:\pi_1\Sigma_i\to \Gamma_i</script> be the holonomy of the projective structure on <script type="math/tex">\Sigma_i</script> and assume we have conjugated so that <script type="math/tex">\rho_1(\pi_1\partial_1)=\rho_2(\pi_1\partial_2)</script>.  Let <script type="math/tex">g\in \Gamma</script> then we can write <script type="math/tex">g=\gamma_1\gamma_2\cdots \gamma_m</script> where <script type="math/tex">\gamma_i\in \Gamma_{i \text{ mod } 2}</script>. We can define the holonomy representation <script type="math/tex">\sigma:\pi_1\Sigma\to SL_3(\mathbb{R})</script> as</p>
+
+<script type="math/tex; mode=display">\sigma(g)=\prod_{i=1}^m\rho_{i\text{ mod }2}(\gamma_i).</script>
+
+<p>Note that this is well defined since we insisted that <script type="math/tex">\rho_1(\pi_1\partial_1)=\rho_2(\pi_1\partial_2)</script>. In order to define the developing map we need to give a “combinatorial description” of <script type="math/tex">\tilde \Sigma</script>. Informally, the universal cover can be described as follows. Pick a lift of <script type="math/tex">\tilde \Sigma_1</script> to <script type="math/tex">\tilde \Sigma</script>. This lift will contain infinitely many copies of <script type="math/tex">\tilde \partial</script> (one for each <script type="math/tex">\Gamma_1</script> conjugate of <script type="math/tex">\pi_1\partial</script>). Along each of these copies of <script type="math/tex">\tilde \partial</script> we glue a copy of <script type="math/tex">\tilde \Sigma_2</script>. Each of the copies of <script type="math/tex">\tilde \Sigma_2</script> that we have glued on will itself contain infinitely many copies of <script type="math/tex">\tilde \partial</script>. Along each of these we glue a copy of <script type="math/tex">\tilde \Sigma_1</script>. Repeating this procedure ad infinitum gives a tiling of <script type="math/tex">\tilde \Sigma</script> where the tiles are copies of <script type="math/tex">\tilde \Sigma_1</script> and <script type="math/tex">\tilde \Sigma_2</script> glued along <script type="math/tex">\tilde \partial</script>.</p>
+
+<p>More formally, For <script type="math/tex">i=1,2</script>, let <script type="math/tex">\hat T_i=\Gamma\times \Omega_i</script>. There is a group action of <script type="math/tex">\Gamma_i</script> on <script type="math/tex">\hat T_i</script> given by <script type="math/tex">\alpha\cdot(\gamma,p)=(\gamma\alpha^{-1}),\alpha\cdot p)</script>. If we let <script type="math/tex">T_i=\hat T_i/\Gamma_i</script> then <script type="math/tex">\tilde \Sigma=T_1\sqcup T_2</script> where we identify the points <script type="math/tex">[(\gamma,p)]\in T_1</script> and <script type="math/tex">[(\gamma,p)]\in T_2</script> whenever <script type="math/tex">p\in \Omega_1\cap \Omega_2</script>. Sets fo the form <script type="math/tex">\{\gamma\}\times \Omega_i</script> are called <em>tiles</em> can be thought of as the aforementioned copies of <script type="math/tex">\tilde \Sigma_i</script> that tile <script type="math/tex">\tilde \Sigma</script>. The action of <script type="math/tex">\Gamma</script> on <script type="math/tex">\tilde \Sigma</script> by deck transformations is given by <script type="math/tex">g\cdot[(\gamma,p)]=[(g\gamma,p)]</script></p>
+
+<p>Using this description it is a very simple matter to describe the developing map. If we let <script type="math/tex">[(\gamma,p)]\in \tilde \Sigma</script> then</p>
+
+<script type="math/tex; mode=display">Dev([(\gamma,p)])=\sigma(\gamma)p.</script>
+
+<p>By construction, <script type="math/tex">Dev</script> is <script type="math/tex">\sigma</script>-equivariant.</p>
+
+<p>In order to prove the above theorem we will show that <script type="math/tex">Dev</script> is an embedding onto a properly convex subset of <script type="math/tex">\mathbb{R}P^2</script>. This will be done by applying a ping-pong arguement. The crux of this argument is the following fact that follows from the main lemma from the previous lecture. Let <script type="math/tex">\gamma</script> be such that <script type="math/tex">\langle \gamma\rangle=\pi_1\partial</script> then for any <script type="math/tex">g\in \Gamma_1\setminus\langle\gamma\rangle</script> <script type="math/tex">g\Omega_2\subset \Delta\setminus \Omega_1</script> and for any <script type="math/tex">g\in \Gamma_2\setminus \langle \gamma\rangle</script> <script type="math/tex">g\Omega_1\subset R\Delta\setminus\Omega_2</script>.</p>
+
+<p>We begin by showing that <script type="math/tex">Dev</script> is injective. To this end let <script type="math/tex">[(\gamma_1,p_1)]</script> and <script type="math/tex">[(\gamma_2,p_2)]</script> be distinct points in <script type="math/tex">\tilde \Sigma</script>. By renumbering we can assume that <script type="math/tex">p_2\in \Omega_1</script>. Furthermore, by applying a deck transformation we can assume that <script type="math/tex">\gamma_1=1</script>. By construction, the developing map restricted <script type="math/tex">\Omega_1\cup\Omega_2</script> is injective. It follows that the restriction of the developing map to any adjacent tiles is injective. As a result, we can assume that <script type="math/tex">\gamma_2\notin \Gamma_1\cup\Gamma_2</script>. It thus suffices to show that <script type="math/tex">\sigma(\gamma_2)\Omega_1</script> is disjoint from <script type="math/tex">\Omega_1\cup\Omega_2</script>. By our previous simplifications, we can assume that <script type="math/tex">\gamma_2=g_1g_2\cdots g_m</script>, where <script type="math/tex">g_i\in (\Gamma_1\cup\Gamma_2)\setminus \langle\gamma\rangle</script> and <script type="math/tex">g_i\in \Gamma_1</script> if and only if <script type="math/tex">g_{i+1}\in \Gamma_2</script>.</p>
+
+<p>We can now play ping-pong. As usual, there are a few cases to consider. First, suppose that <script type="math/tex">g_m\in \Gamma_2</script>. In this case</p>
+
+<script type="math/tex; mode=display">\begin{gather}
+\sigma(\gamma_2)\Omega_1=\sigma(g_1\cdots g_{m-1})\sigma(g_m)\Omega_1 \subset \sigma(g_1\cdots g_{m-1})(R\Delta\setminus \Omega_2) \\
+\subset\sigma(g_1\cdots g_{m-2})\sigma(g_{m-1})(R\Delta\setminus \Omega_2)\subset \sigma(g_1\cdots g_{m-2})(\Delta\setminus \Omega_1)\\
+\vdots\\
+\subset R\Delta\setminus \Omega_2 \text{ or } \Delta\setminus \Omega_1
+\end{gather}</script>
+
+<p>In the case where <script type="math/tex">g_m\in \Gamma_1</script> we simply observe that <script type="math/tex">\Gamma_1</script> preserves <script type="math/tex">\Omega_1</script> and then apply the above argument to <script type="math/tex">g_1\cdots g_{m-1}</script>. As a result <script type="math/tex">Dev</script> is injective. Since developing maps are in general local embeddings we conclude that <script type="math/tex">Dev</script> is an embedding onto its image, which we now show is a convex set. The image of <script type="math/tex">Dev</script> can be constructed as an increasing union of tiles. It is easily verifed that the connected union on tiles has locally convex boundary and is thus convex. Therefore the image of <script type="math/tex">Dev</script> is an increasing union of convex sets and is thus convex. To see that the image is proper we observe that the above ping-pong argument actually shows that</p>
+
+<script type="math/tex; mode=display">Dev(\tilde \Sigma)\subset \Omega_1\cup \bigcup_{g\in \Gamma_1/\langle\gamma\rangle} gR\Delta,</script>
+
+<p>and this last set is disjoing from any hyperplane passing through <script type="math/tex">[e_2]</script> and disjoint from <script type="math/tex">\Delta\cup R\Delta.</script> This completes the proof of the theorem.</p>
+
+<p>While the above theorem tells us that we can convexly glue properly convex surfaces along principal boundary components provided their boundary geometry matches, it does not tell us in how many ways this can be done. It turns out such a gluing can be done in 2 dimensions worth of ways. More concretely, since <script type="math/tex">\pi_1\partial</script> is conjugate into <script type="math/tex">D^+</script> we see that <script type="math/tex">\pi_1\partial</script> is centralized by a fixed conjugate of any element of <script type="math/tex">D^+</script>. Given such a centralizing element <script type="math/tex">\alpha</script> we apply <script type="math/tex">\alpha</script> to <script type="math/tex">\Omega_2</script> in our construction of the developing map. Different choices of <script type="math/tex">\alpha</script> give rise distinct marked convex projective structures. Informally, the geometries of <script type="math/tex">\Sigma_1</script> and <script type="math/tex">\Sigma_2</script> are indepentent of <script type="math/tex">\alpha</script>. What <script type="math/tex">\alpha</script> is affecting is the way that these structures are glued together.</p>
+
+<p>In the next lecture we will conclude our discussion of convex projective structures on surfaces by describing the space of convex projective structrures with principal boundary on a pair of pants.</p>
+
+
+	<p><a href="/~ballas/260p/lectures/lecture11/"><b>Previous Post:</b> Lecture 11: Projective Structures on Surfaces</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture13/"><b>Next Post:</b> Lecture 13: Projective Structures on Surfaces Part III</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 1: Introduction to Projective Geometry</title>
+  <meta name="description" content="Let  be a finite dimensional vector space over a field .">
+
+  <link rel="stylesheet" href="/~sballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.ucsb.edu/~sballas/260p/lectures/lecture1/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.ucsb.edu/~sballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~sballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~sballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~sballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 1: Introduction to Projective Geometry</h1>
+    <p class="post-meta">Mar 29, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Let <script type="math/tex">V</script> be a finite dimensional vector space over a field <script type="math/tex">\mathbb{F}</script>.</p>
+
+<p>The <em>projectiviziation</em> of <script type="math/tex"></script>V<script type="math/tex"></script> is 
+\[\mathbb{P}(V) = (V\backslash {0})/\mathbb{F}^\times = (V\backslash{0})/\sim\]
+where we say <script type="math/tex">v \sim w</script> if <script type="math/tex">w = \lambda v</script> for some nonzero <script type="math/tex">\lambda \in \mathbb{F}</script>.</p>
+
+<p>If <script type="math/tex">V = \mathbb{F}^{n+1}</script> then we write <script type="math/tex">\mathbb{P}(\mathbb{F}^{n+1}) = \mathbb{F} P^n</script>.</p>
+
+<p>One way to understand the projectivization of <script type="math/tex">V</script> is as the space of 
+1-dimensional subspaces of <script type="math/tex">V</script>.</p>
+
+<p>If we take <script type="math/tex">\mathbb{F}=\mathbb{R}</script> or <script type="math/tex">\mathbb{F} = \mathbb{C}</script>, then we can consider <script type="math/tex">\mathbb{F} P^1</script> to be the field
+<script type="math/tex">\mathbb{F}</script> together with a point at infinity via the following map:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\theta: [(x_0,x_1)] \mapsto \begin{cases}
+\frac{x_0}{x_1} & x_1 \neq 0 \\
+ \infty & x_1 = 0\end{cases} %]]></script>
+
+<p>A transformation <script type="math/tex">T \in GL(V)</script> sends 1-dimensional subspaces to 1-dimensional 
+subspaces. Thus <script type="math/tex">T</script> induces a map <script type="math/tex">[T]:\mathbb{P}(V) \to \mathbb{P}(V)</script>, which we call a 
+<em>projective transformation</em>.</p>
+
+<p>We now consider the case of <script type="math/tex">\mathbb{F} P^1</script> further. Suppose <script type="math/tex">T\in GL(\mathbb{F}^2)</script>, 
+and write 
+<script type="math/tex">% <![CDATA[
+T = \begin{pmatrix}
+a&b \\ c&d
+\end{pmatrix} %]]></script>.
+Then
+\[[T]\left[\left(\begin{array}{c} x_0, \ x_1 \ \end{array}\right)\right]
+= \left[\left(\begin{array}{c} ax_0 + bx_1, \ cx_0 + dx_1 \ \end{array}\right)\right]. \]</p>
+
+<p>Applying the map <script type="math/tex">\theta</script> above, we find <script type="math/tex">\theta([(x_0,x_1)]) = x_0/x_1 = y</script> 
+and that <script type="math/tex">\theta([T][(x_0,x_1)]) = (ay+b)/(cy+d)</script>. We conclude that the 
+group of projective transformations is isomorphic to the Mobius transformations.</p>
+
+<p>We now note that <script type="math/tex">T \in GL(V)</script> acts trivially on <script type="math/tex">\mathbb{P}(V)</script> if and only if 
+<script type="math/tex">T</script> fixes every 1-dimensional subspace of <script type="math/tex">V</script>, which occurs if and only if 
+<script type="math/tex">T = \lambda \cdot \text{Id}</script> for some nonzero <script type="math/tex">\lambda</script>.</p>
+
+<p><strong>Definition:</strong>
+The <em>projective general linear group</em> is 
+\[PGL(V) = GL(V)/{\lambda \cdot \text{Id} : \lambda \neq 0}.\]</p>
+
+<p><em>Exercise:</em> The set of all nonzero multiples of the identity is the center of 
+<script type="math/tex">GL(V)</script>.</p>
+
+<p><strong>Definition:</strong>
+If <script type="math/tex">U \neq 0</script> is a vector subspace of <script type="math/tex">V</script>, then <script type="math/tex">\mathbb{P}(U)</script> is a <em>projective 
+subspace</em> of <script type="math/tex">\mathbb{P}(V)</script>.</p>
+
+<ul>
+  <li>If <script type="math/tex">\dim U = 1</script> then <script type="math/tex">\mathbb{P}(U)</script> is one point.</li>
+  <li>If <script type="math/tex">\dim U = 2</script> then <script type="math/tex">\mathbb{P}(U)</script> is a <em>projective line</em>.</li>
+  <li>If <script type="math/tex">\dim U = \dim V - 1</script> then <script type="math/tex">\mathbb{P}(U)</script> is a <em>projective hyperplane</em>.</li>
+</ul>
+
+<p>The following definition is necessary to define a projective basis.</p>
+
+<p><strong>Definition:</strong>
+A set of points <script type="math/tex">S=\{p_i : I\in I\}</script> in <script type="math/tex">\mathbb{P}(V)</script> is in <em>general position</em> 
+if for all <script type="math/tex">k \leq \dim(V)</script>, every subset of <script type="math/tex">k</script> points in <script type="math/tex">S</script> is not contained 
+in a projective  subspace of dimension <script type="math/tex">k-2</script>.</p>
+
+<p>So for example, any subset of 3 points of <script type="math/tex">S</script> must not lie on a projective line.</p>
+
+<p>A <em>projective basis</em> of <script type="math/tex">\mathbb{F} P^n</script> is a set of <script type="math/tex">n+2</script> points in general position.</p>
+
+<p><strong>Theorem:</strong>
+There exists a unique projective transformation taking one ordered projective 
+basis to another.</p>
+
+<p><em>Proof:</em>
+Fix a basis <script type="math/tex">v_1,\ldots,v_n</script> of <script type="math/tex">V</script>. Then 
+<script type="math/tex">[v_1],[v_2],\ldots,[v_n],[v_1 + \cdots + v_n] = [v_{n+1}]</script> is a projective 
+basis for <script type="math/tex">\mathbb{P}(V)</script>.  Given another projective basis <script type="math/tex">[w_1],\ldots,[w_{n+1}]</script>, 
+it will suffice to show that there is a unique projective transformation taking this 
+basis to our chosen one.</p>
+
+<p>Now, since <script type="math/tex">w_1,\ldots,w_n</script> is a basis for <script type="math/tex">V</script>, there exists a vector 
+space isomorphism <script type="math/tex">T</script> sending <script type="math/tex">v_i</script> to <script type="math/tex">w_i</script> for all <script type="math/tex">1\le i \le n</script>. Note 
+that <script type="math/tex">[T]</script> is not the unique transformation taking <script type="math/tex">[v_i]</script> to <script type="math/tex">[w_i]</script> because of 
+scaling.</p>
+
+<p>Now we replace <script type="math/tex">w_i</script> by <script type="math/tex">T^{-1} w_i</script>. It remains to show that there exists 
+a projective transformation that fixes each <script type="math/tex">[v_i]</script> for <script type="math/tex">i\le n</script> and sends 
+<script type="math/tex">[v_{n+1}]</script> to <script type="math/tex">[w_{n+1}]</script>.</p>
+
+<p>We know <script type="math/tex">[w_{n+1}] = [\lambda_1 v_1 + \lambda_2 v_2 + \cdots  + \lambda_n v_n]</script>,
+and we know that <script type="math/tex">\lambda_i \neq 0</script> for all <script type="math/tex">i</script> because our vectors are in general 
+position. Thus the diagonal matrix with diagonal entries <script type="math/tex">\lambda_i</script> is the desired 
+transformation.</p>
+
+<p>To show uniqueness, we can suppose we have 2 transformations taking one basis 
+to another, then compose one with the inverse of another.  The result will be a 
+projective transformation that fixes a projective basis. So it will suffice to show 
+that if a projective transformation fixes every point in a projective basis, then 
+it is <script type="math/tex">[\lambda \cdot \text{Id}] = [\text{Id}]</script>.</p>
+
+<p>So suppose that <script type="math/tex">[T e_i] = [e_i]</script> for all <script type="math/tex">i\le n</script> and that 
+<script type="math/tex">[T(e_1 + \cdots + e_n)] = [e_1  + \cdots + e_n]</script>.  So <script type="math/tex">Te_i = \lambda_i e_i</script>
+for all <script type="math/tex">i\le n</script>.  Then since 
+<script type="math/tex">[\lambda_1 e_1 + \lambda_2 e_2 + \cdots + \lambda_n e_n] = [e_1 + \cdots + e_n]</script>
+there is some scalar <script type="math/tex">\lambda</script> with <script type="math/tex">\lambda_i = \lambda</script> for all <script type="math/tex">i</script>. So 
+<script type="math/tex">T = \lambda \cdot \text{Id}</script> as desired.</p>
+
+<p>One way to understand <script type="math/tex">\mathbb{R} P^n</script> is as the union of an affine patch <script type="math/tex">\mathbb{R}^n</script> with a 
+projective hyperplane <script type="math/tex">\mathbb{R} P^{n-1}</script> at infinity.  This conception seems to suggest 
+that there are two distinct kinds of points in projective space, but there is no 
+actual difference.</p>
+
+<p><strong>Definition:</strong>
+An <em>affine patch</em> <script type="math/tex">\mathbb{A}^n</script> in <script type="math/tex">\mathbb{R} P^n</script> is the complement of a hyperplane <script type="math/tex">H</script>.</p>
+
+<p>Since you can find a projective transformation sending any hyperplane to any 
+other hyperplane, you can also send any affine patch to any other affine patch.</p>
+
+<p><strong>Definition:</strong>
+Let <script type="math/tex">V</script> be a vector space over <script type="math/tex">\mathbb{F}</script>. A map <script type="math/tex">\alpha:V\to V</script> is an 
+<em>affine map</em> if there exist a linear map <script type="math/tex">\beta:V\to V</script> and 
+a vector <script type="math/tex">v_0 \in V</script> such that <script type="math/tex">\alpha(x) = v_0 + \beta(x)</script> for all <script type="math/tex">x\in V</script>.</p>
+
+<p>In other words, an affine map is a linear map plus a constant vector.</p>
+
+<p><strong>Definition:</strong>
+An <em>affine geometry</em> is a pair <script type="math/tex">(V, \text{Aff}(V))</script> where <script type="math/tex">V</script> is a vector space 
+and <script type="math/tex">\text{Aff}(V)</script> is the group of affine isomorphisms of <script type="math/tex">V</script>.</p>
+
+<p><strong>Proposition:</strong>
+<script type="math/tex">PGL(\mathbb{R} P^n \setminus \mathbb{R} P^{n-1}) \cong \text{Aff}(\mathbb{A}^n)</script>.</p>
+
+<p>Before proving the proposition we give some useful definitions.</p>
+
+<p><strong>Definition:</strong>
+Let <script type="math/tex">V</script> be a real vector space.  Then the <em>positive projective space</em> over <script type="math/tex">V</script> 
+is <script type="math/tex">\mathbb{S}(V) = (V\setminus 0) /( v \cong \lambda v): \lambda > 0</script>.</p>
+
+<p>So, <script type="math/tex">\mathbb{S}(\mathbb{R}^{n+1}) = S^n</script> and <script type="math/tex">\mathbb{P}(V)</script> is equal to 
+<script type="math/tex">\mathbb{S}(V) /( [v] \cong [-v])</script>.</p>
+
+<p><strong>Definition:</strong>
+<script type="math/tex">PGL^+ (V) = GL(V)/ \lambda \cdot \text{Id} : \lambda > 0</script>.</p>
+
+<p>Now we prove the proposition in the case of 2 projective dimensions.  When we make 
+<script type="math/tex">\mathbb{R}P^2</script> out of equivalence classes of Euclidean 3-space, we can represent 
+any equivalence classes not in the <script type="math/tex">xy</script> plane by points in the plane <script type="math/tex">z=1</script> by 
+writing <script type="math/tex">[x_0:x_1:x_2] = [x_0/x_2:x_1/x_2: 1]</script>.  The points not accounted for here are 
+of the form <script type="math/tex">[x_0:x_1:0]</script> which may be considered a copy of <script type="math/tex">\mathbb{R} P^1</script>.  So the 
+points in the <script type="math/tex">z=1</script> plane are a copy of <script type="math/tex">\mathbb{A}^2</script>.</p>
+
+<p>Now if we consider a transformation in <script type="math/tex">PGL(\mathbb{R} P^3 - \mathbb{R} P^{2})</script>, we need 
+a transformation that preserves <script type="math/tex">\langle e_1,e_2 \rangle</script>. So our transformation <script type="math/tex">[T]</script> may 
+be written</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+T = \begin{pmatrix}
+a & b & e \\
+c & d & f \\
+0 & 0 & 1 \end{pmatrix} %]]></script>
+
+<p>Where scaling allows us to set the bottom corner entry to 1.  Then <script type="math/tex">T</script> applied to an 
+arbitrary <script type="math/tex">[x_0:x_1:1]</script> will be a vector with 1 in the first position and the second two 
+being an arbitrary affine transformation of <script type="math/tex">(x_0,x_1)</script>.</p>
+
+	<p><a href="/~sballas/260p/lectures/tutorial/"><b>Previous Post:</b> Blogging Tutorial</a></p>
+	<br>
+	<p> <a href="/~sballas/260p/lectures/lecture2/"><b>Next Post:</b> Lecture 2: Introduction to Projective Geometry Part II</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://math.ucsb.edu/~sballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

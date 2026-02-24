@@ -1,0 +1,4 @@
+AuthType Basic 
+AuthUserFile /home/m1/ballas/public_html/tenure/.htpasswd
+AuthName ballas
+Require valid-user

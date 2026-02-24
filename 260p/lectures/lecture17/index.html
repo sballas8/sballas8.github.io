@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 17: Geometric Transitions</title>
+  <meta name="description" content="###Geometric Transitions">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture17/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 17: Geometric Transitions</h1>
+    <p class="post-meta">May 24, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>###Geometric Transitions</p>
+
+<p>Let’s start by considering the behavior of triangles in the hyperbolic plane.  While large triangles differ greatly from being Euclidean (they are thin), the smaller the triangle, the more approximately Euclidean it looks.  The same kind of story plays out on the sphere: large triangles “bow outwards” but small triangles are approximately Euclidean.</p>
+
+<p>In fact, if we were to take a triangle in the hyperbolic plane and shrink it, it would appear to be converging onto a Euclidean triangle, but would be shrinking in size so fast that in the limit it would no longer be a triangle, but a point.  However, if we looked at our sequence of shrinking triangles through higher and higher powered microscopes (so they appeared to remain approximately the same size) we would observe our hyperbolic triangles get progressively thicker and limit onto a Euclidean one.</p>
+
+<p>However, if we actually want to carry out the above scenario, we can’t achieve our magnification by a simple rescaling (as there are no similarities in the hyperbolic plane other than isometries), so we will in fact need to construct and utilize different copies of the hyperbolic plane within projective 2-space, one for each triangle to live in.</p>
+
+<p>The idea that our above observations are hinting at is that Euclidean geometry reached by the limit of a family of different hyperbolic spaces (and likewise for spherical geometry).  In fact, we will see that Euclidean geometry is a transitional geometry lying between hyperbolic and spherical.  But to do this, we first need some more precise definitions.</p>
+
+<p>A <script type="math/tex">(G,X)</script>-structure is a pair consisting of a Lie group <script type="math/tex">G</script>, a smooth manifold <script type="math/tex">X</script> equipped with a transitive analytic <script type="math/tex">G</script>-action.  A geometry <script type="math/tex">(H,Y)</script> is said to be a subgeometry of <script type="math/tex">(G,X)</script> if <script type="math/tex">H\subset G</script> is a closed subgroup and <script type="math/tex">Y\subset X</script> is an open submanifold.</p>
+
+<p>For example, hyperbolic geometry can be realized itself as <script type="math/tex">(\textrm{PSO}(n,1),\mathbb{H}^n)</script> where here <script type="math/tex">\mathbb{H}^n</script> is a unit <script type="math/tex">n</script>-ball in <script type="math/tex">\mathbb{R}P^n</script> and the action of <script type="math/tex">\textrm{PSO}(n,1)</script> is by projective transformations.  This setup as stated makes it clear that hyperbolic geometry is a subgeometry of projective geometry <script type="math/tex">(\textrm{PGL}(n+1,\mathbb{R}),\mathbb{R}P^n)</script>.  Likewise, Euclidean geometry <script type="math/tex">(\textrm{Isom}(\mathbb{E}^n),\mathbb{E}^n)</script> and elliptic geometry <script type="math/tex">(\textrm{PO}(n+1),\mathbb{R}P^n)</script> are both subgeometries of Projective Geometry.</p>
+
+<p>So, clearly projective geometry is a reasonable spot to try and make sense of the claim that Euclidean geometry is a transitional geometry between hyperbolic and spherical (ok, well really elliptic…).  But to do so we still need to make sense of what it means for a sequence of subgeometries to converge to a geometry.  Naively we would expect this to mean something like “<script type="math/tex">(G_n,X_n)\to (G,X)</script> in <script type="math/tex">(\tilde{G},\tilde{X})</script> if <script type="math/tex">G_n\to G</script> and <script type="math/tex">X_n\to X</script>,” and make sense of this we need to understand how closed subgroupups <script type="math/tex">G_n\subset\tilde{G}</script> and subsets <script type="math/tex">X_n\subset\tilde{X}</script> converge.</p>
+
+<p>The important case is that of the groups, and here we will mean convergence in the Chabuty topology, which is a topology one can put on the closed subgroups of a Lie group making it into a compact space.  The (kind of technical) definition of this topology is given by writing down a basis as follows.  Let <script type="math/tex">G</script> be a Lie group, and <script type="math/tex">C(G)</script> the set of closed subgroups of <script type="math/tex">G</script>.  Let <script type="math/tex">H</script> be a closed subgroup, <script type="math/tex">K\subset G</script> be compact, and <script type="math/tex">U</script> an open neighborhood of the identity in <script type="math/tex">G</script>.  Then the basic open sets for our topology can be described as <script type="math/tex">N_{K,U}(H)=\{D\in C(G): D\cap K\subset HU,\; H\cap K\subset DU\}</script>.  Given this topology, we have <script type="math/tex">H_i\to H</script> iff for all <script type="math/tex">x\in H</script> there is a sequence <script type="math/tex">x_i\in H_i</script> such that <script type="math/tex">x_i\to x</script>, and if <script type="math/tex">x_i\in H_i</script> is a sequence which converges to <script type="math/tex">x\in G</script> then <script type="math/tex">x\in H</script>.</p>
+
+<p>For example, if we let <script type="math/tex">H_n</script> be the subgroup of <script type="math/tex">\mathbb{R}^2</script> generated by <script type="math/tex">e_1</script> and <script type="math/tex">ne_2</script>, <script type="math/tex">H_n\to \langle e_1\rangle</script>.  However things aren’t always this simple: if <script type="math/tex">K_n=\langle e_1, \frac{1}{n}e_2\rangle</script> then in fact (maybe surprisingly at first ) <script type="math/tex">K_n\to \mathbb{Z}e_1\oplus \mathbb{R}e_2</script>.</p>
+
+<p>Before returning to the idea of a transitional or limit geometry, lets look quickly at two more examples that will be relevant.  Let <script type="math/tex">% <![CDATA[
+A_0=\left\{\left(\begin{array}{cc}e^t& 0\\ 0&e^{-t}\end{array}\right): t\in \mathbb{R}\right \} %]]></script></p>
+
+<p>and let <script type="math/tex">A_n</script> be the subgroup of <script type="math/tex">\textrm{SL}(2,\mathbb{R})</script> conjugate to <script type="math/tex">A_0</script> by <script type="math/tex">% <![CDATA[
+\left(\begin{array}{cc}1&n\\0&1\end{array}\right) %]]></script>.  Then if <script type="math/tex">% <![CDATA[
+A=\left\{\left(\begin{array}{cc}1&s\\0&1\end{array}\right):s\in \mathbb{R}\right\} %]]></script>, we have <script type="math/tex">A_n\to A</script> in the Chabuty topology.  This example shows that a sequence of groups of hyperbolic isometries can converge to a group generated parabolics in the limit.</p>
+
+<p>One further example is given by the following sequence:  if <script type="math/tex">% <![CDATA[
+R_0=\left\{\left(\begin{array}{cc}\cos t &\sin t\\-\sin t &\cos t\end{array}\right):t\in\mathbb{R}\right\} %]]></script> and <script type="math/tex">R_n</script> is the congugate of <script type="math/tex">R_0</script> by <script type="math/tex">% <![CDATA[
+\left(\begin{array}{cc}n&0\\0&\frac{1}{n}\end{array}\right) %]]></script>.   Then <script type="math/tex">A_n\to A</script> where <script type="math/tex">A</script> is the group <script type="math/tex">% <![CDATA[
+A=\left\{\left(\begin{array}{cc}1&s\\0&1\end{array}\right):s\in\mathbb{R}\right\} %]]></script>.  This example shows a sequence of groups of ellptics can also converge to a group of parabolics.</p>
+
+<p>We are now in a good position to define what precisely we mean by a limit of geometric structures: a sequence <script type="math/tex">(H_n,Y_n)</script> of subgeometries of <script type="math/tex">(G,X)</script> is said to converge to the geometry <script type="math/tex">(L,Z)</script> if <script type="math/tex">H_n\to L</script> if <script type="math/tex">z\in Z</script> then <script type="math/tex">z\in Y_n</script> for all sufficiently large <script type="math/tex">n</script>.  Because the two important examples we gave above had to to with sequence of groups that are conjugate to each other, we further will say that <script type="math/tex">(L,Z)</script> is a conjugacy limit of <script type="math/tex">(H_n, Y_n)</script> if there is some sequence <script type="math/tex">g_n\in G</script> such that <script type="math/tex">(g_nHg_n^{-1}, g_nY)\to (L,Z)</script> in the sense above.</p>
+
+<p>This lets us make precise our claim that Euclidean geometry is transitional between hyperbolic and elliptic.  Namely, we can say that <script type="math/tex">(\textrm{Isom}(\mathbb{E}^n, \mathbb{E}^n)</script> is a conjugacy limit of both <script type="math/tex">(\textrm{PSO}(n,1), \mathbb{H}^n)</script> and <script type="math/tex">(\textrm{PO}(n+1),\mathbb{R}P^n)</script>.  The jist of the argument is as follows: consider the family of quadratic forms <script type="math/tex">B_t=t(x_1^2+x_2^2+\cdots + x_n^2)-x_{n+1}^2</script>.  Then if <script type="math/tex">% <![CDATA[
+t<0 %]]></script>, <script type="math/tex">B_t</script> has signature <script type="math/tex">(n,1)</script>, if <script type="math/tex">t=0</script> the form is degenerate and if <script type="math/tex">t>0</script> it has signature <script type="math/tex">(n+1,0)</script>.  For the case <script type="math/tex">t>0</script> we can define <script type="math/tex">X_t\subset \mathbb{R}P^n</script> to be <script type="math/tex">% <![CDATA[
+X_t=\{[v]\in\mathbb{R}P^n: v^TB_tV<0\} %]]></script> and <script type="math/tex">G_t=\mathrm{PSO}(B_t)</script>.  Then clearly when <script type="math/tex">t=1</script> we have <script type="math/tex">(G_1,X_1)=(\textrm{PSO}(n,1),\mathbb{H}^n)</script> and if we let <script type="math/tex">C_t</script> be the diagonal matrix with the first <script type="math/tex">n</script> entries equal to <script type="math/tex">\sqrt{t}</script> and the last equal to <script type="math/tex">1</script>, we have <script type="math/tex">C_tX_t=X_1</script> and <script type="math/tex">C_tG_tC_t^{-1}=\textrm{PSO}(n,1)</script>.  Thus to show that Euclidean geometry is a conjugacy limit of hyperbolic geometry, it suffices to understand what happens to <script type="math/tex">G_t</script> as <script type="math/tex">t\to 0</script>.</p>
+
+<p>To do so, we will study their Lie algebras, and show that as <script type="math/tex">t\to 0</script> the Lie algebra of <script type="math/tex">G_t</script> goes to the Lie algebra of <script type="math/tex">\textrm{Isom}(\mathbb{E}^n)</script>. After a series of simple computations we have the following description of the Lie algebra <script type="math/tex">% <![CDATA[
+\mathfrak{pso}(B_t)=\left\{\left(\begin{array}{cc}M&\frac{v}{\sqrt{t}}\\\sqrt{t}v^T&0\end{array}\right): M\in\mathfrak{so}(n), v\in\mathbb{R}^n\right\} %]]></script>.  Then as <script type="math/tex">t\to 0</script> this becomes</p>
+
+<p><script type="math/tex">% <![CDATA[
+\left\{\left(\begin{array}{cc}M&w\\0 &0\end{array}\right): M\in\mathfrak{so}(n),w\in\mathbb{R}^n\right\} %]]></script> which is the Lie algebra to the group of Euclidean isometries, as claimed.</p>
+
+<p>A similar story can be told for <script type="math/tex">t>0</script>, and so we have Euclidean geometry arising as a conjugacy limit of both Hyperbolic and Elliptic.</p>
+
+	<p><a href="/~ballas/260p/lectures/lecture16/"><b>Previous Post:</b> Lecture 16: Openness of Deformation Space</a></p>
+	<br>
+	<p> <a href="/~ballas/260p/lectures/lecture18/"><b>Next Post:</b> Lecture 18: Geometric Transitions Part II</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

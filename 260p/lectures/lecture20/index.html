@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 20: Closedness Part II</title>
+  <meta name="description" content="Lemma (Box estimate).  Let  and , where  for each  and  is identified with an affine patch in .  Suppose  and  are given such that  , and let .  Then">
+
+  <link rel="stylesheet" href="/~ballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.fsu.edu/~ballas/260p/lectures/lecture20/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.fsu.edu/~ballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~ballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~ballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~ballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 20: Closedness Part II</h1>
+    <p class="post-meta">Jun 2, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p><strong>Lemma</strong> (Box estimate)<strong>.</strong>  <em>Let <script type="math/tex">B = \prod^n_{i = 1} [-\lambda_i, \lambda_i] \subset \mathbb R^n</script> and <script type="math/tex">\lambda_{n + 1} = 1</script>, where <script type="math/tex">\lambda_i > 0</script> for each <script type="math/tex">i</script> and <script type="math/tex">\mathbb R^n</script> is identified with an affine patch in <script type="math/tex">\mathbb R\mathrm P^n</script>.  Suppose <script type="math/tex">A = (A_{ij}) \in \mathrm{SL}_\pm(n + 1; \mathbb R)</script> and <script type="math/tex">\kappa > 1</script> are given such that  <script type="math/tex">[A](B) \subset \kappa \cdot B</script>, and let <script type="math/tex">\alpha = A_{n + 1, n + 1}</script>.  Then</em></p>
+
+<script type="math/tex; mode=display">|A_{ij}| \leq 2 |\alpha| \kappa \frac{\lambda_i}{\lambda_j} \quad \text{for all }1 \leq i, j \leq n + 1.</script>
+
+<p><em>Proof.</em>  Let <script type="math/tex">\{e_1, \dots, e_{n + 1}\}</script> be the standard basis for <script type="math/tex">\mathbb R^{n + 1}</script> so that <script type="math/tex">\{e_1, \dots, e_n\}</script> is the standard basis for <script type="math/tex">\mathbb R^n \subset \mathbb R^{n + 1}</script>.  If</p>
+
+<script type="math/tex; mode=display">p = (x_1, \dots, x_n) = x_1 e_1 + \dots + x_n e_n = [x_1 e_1 + \dotsb + x_n e_n + e_{n + 1}] \in \mathbb R^n,</script>
+
+<p>then</p>
+
+<script type="math/tex; mode=display">p \in B \Longleftrightarrow |x_i| \leq \lambda_i \quad \text{for each } 1 \leq i \leq n.</script>
+
+<p><em>Step 1:</em>  We prove for the last column of <script type="math/tex">A</script>.</p>
+
+<p>Observe that <script type="math/tex">[e_{n + 1}] = 0 \in B</script>.  The last column of <script type="math/tex">A</script> is <script type="math/tex">A e_{n + 1}</script>, and</p>
+
+<script type="math/tex; mode=display">[A e_{n + 1}] = [A_{1, n + 1} e_1 + \dotsb + A_{n, n + 1} e_n + \alpha e_{n + 1}] \in \kappa \cdot B,</script>
+
+<p>so <script type="math/tex">\alpha \neq 0</script>.  Scaling by <script type="math/tex">\alpha</script> gives</p>
+
+<script type="math/tex; mode=display">\left| \frac{A_{i, n + 1}}{\alpha} \right| \leq \kappa \lambda_i,</script>
+
+<p>so that</p>
+
+<script type="math/tex; mode=display">|A_{i, n + 1}| \leq |\alpha| \kappa \lambda_i \leq 2 |\alpha| \kappa \frac{\lambda_i}{\lambda_{n + 1}}</script>
+
+<p>for each <script type="math/tex">1 \leq i \leq n + 1</script>, since <script type="math/tex">\lambda_{n + 1} = 1</script>.</p>
+
+<p><em>Step 2:</em>  We prove for the last row of <script type="math/tex">A</script>.</p>
+
+<p>Let <script type="math/tex">1 \leq j \leq n</script>, and let <script type="math/tex">p</script> be a point in <script type="math/tex">B</script> on the line through <script type="math/tex">[e_{n + 1}]</script> in the direction of <script type="math/tex">e_j</script>.  Then</p>
+
+<script type="math/tex; mode=display">p = [t e_j + e_{n + 1}] \quad \text{for some } |t| \leq \lambda_j.</script>
+
+<p>We have</p>
+
+<script type="math/tex; mode=display">[A] p = [A(t e_j + e_{n + 1})] \in \kappa \cdot B,</script>
+
+<p>so the coefficient of <script type="math/tex">e_{n + 1}</script> in <script type="math/tex">[A] p</script> is nonzero.  It follows that</p>
+
+<script type="math/tex; mode=display">t A_{n + 1, j} + \alpha \neq 0 \quad \text{for all } |t| \leq \lambda_j,</script>
+
+<p>whence</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+|A_{n + 1, j}| < \frac{|\alpha|}{\lambda_j} < 2|\alpha| \kappa \frac{\lambda_{n + 1}}{\lambda_j} %]]></script>
+
+<p>for each <script type="math/tex">1 \leq j \leq n + 1</script>, since <script type="math/tex">\lambda_{n + 1} = 1</script>.</p>
+
+<p><em>Step 3:</em>  We prove for the remaining entries of <script type="math/tex">A</script>.</p>
+
+<p>Let <script type="math/tex">1 \leq i, j \leq n</script>, and let <script type="math/tex">{\mid}t{\mid} \leq \lambda_i</script>.  Observe that <script type="math/tex">A (t e_j + e_{n + 1})</script> is <script type="math/tex">t</script> times the <script type="math/tex">j</script>th column of <script type="math/tex">A</script> plus the <script type="math/tex">(n + 1)</script>st column of <script type="math/tex">A</script>.  Write</p>
+
+<script type="math/tex; mode=display">[p_1 : \dots : p_{n + 1}] = [A(t e_j + e_{n + 1})] \in \kappa \cdot B.</script>
+
+<p>Then</p>
+
+<script type="math/tex; mode=display">\left| \frac{p_j}{p_{n + 1}} \right| = \left| \frac{t A_{ji} + A_{j, n + 1}}{t A_{n + 1, i} + \alpha} \right| \leq \kappa \lambda_j.</script>
+
+<p>Note that the denominator above is never zero, so that <script type="math/tex">% <![CDATA[
+{\mid}t A_{n + 1, j}{\mid} < {\mid}\alpha{\mid} %]]></script>, and hence <script type="math/tex">{\mid}A_{n + 1, j}{\mid} \leq {\mid}\alpha{\mid} / \lambda_j</script>.  Therefore,</p>
+
+<script type="math/tex; mode=display">|t A_{n + 1, i} + \alpha| \leq 2|\alpha|,</script>
+
+<p>so that</p>
+
+<script type="math/tex; mode=display">|t A_{ji} + A_{j, n + 1}| \leq 2|\alpha| \kappa \lambda_j.</script>
+
+<p>Now choose the sign of <script type="math/tex">t \in [-\lambda_i, \lambda_i]</script> so that <script type="math/tex">t A_{ji}</script> and <script type="math/tex">A_{j, n + 1}</script> have the same sign.  Then</p>
+
+<script type="math/tex; mode=display">\lambda_i |A_{ji}| \leq 2|\alpha|\kappa \lambda_j.</script>
+
+<p>Dividing by <script type="math/tex">\lambda_i</script> and switching <script type="math/tex">i</script> and <script type="math/tex">j</script> completes the proof.  <script type="math/tex">\square</script></p>
+
+<p><strong>Theorem.</strong>  <em>Let <script type="math/tex">M</script> be a closed properly convex real projective <script type="math/tex">k</script>-dimensional manifold.  Suppose that <script type="math/tex">\pi_1 M</script> has no infinite normal nilpotent subgroup.  Then <script type="math/tex">\chi_c(M)</script> is closed in <script type="math/tex">\chi(M)</script>.</em></p>
+
+<p><em>Remark 1.</em>  If representations <script type="math/tex">\rho, \rho' : G \to \mathrm{GL}(k; \mathbb R)</script> have the same character and <script type="math/tex">\rho</script> is irreducible, then <script type="math/tex">\rho</script> and <script type="math/tex">\rho'</script> are conjugate.</p>
+
+<p><em>Remark 2.</em>  If <script type="math/tex">\pi_1 M</script> is word-hyperbolic (i.e., it’s finitely generated and its Cayley graph has <script type="math/tex">\delta</script>-thin triangles for some <script type="math/tex">\delta > 0</script>) and <script type="math/tex">\sigma \in \mathrm{Rep}_c(M)</script>, then <script type="math/tex">\sigma</script> is irreducible.</p>
+
+<p><em>Proof of theorem.</em>  Let <script type="math/tex">\rho_n \in \mathrm{Rep}_c(M)</script> be a sequence of holonomies of properly convex projective structures on <script type="math/tex">M_n = \Omega_n / \Gamma_n</script>, where <script type="math/tex">\Gamma_n = \rho_n(\pi_1 M)</script>, and let <script type="math/tex">\rho_n \to \rho_\infty</script>.  We claim there is a <script type="math/tex">\sigma \in \mathrm{Rep}_c(M)</script> with the same character as <script type="math/tex">\rho_\infty</script>.</p>
+
+<p>Suppose that such a <script type="math/tex">\sigma</script> exists.  We show there exists a sequence <script type="math/tex">A_n \in \mathrm{SO}(k + 1)</script> such that the sequence <script type="math/tex">\Omega'_n = A_n(\Omega_n)</script> converges in the Hausdorff topology to a properly convex domain <script type="math/tex">\Omega'_\infty</script>, and the sequence <script type="math/tex">\rho'_n = A_n \rho_n A^{-1}_n</script> subconverges to <script type="math/tex">\sigma</script>.  The <script type="math/tex">\rho'_n</script>’s are holonomies of properly convex projective structures and hence discrete and faithful.  Since <script type="math/tex">\pi_1 M</script> has no infinite normal nilpotent subgroup, <script type="math/tex">\sigma</script> is discrete and faithful by Chuckrow’s theorem.</p>
+
+<p>Now <script type="math/tex">M'_\infty = \Omega'_\infty / \sigma(\pi_1 M)</script> is a properly convex projective manifold, and <script type="math/tex">M'_\infty</script> is diffeomorphic to <script type="math/tex">M</script> because <script type="math/tex">M_n</script> Gromov–Hausdorff converges to <script type="math/tex">M'_\infty</script>, so that <script type="math/tex">M_n</script> is diffeomorphic to <script type="math/tex">M'_\infty</script> for large <script type="math/tex">n</script>.  <script type="math/tex">\square</script></p>
+
+<p><em>Proof of claim.</em>  By performing a rotation if necessary, we may assume without loss of generality that for each <script type="math/tex">n</script>, there exists a domain <script type="math/tex">\Omega'_n = A_n(\Omega_n)</script>, with <script type="math/tex">A_n \in \mathrm{SO}(k + 1)</script>, and a center for which there is a new domain <script type="math/tex">\Omega''_n \subset \mathbb R^k \subset \mathbb R\mathrm P^k</script> and a box <script type="math/tex">B_n</script> such that we have the following diagram:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{matrix} B_1 & \subseteq & \Omega'_n & \subseteq & \kappa \cdot B_1 \\
+                 \downarrow & & \downarrow & & \downarrow \\
+                 B_n & \subseteq & \Omega''_n & \subseteq & \kappa \cdot B_n \end{matrix} %]]></script>
+
+<p>Here <script type="math/tex">B_1</script> is the unit box, <script type="math/tex">\kappa</script> depends only on the dimension <script type="math/tex">k</script>,</p>
+
+<script type="math/tex; mode=display">B_n = \prod^k_{i = 1} [-\lambda_{n i}, \lambda_{n i}]</script>
+
+<p>for some <script type="math/tex">\lambda_{n i} > 0</script>,</p>
+
+<script type="math/tex; mode=display">\Omega'_n = D^{-1}_n(\Omega''_n), \qquad \rho'_n = D^{-1}_n \rho''_n D_n, \qquad \rho'_n \curvearrowright \Omega'_n, \qquad \rho''_n \curvearrowright \Omega''_n</script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">D_n = \mathrm{diag}(\lambda_{n1}, \dots, \lambda_{nk}, 1)</script>
+
+<p>is the vertical map in the diagram above.  Since <script type="math/tex">\mathrm{SO}(k + 1)</script> is compact, the sequence <script type="math/tex">\rho''_n</script> subconverges, so the sequence <script type="math/tex">\Omega'_n</script> subconverges to <script type="math/tex">\Omega'_\infty</script>.</p>
+
+<p>By the box estimate lemma, the entries of each matrix <script type="math/tex">A_n</script> are bounded by a constant multiple of <script type="math/tex">{\mid}(A_n)_{k + 1, k + 1}{\mid}</script>.  It is possible that <script type="math/tex">{\mid}(A_n)_{k + 1, k + 1}{\mid} \to \infty</script>; however, since we are considering projective maps, we can rescale if necessary so that <script type="math/tex">(A_n)_{k + 1, k + 1} = 1</script> for all <script type="math/tex">n</script>.  Then the sequence <script type="math/tex">\rho'_n</script> is bounded, so it subconverges.  <script type="math/tex">\square</script></p>
+
+	<p><a href="/~ballas/260p/lectures/lecture19/"><b>Previous Post:</b> Lecture 19: Closedness Part I</a></p>
+	<br>
+	<p></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://www.math.fsu.edu/~ballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

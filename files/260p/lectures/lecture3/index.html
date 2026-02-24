@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 3: Properly Convex Domains</title>
+  <meta name="description" content="Last time: . If  is a real vector space, let  be the collection of quadratic forms . These are functions of the form  for real numbers . This can be expresse...">
+
+  <link rel="stylesheet" href="/~sballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.ucsb.edu/~sballas/260p/lectures/lecture3/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.ucsb.edu/~sballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~sballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~sballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~sballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 3: Properly Convex Domains</h1>
+    <p class="post-meta">Apr 3, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Last time: <script type="math/tex">\theta\colon PSL(2,R)\hookrightarrow SL(3,R)</script>. If <script type="math/tex">V</script> is a real vector space, let <script type="math/tex">S^2(V)</script> be the collection of quadratic forms <script type="math/tex">\beta\colon V\to R</script>. These are functions of the form <script type="math/tex">\ell x^2+2mxy+ny^2</script> for real numbers <script type="math/tex">\ell,m,n</script>. This can be expressed as a symmetric matrix <script type="math/tex">% <![CDATA[
+\beta=\begin{pmatrix} \ell & m \\ m & n\end{pmatrix} %]]></script>. There is an action of <script type="math/tex">SL(2,R)</script> on <script type="math/tex">S^2(R^2)</script>, given by, for <script type="math/tex">A\in SL(2,R)</script>, setting <script type="math/tex">\theta(A)\colon S^2(R^2)\to S^2(R^2)</script>  to be <script type="math/tex">% <![CDATA[
+(A^{-1})^t\begin{pmatrix} \ell & m \\ m & n\end{pmatrix}A^{-1} %]]></script>. Concretely, if <script type="math/tex">% <![CDATA[
+A=\begin{pmatrix}a & b \\ c & d\end{pmatrix} %]]></script>, we have <script type="math/tex">% <![CDATA[
+\theta(A)\beta=\begin{pmatrix}d^2\ell -2dcm +c^2n & -db\ell + (ad+bc)m-acn \\ -db\ell +(ad+bc)m-acn & b^2\ell-2abm+a^2n\end{pmatrix} %]]></script>.</p>
+
+<p>By identifying <script type="math/tex">S^2(\mathbb{R}^2)</script> with <script type="math/tex">\mathbb{R}^3</script> via <script type="math/tex">\beta\mapsto (\ell,m,n)</script>, this gives <script type="math/tex">% <![CDATA[
+\theta(A)=\begin{pmatrix}d^2 & -2dc & c^2 \\ -2b\ell & ad+bc & -2ac \\ b^2 & -2ab & a^2\end{pmatrix} %]]></script>.</p>
+
+<p>Claim: <script type="math/tex">\text{Im}(\theta)=SO(1,2)=\text{Isom}_+(J)</script>, where <script type="math/tex">% <![CDATA[
+J=\begin{pmatrix} 0 & 0 & 1 \\ 0 & -1 & 0 \\ 1 & 0 & 0\end{pmatrix} %]]></script>.</p>
+
+<p>This is because the determinant map which sends <script type="math/tex">\beta</script> to <script type="math/tex">\ell n-m^2</script> is invariant under the action of <script type="math/tex">SL(2,R)</script>, namely since <script type="math/tex">\theta(A)(\beta)=(A^{-1})^tP(A^{-1})</script>, and <script type="math/tex">\det(A)=1</script>, we have <script type="math/tex">\det(\theta(A)(\beta))=\det(\beta)</script>. Therefore, the image of <script type="math/tex">\theta</script> is a subspace of <script type="math/tex">\text{Isom}_+(J)</script>, and by comparing dimensions and using the fact that <script type="math/tex">\text{Isom}_+(J)</script> is connected, we get equality.</p>
+
+<p>Fact: <script type="math/tex">SL(2,R)/SO(2)\cong H^2</script>. Therefore <script type="math/tex">\text{Im}(\theta)/\theta(SO(2))=SO(1,2)/\theta(SO(2))\cong H^2</script>.</p>
+
+<p><script type="math/tex">SO(1,2)</script> acting on <script type="math/tex">R^3</script>. By mapping <script type="math/tex">(\ell,m,n)\mapsto(x_3-x_1,x_2,x_1+x_3)</script>, we change <script type="math/tex">\ell n-m^2</script> to <script type="math/tex">x_3^2-x_1^2-x_2^2</script>. Given an <script type="math/tex">M\in  SO(2,1)</script>, this acts on the new coordinates by conjugation with the coordinate map, and preserves the quadratic form. In particular, the 1-locus is a hyperboloid of two sheets which is preserved under the action of <script type="math/tex">SO(2,1)</script>, and we can metrize the positive (meaning <script type="math/tex">x_3>0</script>) sheet of this hyperboloid <script type="math/tex">H</script> with a hyperbolic metric.</p>
+
+<p>So the action of <script type="math/tex">SO(1,2)</script> on <script type="math/tex">H</script> is conjugate by a diffeomorphism to action of <script type="math/tex">PSL(2,R)</script> on <script type="math/tex">H^2=\{x+iy\mid y>0\}</script>.</p>
+
+<p>We may also projectivize <script type="math/tex">R^3</script>, in which case both sheets of the hyperboloid are identified with the unit disc <script type="math/tex">\mathbb{D}</script> in the affine patch <script type="math/tex">[x_1:x_2:1]</script>, with <script type="math/tex">% <![CDATA[
+x_1^2+x_2^1<1 %]]></script>. Then the action of <script type="math/tex">PSO(1,2)</script> on <script type="math/tex">\mathbb{D}</script> is conjugate by a diffeomorphism to an action of <script type="math/tex">PSL(2,R)</script> on the upper half plane <script type="math/tex">H^2</script>. Then <script type="math/tex">(\mathbb{D},PO(1,2))</script> is called the Klein model of <script type="math/tex">H^2</script>.</p>
+
+<p>Definition: A subset <script type="math/tex">\Omega\subseteq R P^n</script> is convex if for every line <script type="math/tex">\ell</script> in <script type="math/tex">R P^n</script>, <script type="math/tex">\Omega \cap \ell</script> is connected (possibly empty). If also the closure <script type="math/tex">\bar{\Omega}</script> is disjoint from some <script type="math/tex">R P^{n-1}</script>, then <script type="math/tex">\Omega</script> is properly convex. For example, consider <script type="math/tex">\mathbb{D}\subseteq R P^2</script>.</p>
+
+<p>Definition: A properly convex projective orbifold is <script type="math/tex">M^n=\Omega/\Gamma</script>, where <script type="math/tex">\Omega</script> is a properly convex open set in <script type="math/tex">R P^n</script> and <script type="math/tex">\Gamma</script> is a discrete subgroup of <script type="math/tex">PGL(\Omega)=\{\alpha\in PGL(n+1,R)\mid \alpha(\Omega)=\Omega\}</script>. If <script type="math/tex">\Gamma</script> has no elements of finite order, or if <script type="math/tex">\Gamma</script> acts freely on <script type="math/tex">\Omega</script>, this is a manifold.</p>
+
+<p>Example: A hyperbolic manifold is a properly convex projective orbifold.</p>
+
+<p>By taking <script type="math/tex">\Omega</script> to be the interior of a triangle, and <script type="math/tex">% <![CDATA[
+\Gamma =\langle \begin{pmatrix} 2 & & \\ & 1 & \\ & & 1\end{pmatrix},\begin{pmatrix} 1 & & \\ &2 & \\ & & 1\end{pmatrix}\rangle %]]></script>, we obtain a torus.</p>
+
+<p>Duality: Let <script type="math/tex">V^*=\text{Hom}(V,R)</script>, and consider <script type="math/tex">P(V^*)</script>. A <script type="math/tex">T\in GL(V)</script> acts on <script type="math/tex">V^*</script> by <script type="math/tex">T_*(\phi)=\phi\circ T^{-1}</script>.</p>
+
+<p>If <script type="math/tex">\beta</script> is a basis of <script type="math/tex">V</script>, and <script type="math/tex">\beta^*</script> is the dual basis of <script type="math/tex">V^*</script>, then the matrices are related by <script type="math/tex">[T_*]_{\beta^*}=([T]_\beta^{-1})^t</script>. The automorphism of <script type="math/tex">GL(n,\mathbb{R})</script> given by <script type="math/tex">A\mapsto (A^{-1})^t</script> is called a global Cartan involution.</p>
+
+<p>Let <script type="math/tex">\Omega</script> be a subset of an affine patch <script type="math/tex">A^n</script> in <script type="math/tex">R P^n</script>. Define <script type="math/tex">\mathscr{C}(\Omega)=\{tv\mid v\in \Omega, t>0\}</script>. For example, if <script type="math/tex">\Omega=\mathbb{D}</script>, then <script type="math/tex">\mathscr{C}\mathbb{D}</script> is the interior of the light cone, the set <script type="math/tex">\{(x_1,x_2,x_3)\mid x_3^2>x_1^2+x_2^2,x_3>0\}</script>.</p>
+
+<p>Let <script type="math/tex">\mathscr{C}^*\Omega=\{\phi\in V^*\mid \phi(x)>0\forall x\in\overline{\mathscr{C}\Omega}\}</script>. This is an open convex cone, because if <script type="math/tex">\phi_1,\phi_2\in\mathscr{C}^*</script> and <script type="math/tex">\lambda\in [0,1]</script>, then <script type="math/tex">(\lambda\phi_1+(1-\lambda)\phi_2)(x)>0</script> for all <script type="math/tex">x\in \overline{\mathscr{C}\Omega}</script>.</p>
+
+<p>Definition: The dual domain of <script type="math/tex">\Omega</script> is <script type="math/tex">\Omega^*=P(\mathscr{C}^*\Omega)</script>, which is a convex set in <script type="math/tex">P(V^*)</script>. It is open and properly convex.</p>
+
+<p>Example: Take <script type="math/tex">\Omega</script> to be the image of a spherical triangle in <script type="math/tex">S^2</script> in <script type="math/tex">R P^2</script>, with angles <script type="math/tex">\alpha,\beta,\gamma</script> and opposing side lengths $a,b,c$. The standard inner product of <script type="math/tex">V=R^3</script> gives a canonical isomorphism from <script type="math/tex">V\to V^*</script> by mapping <script type="math/tex">v</script> to <script type="math/tex">\langle v,-\rangle</script> (linear functionals are representable). This identifies <script type="math/tex">P(V)</script> with <script type="math/tex">P(V^*)</script>, and in this case, <script type="math/tex">\Omega^*</script> is a triangle with side lengths <script type="math/tex">\alpha,\beta,\gamma</script> and angles <script type="math/tex">a,b,c</script>.</p>
+
+<p><script type="math/tex">\Omega</script> is strictly convex if it is properly convex and its boundary contains no line segments. For example, a triangle is properly but not strictly convex.</p>
+
+	<p><a href="/~sballas/260p/lectures/lecture2/"><b>Previous Post:</b> Lecture 2: Introduction to Projective Geometry Part II</a></p>
+	<br>
+	<p> <a href="/~sballas/260p/lectures/lecture4"><b>Next Post:</b> Lecture 4: Projective Structures and Maps</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://math.ucsb.edu/~sballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

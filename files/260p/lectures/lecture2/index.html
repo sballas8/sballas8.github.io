@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lecture 2: Introduction to Projective Geometry Part II</title>
+  <meta name="description" content="Last time, we saw a theorem stating that the subgroup of  transformations in that preserve an affine patch is isomorphic to the affine transformations in -di...">
+
+  <link rel="stylesheet" href="/~sballas/260p/css/main.css">
+  <link rel="canonical" href="http://math.ucsb.edu/~sballas/260p/lectures/lecture2/">
+  <link rel="alternate" type="application/rss+xml" title="260P: Projective Structures on Manifolds" href="http://math.ucsb.edu/~sballas/260p/feed.xml" /> 
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~sballas/260p/">260P: Projective Structures on Manifolds</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~sballas/260p/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/~sballas/260p/schedule/">Blogging Schedule</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lecture 2: Introduction to Projective Geometry Part II</h1>
+    <p class="post-meta">Mar 31, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Last time, we saw a theorem stating that the subgroup of 
+ transformations in <script type="math/tex">PGL(n+1,\mathbb{R})</script>
+that preserve an affine patch is isomorphic to the affine transformations in 
+<script type="math/tex">n</script>-dimensional Euclidean space.  To see this in general, we first 
+introduce the idea of <em>projective coordinates</em>.</p>
+
+<p>If our vector space <script type="math/tex">V = \mathbb{R}^{n+1}</script> has a basis <script type="math/tex">v_1,\ldots,v_{n+1}</script> 
+then we write
+\[
+[t_1:\cdots:t_{n+1}] := [t_1 v_1 + \cdots + t_{n+1}v_{n+1}].
+\]</p>
+
+<p>Then we consider the affine patch of points where <script type="math/tex">t_{n+1} \neq 0</script>. In this 
+affine patch, we can rewrite the projective coordinates so the last coordinate is 1.</p>
+
+<p>Now if <script type="math/tex">[A] \in PGL(n+1,\mathbb{R})</script> preserves this affine patch, we find</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+A = 
+\left(\begin{array}{c|c}
+B & v \\ \hline
+0 \cdots 0 & 1
+\end{array}\right). %]]></script>
+
+<p>So when we apply <script type="math/tex">A</script> to the vector <script type="math/tex">(x_1,\ldots,x_n,1)</script> we get a vector of 
+the form <script type="math/tex">(Bx + v, 1)</script>.  The set of all transformations taking a vector <script type="math/tex">x</script> to 
+the vector <script type="math/tex">Bx + v</script> is called the <em>affine group</em>.</p>
+
+<p><strong>Example Affine Manifold</strong></p>
+
+<p>We consider the space <script type="math/tex">\mathbb{R}P^2</script>. We let <script type="math/tex">v_1,v_2,v_3</script> be a basis for 
+<script type="math/tex">\mathbb{R}^3</script>. Then the points <script type="math/tex">[v_1],[v_2],[v_3]</script> with the lines between 
+each pair divide <script type="math/tex">\mathbb{R}P^2</script> into 4 triangles. We label the middle 
+triangle <script type="math/tex">\Delta</script>.</p>
+
+<p>Next, we let <script type="math/tex">\Gamma = \langle [A],[B] \rangle \cong \mathbb{Z}^2</script> where 
+<script type="math/tex">A</script> and <script type="math/tex">B</script> are diagonal matrices with entries <script type="math/tex">2,1,1</script> and <script type="math/tex">1,3,1</script> 
+respectively.  Since both transformations have all positive coordinates, 
+<script type="math/tex">\Gamma</script> preserves our 4 triangles in <script type="math/tex">\mathbb{R}P^2</script>.</p>
+
+<p>Then <script type="math/tex">\Delta / \Gamma</script> is an <em>affine torus</em>, which is homeomorphic to a 
+torus.  To see this we note that in the affine patch <script type="math/tex">[x:y:1]</script>, the rectangle 
+<script type="math/tex">X = [1,2]\times [1,3]</script> is a fundamental domain of <script type="math/tex">\Gamma</script> which is moved 
+by transformations that stretch or compress the rectangle.  Applying a log 
+transformation to the first quadrant gives a homeomorphism to <script type="math/tex">\mathbb{R}^2</script>, 
+where <script type="math/tex">\Gamma</script> now acts by translation and hence the quotient by <script type="math/tex">\Gamma</script> 
+is clearly a torus.</p>
+
+<p>For the next theorem it is useful to note that because linear maps send vector 
+subspaces of <script type="math/tex">V</script> to other vector subspaces, transformations in <script type="math/tex">PGL(V)</script> 
+similarly preserve projective subspaces (eg projective lines) in 
+<script type="math/tex">\mathbb{P}(V)</script>.</p>
+
+<p><strong>(A) Fundamental Theorem of Projective Geometry</strong></p>
+
+<p><em>If <script type="math/tex">n\ge 2</script>, <script type="math/tex">U</script> and <script type="math/tex">V</script> are open sets in <script type="math/tex">\mathbb{R}P^n</script>, <script type="math/tex">T</script> is a 
+continuous map <script type="math/tex">T:U \to V</script>, and <script type="math/tex">T</script> sends <script type="math/tex">U \cap</script>(line) to 
+<script type="math/tex">V \cap</script>(line) for all projective lines, then <script type="math/tex">T</script> is the restriction of a 
+projective transformation.</em></p>
+
+<p>This can be interpreted as saying if <script type="math/tex">T</script> preserves “lines” (the intersections 
+of lines with U), then <script type="math/tex">T</script> also preserves “projective subspaces.”</p>
+
+<p><em>Proof:</em> There exists a projective basis <script type="math/tex">\{p_1,\ldots,p_{n+2}\} = B</script> 
+contained in <script type="math/tex">U</script> such that <script type="math/tex">T(B)</script> is another projective basis.  Then there 
+exists a unique projective transformation <script type="math/tex">S</script> such that 
+<script type="math/tex">S\mid_B = T\mid_B</script> (considering <script type="math/tex">B</script> as an ordered basis).   Then the map 
+<script type="math/tex">S^{-1}\circ T</script> preserves “lines” and <script type="math/tex">S^{-1} \circ T</script> fixes <script type="math/tex">B</script>. We now 
+want to show <script type="math/tex">S^{-1} \circ T</script> is the identity map.</p>
+
+<p>So, we may assume <script type="math/tex">T</script> is a transformation from <script type="math/tex">U</script> to itself that fixes the 
+projcetive basis <script type="math/tex">B</script>.  We proceed by induction on the dimension of 
+<script type="math/tex">\mathbb{R}P^n</script>.</p>
+
+<p>First, if <script type="math/tex">n=2</script> then our projective basis has 4 points.  Let <script type="math/tex">L_0</script> denote 
+the six “lines” (lines intersected with <script type="math/tex">U</script>) that contain 2 points in <script type="math/tex">B</script>. 
+Since <script type="math/tex">T</script> sends each “line” to itself, <script type="math/tex">T</script> fixes a set of points <script type="math/tex">P_1</script> 
+composed of <script type="math/tex">B</script> together with the 3 additional points lying on 2 lines in 
+<script type="math/tex">L_0</script>.  Next we let <script type="math/tex">L_1</script> be the set of line containing 2 points in 
+<script type="math/tex">P_1</script>, obtain <script type="math/tex">P_2</script> from <script type="math/tex">P_1</script> by adding points contained in two lines in 
+<script type="math/tex">L_1</script>, and continue in this fashion.  The union of all sets <script type="math/tex">P_n</script> will be a 
+dense set in <script type="math/tex">U</script> that is fixed by <script type="math/tex">T</script>.  Since <script type="math/tex">T</script> is continuous, this 
+shows that <script type="math/tex">T</script> is the identity.</p>
+
+<p>We show how the induction works by sketching the <script type="math/tex">n=3</script> case.  Now <script type="math/tex">B</script> is a 
+projective basis of <script type="math/tex">\mathbb{R}P^3</script>, and we know that <script type="math/tex">T</script> is the identity 
+on <script type="math/tex">B</script>.  Then <script type="math/tex">T</script> preserves each “plane” containing 3 points in <script type="math/tex">B</script>.  By 
+the <script type="math/tex">n=2</script> step, we have that <script type="math/tex">T</script> is the identity on each of these planes. 
+Now we use a similar construction to the <script type="math/tex">n=2</script> step to again get a dense set 
+of points fixed by <script type="math/tex">T</script>.</p>
+
+<p><strong>The Klein (or Projective) Model of <script type="math/tex">\mathbb{H}^2</script></strong></p>
+
+<p>We can model the hyperbolic plane as a disc in the “light cone” in 
+<script type="math/tex">\mathbb{R}^3</script> defined by <script type="math/tex">z= x^2 + y^2</script>.  We let <script type="math/tex">\mathcal{C}</script> denote 
+the unit disc inside this cone at height <script type="math/tex">z=1</script>.  Then the disc in 
+<script type="math/tex">\mathbb{R}P^2</script> is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\mathbb{D} = \mathbb{P}(\mathcal{C}) = \{[x:y:1] \mid x^2+y^2 < 1\}. %]]></script>
+
+<p>The set of projective transformations that fix <script type="math/tex">\mathbb{D}</script> is</p>
+
+<script type="math/tex; mode=display">PGL(\mathbb{D}) = \{[A] \in PGL(3,\mathbb{R}) \mid A\mathcal{C} 
+= \mathcal{C}\} = O(2,1) \cong \text{Isom}(\mathbb{H}^2).</script>
+
+<p>There exist homomorphisms from <script type="math/tex">SL(2,\mathbb{R})</script> to <script type="math/tex">SL(3,\mathbb{R})</script>:</p>
+
+<ul>
+  <li>
+    <p>the trivial homomorphism <script type="math/tex">A \mapsto \text{Id}</script>;</p>
+  </li>
+  <li>
+    <p>the homomorpism <script type="math/tex">% <![CDATA[
+A \mapsto \bigl(\begin{smallmatrix}
+A& \\ &1
+\end{smallmatrix} \bigr) %]]></script>, a reducible homomorphism;</p>
+  </li>
+  <li>
+    <p>there also exists an <em>irreducible</em> homomorphism defined as follows:</p>
+  </li>
+</ul>
+
+<p><script type="math/tex">SL(2,\mathbb{R})</script> acts on the vector space <script type="math/tex">\mathbb{R}^3</script> considered as 
+the vector space of <em>quadratic forms</em> on <script type="math/tex">\mathbb{R}^2</script>, that is, polynomials 
+of the form <script type="math/tex">ax^2 + bxy + cy^2</script>.</p>
+
+<p>Let <script type="math/tex">\beta:\mathbb{R}^2 \to \mathbb{R}^1</script> be a quadratic form, written as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\beta \left(\begin{array}{c} x \\ y \end{array}\right)
+= \left(\begin{array}{cc} x & y \end{array}\right) 
+\left(\begin{array}{cc} m & n \\ n & p \end{array}\right)
+\left(\begin{array}{c} x \\ y \end{array}\right) 
+= mx^2 +2nxy + py^2. %]]></script>
+
+<p>We then identify <script type="math/tex">\beta</script> with the vector <script type="math/tex">(m,n,p) \in \mathbb{R}^3</script>. 
+Now let <script type="math/tex">T:\mathbb{R}^2 \to \mathbb{R}^2</script> be a linear transformation.  Then 
+define <script type="math/tex">T_* (\beta)</script> as the following quadratic form:</p>
+
+<script type="math/tex; mode=display">T_*(\beta) \left(\begin{array}{c} x \\ y \end{array}\right)
+= \beta\left(T\left(\begin{array}{c} x \\ y \end{array}\right)\right).</script>
+
+<p>It is easy to calculate that <script type="math/tex">(S\circ T)_* = T_* \circ S_*</script>, so we have 
+defined an <em>anti-homomorphism</em>. So we must fix this define our homomorphism 
+<script type="math/tex">\theta: GL(2,\mathbb{R}) \to GL(3,\mathbb{R})</script> by 
+<script type="math/tex">\theta(T) = (T^{-1})_*</script>.  This is our irreducible homomorphism, and it 
+restricts to a homomorphism taking <script type="math/tex">SL(2,\mathbb{R})</script> to 
+<script type="math/tex">SL(3,\mathbb{R})</script>.</p>
+
+	<p><a href="/~sballas/260p/lectures/lecture1/"><b>Previous Post:</b> Lecture 1: Introduction to Projective Geometry</a></p>
+	<br>
+	<p> <a href="/~sballas/260p/lectures/lecture3/"><b>Next Post:</b> Lecture 3: Properly Convex Domains</a></p>
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">260P: Projective Structures on Manifolds</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><a href="http://math.ucsb.edu/~sballas/">Sam Ballas</li>
+          <li><a href="http://www.math.ucsb.edu/~cooper/">Daryl Cooper</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Blog of notes for Math 260P
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
